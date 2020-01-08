@@ -19,6 +19,9 @@
 		D551B25923C45B650061E4A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D551B25723C45B650061E4A8 /* LaunchScreen.storyboard */; };
 		D551B26423C45B650061E4A8 /* MyCloudMusicSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551B26323C45B650061E4A8 /* MyCloudMusicSwiftTests.swift */; };
 		D551B26F23C45B650061E4A8 /* MyCloudMusicSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551B26E23C45B650061E4A8 /* MyCloudMusicSwiftUITests.swift */; };
+		D594D34723C61D890082F9F3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34623C61D890082F9F3 /* Constant.swift */; };
+		D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34823C623CE0082F9F3 /* ViewUtil.swift */; };
+		D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34B23C625700082F9F3 /* ViewExtend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		D551B26A23C45B650061E4A8 /* MyCloudMusicSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCloudMusicSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D551B26E23C45B650061E4A8 /* MyCloudMusicSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCloudMusicSwiftUITests.swift; sourceTree = "<group>"; };
 		D551B27023C45B650061E4A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D594D34623C61D890082F9F3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D594D34823C623CE0082F9F3 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
+		D594D34B23C625700082F9F3 /* ViewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,8 @@
 		D551B24D23C45B620061E4A8 /* MyCloudMusicSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D594D34A23C6255B0082F9F3 /* Extend */,
+				D594D34523C61D580082F9F3 /* Util */,
 				D5060D4823C4C64D00F875E0 /* Controller */,
 				D551B24E23C45B620061E4A8 /* AppDelegate.swift */,
 				D551B25023C45B620061E4A8 /* ViewController.swift */,
@@ -177,6 +185,23 @@
 				D551B27023C45B650061E4A8 /* Info.plist */,
 			);
 			path = MyCloudMusicSwiftUITests;
+			sourceTree = "<group>";
+		};
+		D594D34523C61D580082F9F3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D594D34623C61D890082F9F3 /* Constant.swift */,
+				D594D34823C623CE0082F9F3 /* ViewUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D594D34A23C6255B0082F9F3 /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				D594D34B23C625700082F9F3 /* ViewExtend.swift */,
+			);
+			path = Extend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,8 +407,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */,
 				D5060D4C23C4C68000F875E0 /* SplashController.swift in Sources */,
 				D551B25123C45B620061E4A8 /* ViewController.swift in Sources */,
+				D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */,
+				D594D34723C61D890082F9F3 /* Constant.swift in Sources */,
 				D5060D4A23C4C66F00F875E0 /* GuideController.swift in Sources */,
 				D551B24F23C45B620061E4A8 /* AppDelegate.swift in Sources */,
 			);

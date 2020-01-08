@@ -36,32 +36,35 @@ class GuideController: UIViewController {
         //按钮在容器中垂直居中
 
         //按钮垂直位置,y
-        let buttonY = (vmFooterContainer.frame.size.height - 40) / 2
+        let buttonY = (vmFooterContainer.frame.size.height - CGFloat(SIZE_BUTTON_ENTER_HEIGHT)) / 2
 
         // 登录注册按钮，x
-        let btnLoginOrRegisterX = (vmFooterContainer.frame.size.width - 130 * 2) / 3
+        let btnLoginOrRegisterX = (vmFooterContainer.frame.size.width - (CGFloat(SIZE_BUTTON_ENTER_WIDTH) * 2)) / 3
 
         // 设置登录/注册按钮位置和大小
-        btLoginOrRegister.frame = CGRect(x: btnLoginOrRegisterX, y: buttonY, width: 130, height: 40)
+        btLoginOrRegister.frame = CGRect(x: btnLoginOrRegisterX, y: buttonY, width: CGFloat(SIZE_BUTTON_ENTER_WIDTH), height: CGFloat(SIZE_BUTTON_ENTER_HEIGHT))
 
         // 设置登录/注册按钮位置和大小
-        let btnEnterX = btnLoginOrRegisterX * 2 + 130
+        let btnEnterX = btnLoginOrRegisterX * 2 + CGFloat(SIZE_BUTTON_ENTER_WIDTH)
 
         // 设置立即体验按钮位置和大小
-        btEnter.frame = CGRect(x: btnEnterX, y: buttonY, width: 130, height: 40)
+        btEnter.frame = CGRect(x: btnEnterX, y: buttonY, width: CGFloat(SIZE_BUTTON_ENTER_WIDTH), height: CGFloat(SIZE_BUTTON_ENTER_HEIGHT))
 
-        // //登录/注册按钮圆角20
-        
-        btLoginOrRegister.layer.cornerRadius = 20
-        btEnter.layer.cornerRadius = 20
-        
+        // //登录/注册按钮圆角22
+
+//        btLoginOrRegister.layer.cornerRadius = 22
+//        btEnter.layer.cornerRadius = 22
+        ViewUtil.showLargeRadius(view: btLoginOrRegister)
+        ViewUtil.showLargeRadius(view: btEnter)
+
+        btEnter.showColorPrimaryBorder()
         // 边框为1
-        btEnter.layer.borderWidth = 1
-        
+//        btEnter.layer.borderWidth = 1
+
         // 边框颜色
         // 参数为：rgb
         // 透明度：0：完全透明，1:完全不透明
         // 取值都是0~1，所以要除以255.0
-        btEnter.layer.borderColor=UIColor(red: 212/255.0, green: 0, blue: 0, alpha: 1.0).cgColor
+//        btEnter.layer.borderColor = UIColor(red: 212 / 255.0, green: 0, blue: 0, alpha: 1.0).cgColor
     }
 }
