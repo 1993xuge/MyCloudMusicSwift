@@ -18,6 +18,7 @@ extension UIView {
         
         //边框颜色
 //        self.layer.borderColor = UIColor(red: 212 / 255, green: 0, blue: 0, alpha: 1.0).cgColor
-        self.layer.borderColor = UIColor(hex: 0xDD0000).cgColor
+//        self.layer.borderColor = UIColor(hex: COLOR_PRIMARY).cgColor
+        self.layer.borderColor = UIColor(named: "ColorPrimary")?.cgColor
     }
 }

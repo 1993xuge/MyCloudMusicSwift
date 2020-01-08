@@ -23,3 +23,6 @@ let SIZE_LARGE_RADIUS = 22
 
 /// 边框宽度
 let SIZE_BORDER = 1.0
+
+// MARK: - 颜色
+let COLOR_PRIMARY = 0xdd0000

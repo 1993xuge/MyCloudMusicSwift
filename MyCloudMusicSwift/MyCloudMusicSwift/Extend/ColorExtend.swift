@@ -12,6 +12,9 @@ import UIKit
 
 extension UIColor {
 
+    /// 通过16进制颜色创建Color
+    ///
+    /// - Parameter hex: 16进制颜色
     public convenience init(hex: Int) {
         //从Int提取出每个颜色
         //最高2位表示红色
