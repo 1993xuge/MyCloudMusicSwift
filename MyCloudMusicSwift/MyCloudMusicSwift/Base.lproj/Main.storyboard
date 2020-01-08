@@ -78,26 +78,75 @@
             <point key="canvasLocation" x="-1233" y="-594"/>
         </scene>
         <!--Guide Controller-->
-        <scene sceneID="S0F-G4-0WN">
+        <scene sceneID="530-0A-4qN">
             <objects>
-                <viewController storyboardIdentifier="Guide" id="jsz-R0-aF0" customClass="GuideController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ffx-Aj-GQZ">
+                <viewController storyboardIdentifier="Guide" id="iwx-fx-mpP" customClass="GuideController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xlu-Lc-swT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-af-6Dx" userLabel="Container">
-                                <rect key="frame" x="15" y="185" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twg-ou-n2U" userLabel="Container">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mq-4U-rTw" userLabel="Header">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64H-XZ-HE2" userLabel="Footer">
+                                        <rect key="frame" x="0.0" y="718" width="414" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQP-hW-7Pb" userLabel="Bt Enter">
+                                                <rect key="frame" x="238" y="26" width="74" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="立即体验">
+                                                    <color key="titleColor" red="0.8666666666666667" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWw-1L-cce" userLabel="Bt Login Or Register">
+                                                <rect key="frame" x="10" y="27" width="79" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.8666666666666667" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="登陆/注册">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="2VN-4f-d2u"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="64H-XZ-HE2" secondAttribute="bottom" id="2RO-tt-q9U"/>
+                                    <constraint firstItem="6mq-4U-rTw" firstAttribute="top" secondItem="Twg-ou-n2U" secondAttribute="top" id="9w7-g3-cZi"/>
+                                    <constraint firstItem="64H-XZ-HE2" firstAttribute="top" secondItem="6mq-4U-rTw" secondAttribute="bottom" id="AqD-gM-Qww"/>
+                                    <constraint firstItem="6mq-4U-rTw" firstAttribute="leading" secondItem="Twg-ou-n2U" secondAttribute="leading" id="EYO-RP-b1M"/>
+                                    <constraint firstAttribute="trailing" secondItem="6mq-4U-rTw" secondAttribute="trailing" id="GYO-KF-SXH"/>
+                                    <constraint firstAttribute="trailing" secondItem="64H-XZ-HE2" secondAttribute="trailing" id="gTe-lH-MtT"/>
+                                    <constraint firstItem="64H-XZ-HE2" firstAttribute="leading" secondItem="Twg-ou-n2U" secondAttribute="leading" id="vaJ-yh-Tmn"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Jtk-eC-0CN"/>
+                        <constraints>
+                            <constraint firstItem="Twg-ou-n2U" firstAttribute="top" secondItem="A72-aQ-X4P" secondAttribute="top" id="FUE-3s-uBK"/>
+                            <constraint firstItem="A72-aQ-X4P" firstAttribute="trailing" secondItem="Twg-ou-n2U" secondAttribute="trailing" id="QRC-5r-12s"/>
+                            <constraint firstItem="Twg-ou-n2U" firstAttribute="leading" secondItem="A72-aQ-X4P" secondAttribute="leading" id="cvi-T3-Kjf"/>
+                            <constraint firstItem="A72-aQ-X4P" firstAttribute="bottom" secondItem="Twg-ou-n2U" secondAttribute="bottom" id="igR-fZ-l3q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A72-aQ-X4P"/>
                     </view>
+                    <connections>
+                        <outlet property="btEnter" destination="HQP-hW-7Pb" id="37o-8p-D6j"/>
+                        <outlet property="btLoginOrRegister" destination="mWw-1L-cce" id="YkX-70-jc2"/>
+                        <outlet property="vmFooterContainer" destination="64H-XZ-HE2" id="yDA-jt-TDF"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AjB-Jr-JLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfP-t4-NL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468.11594202898556" y="-595.3125"/>
+            <point key="canvasLocation" x="-342" y="-595"/>
         </scene>
     </scenes>
     <resources>
