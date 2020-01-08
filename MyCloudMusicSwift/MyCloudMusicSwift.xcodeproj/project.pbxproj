@@ -18,10 +18,10 @@
 		D551B25623C45B650061E4A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D551B25523C45B650061E4A8 /* Assets.xcassets */; };
 		D551B25923C45B650061E4A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D551B25723C45B650061E4A8 /* LaunchScreen.storyboard */; };
 		D551B26423C45B650061E4A8 /* MyCloudMusicSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551B26323C45B650061E4A8 /* MyCloudMusicSwiftTests.swift */; };
-		D551B26F23C45B650061E4A8 /* MyCloudMusicSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551B26E23C45B650061E4A8 /* MyCloudMusicSwiftUITests.swift */; };
 		D594D34723C61D890082F9F3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34623C61D890082F9F3 /* Constant.swift */; };
 		D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34823C623CE0082F9F3 /* ViewUtil.swift */; };
 		D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34B23C625700082F9F3 /* ViewExtend.swift */; };
+		D594D34E23C627F70082F9F3 /* ColorExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34D23C627F70082F9F3 /* ColorExtend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +69,7 @@
 		D594D34623C61D890082F9F3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D594D34823C623CE0082F9F3 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		D594D34B23C625700082F9F3 /* ViewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtend.swift; sourceTree = "<group>"; };
+		D594D34D23C627F70082F9F3 /* ColorExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				D594D34B23C625700082F9F3 /* ViewExtend.swift */,
+				D594D34D23C627F70082F9F3 /* ColorExtend.swift */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -410,6 +412,7 @@
 				D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */,
 				D5060D4C23C4C68000F875E0 /* SplashController.swift in Sources */,
 				D551B25123C45B620061E4A8 /* ViewController.swift in Sources */,
+				D594D34E23C627F70082F9F3 /* ColorExtend.swift in Sources */,
 				D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */,
 				D594D34723C61D890082F9F3 /* Constant.swift in Sources */,
 				D5060D4A23C4C66F00F875E0 /* GuideController.swift in Sources */,
@@ -429,7 +432,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D551B26F23C45B650061E4A8 /* MyCloudMusicSwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
