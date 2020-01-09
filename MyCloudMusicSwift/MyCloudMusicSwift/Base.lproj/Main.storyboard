@@ -175,10 +175,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="k2d-Iw-lu1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mNZ-O0-pVc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhs-B6-W71" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1233" y="117"/>
+            <point key="canvasLocation" x="-323.1884057971015" y="116.51785714285714"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="BAN-SA-8c8">
@@ -203,6 +204,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TJ-dZ-qWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1233" y="838"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XwX-9x-OEK">
+            <objects>
+                <navigationController storyboardIdentifier="LoginOrRegisterNavigation" automaticallyAdjustsScrollViewInsets="NO" id="UQR-5X-KoY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y03-Wg-JxT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="heC-On-gsi" kind="relationship" relationship="rootViewController" id="nRK-cN-2wc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WjT-Ge-Sxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1233.3333333333335" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>

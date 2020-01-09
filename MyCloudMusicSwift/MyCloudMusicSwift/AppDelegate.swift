@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     /// 跳转到登录/注册界面
     func toLoginOrRegister() {
-        setRootViewController(name: "LoginOrRegister")
+        setRootViewController(name: "LoginOrRegisterNavigation")
     }
 
     /// 跳转到首页
