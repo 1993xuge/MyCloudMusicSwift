@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuideController: UIViewController {
+class GuideController: BaseController {
 
     // MARK: - 字段
     /// 顶部的轮播图
@@ -24,7 +24,10 @@ class GuideController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func initViews() {
+        super.initViews()
         //初始化轮播图组件
         initBannerView()
     }

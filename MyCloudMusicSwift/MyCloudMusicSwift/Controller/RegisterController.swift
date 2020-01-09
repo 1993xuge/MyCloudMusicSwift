@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterController: UIViewController {
+class RegisterController: BaseController {
 
     /// 昵称控件
     @IBOutlet weak var tfNickname: UITextField!
@@ -30,7 +30,10 @@ class RegisterController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func initViews() {
+        super.initViews()
         ViewUtil.showLargeRadius(view: btRegister)
         
         //设置左侧显示的图标
@@ -39,8 +42,6 @@ class RegisterController: UIViewController {
         tfEmail.showLeftIcon(name: "LoginItemPhone")
         tfPassword.showLeftIcon(name: "LoginItemPhone")
         tfConfirmPassword.showLeftIcon(name: "LoginItemPhone")
-        
-        // Do any additional setup after loading the view.
     }
 
     //MARK: - 点击事件

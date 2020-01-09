@@ -13,7 +13,7 @@
 
 import UIKit
 
-class SplashController: UIViewController {
+class SplashController: BaseController {
 
 
     /// 加载视图成功后调用该方法
