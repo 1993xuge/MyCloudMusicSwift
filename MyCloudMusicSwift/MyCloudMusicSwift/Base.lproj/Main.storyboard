@@ -89,7 +89,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twg-ou-n2U" userLabel="Container">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mq-4U-rTw" userLabel="Header">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mq-4U-rTw" userLabel="Header" customClass="YJBannerView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64H-XZ-HE2" userLabel="Footer">
@@ -146,6 +146,7 @@
                         <viewLayoutGuide key="safeArea" id="A72-aQ-X4P"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="6mq-4U-rTw" id="o2K-rD-ueQ"/>
                         <outlet property="btEnter" destination="HQP-hW-7Pb" id="37o-8p-D6j"/>
                         <outlet property="btLoginOrRegister" destination="mWw-1L-cce" id="YkX-70-jc2"/>
                         <outlet property="vmFooterContainer" destination="64H-XZ-HE2" id="yDA-jt-TDF"/>

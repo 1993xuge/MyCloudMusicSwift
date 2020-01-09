@@ -25,4 +25,12 @@ let SIZE_LARGE_RADIUS = 22
 let SIZE_BORDER = 1.0
 
 // MARK: - 颜色
-let COLOR_PRIMARY = 0xdd0000
+/// 全局主色调
+/// PRIMARY后缀其实是参考了Android中颜色的命名
+let COLOR_PRIMARY=0xdd0000
+
+/// 亮灰色
+let COLOR_LIGHT_GREY=0xaaaaaa
+
+/// 占位图
+let IMAGE_PLACE_HOLDER="PlaceHolder"
