@@ -66,6 +66,12 @@ class LoginOrRegisterController: BaseController {
     
     func toLogin() {
         print("LoginOrRegisterController toLogin")
+//        ToastUtil.short("去登陆")
+        ToastUtil.showLoading()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            // 延迟了3s后。
+            ToastUtil.hideLoading()
+        })
     }
     
     func toRegister()  {

@@ -34,6 +34,7 @@
 		D57905F323C76291003A4B95 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F223C76291003A4B95 /* RegisterController.swift */; };
 		D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F423C776CC003A4B95 /* TextFieldExtend.swift */; };
 		D57905F723C778D2003A4B95 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F623C778D2003A4B95 /* BaseController.swift */; };
+		D57905F923C77AEB003A4B95 /* ToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F823C77AEB003A4B95 /* ToastUtil.swift */; };
 		D594D34723C61D890082F9F3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34623C61D890082F9F3 /* Constant.swift */; };
 		D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34823C623CE0082F9F3 /* ViewUtil.swift */; };
 		D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34B23C625700082F9F3 /* ViewExtend.swift */; };
@@ -107,6 +108,7 @@
 		D57905F223C76291003A4B95 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		D57905F423C776CC003A4B95 /* TextFieldExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtend.swift; sourceTree = "<group>"; };
 		D57905F623C778D2003A4B95 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		D57905F823C77AEB003A4B95 /* ToastUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastUtil.swift; sourceTree = "<group>"; };
 		D594D34623C61D890082F9F3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D594D34823C623CE0082F9F3 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		D594D34B23C625700082F9F3 /* ViewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtend.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				D594D34623C61D890082F9F3 /* Constant.swift */,
 				D594D34823C623CE0082F9F3 /* ViewUtil.swift */,
 				D55801B523C6FFA500BD5335 /* PreferenceUtil.swift */,
+				D57905F823C77AEB003A4B95 /* ToastUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */,
 				D55801AB23C6E68300BD5335 /* YJBannerView.m in Sources */,
 				D55801B123C6E68300BD5335 /* YJBannerViewCell.m in Sources */,
+				D57905F923C77AEB003A4B95 /* ToastUtil.swift in Sources */,
 				D55801B023C6E68300BD5335 /* YJBannerViewCollectionView.m in Sources */,
 				D5060D4C23C4C68000F875E0 /* SplashController.swift in Sources */,
 				D55801AD23C6E68300BD5335 /* YJAbstractDotView.m in Sources */,

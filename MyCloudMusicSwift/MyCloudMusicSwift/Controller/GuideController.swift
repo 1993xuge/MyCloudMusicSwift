@@ -26,9 +26,9 @@ class GuideController: BaseController {
         super.viewDidLoad()
     }
     
-    override func initViews() {
+    override func initViews(){
         super.initViews()
-        //初始化轮播图组件
+       //初始化轮播图组件
         initBannerView()
     }
 

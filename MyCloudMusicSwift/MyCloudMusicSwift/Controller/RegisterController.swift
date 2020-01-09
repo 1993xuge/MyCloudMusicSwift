@@ -48,6 +48,7 @@ class RegisterController: BaseController {
     /// 注册按钮点击事件
     @IBAction func onRegisterClick(_ sender: UIButton) {
          print("RegisterController onRegisterClick")
+        ToastUtil.short("注册")
     }
     
     /// 注册协议点击
