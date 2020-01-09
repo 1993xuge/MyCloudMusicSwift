@@ -30,6 +30,7 @@
 		D55801B123C6E68300BD5335 /* YJBannerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55801A523C6E68300BD5335 /* YJBannerViewCell.m */; };
 		D55801B223C6E68300BD5335 /* YJBannerViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D55801A823C6E68300BD5335 /* YJBannerViewFooter.m */; };
 		D55801B423C6F38900BD5335 /* BannerGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55801B323C6F38900BD5335 /* BannerGuideController.swift */; };
+		D55801B623C6FFA500BD5335 /* PreferenceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55801B523C6FFA500BD5335 /* PreferenceUtil.swift */; };
 		D594D34723C61D890082F9F3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34623C61D890082F9F3 /* Constant.swift */; };
 		D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34823C623CE0082F9F3 /* ViewUtil.swift */; };
 		D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34B23C625700082F9F3 /* ViewExtend.swift */; };
@@ -99,6 +100,7 @@
 		D55801A823C6E68300BD5335 /* YJBannerViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBannerViewFooter.m; sourceTree = "<group>"; };
 		D55801A923C6E68300BD5335 /* YJBannerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBannerViewCell.h; sourceTree = "<group>"; };
 		D55801B323C6F38900BD5335 /* BannerGuideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerGuideController.swift; sourceTree = "<group>"; };
+		D55801B523C6FFA500BD5335 /* PreferenceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceUtil.swift; sourceTree = "<group>"; };
 		D594D34623C61D890082F9F3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D594D34823C623CE0082F9F3 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		D594D34B23C625700082F9F3 /* ViewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtend.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				D594D34623C61D890082F9F3 /* Constant.swift */,
 				D594D34823C623CE0082F9F3 /* ViewUtil.swift */,
+				D55801B523C6FFA500BD5335 /* PreferenceUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				D55801AD23C6E68300BD5335 /* YJAbstractDotView.m in Sources */,
 				D55801AA23C6E68300BD5335 /* UIView+YJBannerViewExt.m in Sources */,
 				D551B25123C45B620061E4A8 /* ViewController.swift in Sources */,
+				D55801B623C6FFA500BD5335 /* PreferenceUtil.swift in Sources */,
 				D594D34E23C627F70082F9F3 /* ColorExtend.swift in Sources */,
 				D55801B423C6F38900BD5335 /* BannerGuideController.swift in Sources */,
 				D558018C23C6AFC900BD5335 /* HomeController.swift in Sources */,

@@ -62,14 +62,21 @@ class GuideController: UIViewController {
     /// 登录或注册按钮点击
     @IBAction func onLoginOrRegisterClick(_ sender: UIButton) {
         print("GuideController onLoginOrRegisterClick")
-
         // 调用它里面的方法显示登录/注册界面
         AppDelegate.shared.toLoginOrRegister()
+        
+        setShowGuide()
     }
 
     /// 立即体验按钮点击
     @IBAction func onEnterClick(_ sender: UIButton) {
         print("GuideController onEnterClick")
         AppDelegate.shared.toHome()
+        setShowGuide()
+    }
+    
+    /// 设置不显示引导界面
+    func setShowGuide()  {
+        PreferenceUtil.setShowGuide(true)
     }
 }
