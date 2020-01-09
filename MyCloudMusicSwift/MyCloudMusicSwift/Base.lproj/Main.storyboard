@@ -233,10 +233,112 @@
                                                                     <action selector="touchUpOutside:" destination="heC-On-gsi" eventType="touchUpOutside" id="BcU-ld-lLz"/>
                                                                 </connections>
                                                             </button>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYs-AY-PWK">
-                                                                <rect key="frame" x="0.0" y="128" width="374" height="259"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYs-AY-PWK" userLabel="Divider">
+                                                                <rect key="frame" x="0.0" y="128" width="374" height="127"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他登录方式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C24-9S-RIb">
+                                                                <rect key="frame" x="0.0" y="275" width="374" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bej-vj-HJf">
+                                                                <rect key="frame" x="0.0" y="312" width="374" height="75"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mag-fu-FAn">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="75"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvh-AN-Hwt">
+                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="42" id="JSx-5u-VMG"/>
+                                                                                </constraints>
+                                                                                <state key="normal" image="LoginWechat"/>
+                                                                                <state key="highlighted" image="LoginWechatSelected"/>
+                                                                                <connections>
+                                                                                    <action selector="onWechatLoginClick:" destination="heC-On-gsi" eventType="touchUpInside" id="biH-WW-5o5"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnB-jE-GFa">
+                                                                                <rect key="frame" x="32.5" y="42" width="29" height="33"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oF1-Wv-XB5">
+                                                                        <rect key="frame" x="93.5" y="0.0" width="93.5" height="75"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yse-Xd-47S">
+                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="42" id="tsl-A8-5yd"/>
+                                                                                </constraints>
+                                                                                <state key="normal" image="LoginQQ"/>
+                                                                                <state key="highlighted" image="LoginQQSelected"/>
+                                                                                <connections>
+                                                                                    <action selector="onQQLoginClick:" destination="heC-On-gsi" eventType="touchUpInside" id="Cby-PJ-oL7"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IY-bf-y2X">
+                                                                                <rect key="frame" x="36" y="42" width="21.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sUM-WS-u7y">
+                                                                        <rect key="frame" x="187" y="0.0" width="93.5" height="75"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ro-2U-Bua">
+                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="42" id="OTd-PK-QVp"/>
+                                                                                </constraints>
+                                                                                <state key="normal" image="LoginWeibo"/>
+                                                                                <state key="highlighted" image="LoginWechatSelected"/>
+                                                                                <connections>
+                                                                                    <action selector="onWeiboLoginClick:" destination="heC-On-gsi" eventType="touchUpInside" id="A4Q-vi-Ihr"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqc-MZ-i0Z">
+                                                                                <rect key="frame" x="32.5" y="42" width="29" height="33"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UiX-aJ-qSi">
+                                                                        <rect key="frame" x="280.5" y="0.0" width="93.5" height="75"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyg-7s-IYN">
+                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="42" id="Lsi-ku-9Ap"/>
+                                                                                </constraints>
+                                                                                <state key="normal" image="LoginNetease"/>
+                                                                                <state key="highlighted" image="LoginWechatSelected"/>
+                                                                                <connections>
+                                                                                    <action selector="onNeteaseLoginClick:" destination="heC-On-gsi" eventType="touchUpInside" id="Q6z-by-deK"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldK-oC-O1X">
+                                                                                <rect key="frame" x="32.5" y="42" width="29" height="33"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="75" id="YA1-BD-hoR"/>
+                                                                </constraints>
+                                                            </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -325,6 +427,12 @@
     <resources>
         <image name="LoginBackground" width="180" height="186.66667175292969"/>
         <image name="LoginLogo" width="60" height="60"/>
+        <image name="LoginNetease" width="42" height="42"/>
+        <image name="LoginQQ" width="42" height="42"/>
+        <image name="LoginQQSelected" width="42" height="42"/>
+        <image name="LoginWechat" width="42" height="42"/>
+        <image name="LoginWechatSelected" width="42" height="42"/>
+        <image name="LoginWeibo" width="42" height="42"/>
         <image name="SplashBanner" width="74.666664123535156" height="309"/>
         <image name="SplashLogo" width="188" height="31.666666030883789"/>
         <namedColor name="ColorPrimary">

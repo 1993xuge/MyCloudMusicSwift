@@ -68,6 +68,37 @@ class LoginOrRegisterController: UIViewController {
     }
     
     func toRegister()  {
-        print("LoginOrRegisterController toRegister")
+        print("LoginOrRegisterController toRegister ")
+    }
+    
+    //MARK: - 第三方登录
+    
+    
+    /// 微信登录
+    ///
+    /// - Parameter sender: <#sender description#>
+    @IBAction func onWechatLoginClick(_ sender: UIButton) {
+        print("LoginOrRegisterController onWechatLoginClick")
+    }
+    
+    /// QQ登录按钮点击
+    ///
+    /// - Parameter sender: <#sender description#>
+    @IBAction func onQQLoginClick(_ sender: UIButton) {
+        print("LoginOrRegisterController onQQLoginClick")
+    }
+    
+    /// 微博登录按钮点击
+    ///
+    /// - Parameter sender: <#sender description#>
+    @IBAction func onWeiboLoginClick(_ sender: UIButton) {
+        print("LoginOrRegisterController onWeiboLoginClick")
+    }
+    
+    /// 网易邮箱登录按钮点击
+    ///
+    /// - Parameter sender: <#sender description#>
+    @IBAction func onNeteaseLoginClick(_ sender: UIButton) {
+        print("LoginOrRegisterController onNeteaseLoginClick")
     }
 }
