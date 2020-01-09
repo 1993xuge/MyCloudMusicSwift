@@ -29,8 +29,8 @@ class LoginOrRegisterController: UIViewController {
         ViewUtil.showLargeRadius(view: btnLogin)
         ViewUtil.showLargeRadius(view: btnRegister)
     }
-    
-    
+
+
     /// 按下
     ///
     /// - Parameter sender: 按下的btn
@@ -38,14 +38,21 @@ class LoginOrRegisterController: UIViewController {
         // 设置 按钮 按下的颜色
         sender.backgroundColor = UIColor(hex: COLOR_PRIMARY)
     }
-    
-    
-    /// 抬起
+
+
+    /// 抬起，在按钮内 抬起
     ///
     /// - Parameter sender: 抬起的btn
     @IBAction func touchUp(_ sender: UIButton) {
         // 设置 按钮 抬起的颜色
         sender.backgroundColor = UIColor.white
     }
-    
+
+
+    /// 抬起，在按钮外抬起
+    ///
+    /// - Parameter sender: 抬起的btn
+    @IBAction func touchUpOutside(_ sender: UIButton) {
+        touchUp(sender)
+    }
 }
