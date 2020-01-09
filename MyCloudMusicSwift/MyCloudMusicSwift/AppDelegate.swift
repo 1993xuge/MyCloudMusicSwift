@@ -33,10 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-
-
-    /// 跳转到 引导界面
-    func toGuide() {
+    /// 设置跟控制器
+    func setRootViewController(name: String) {
         // 先获取 Main.StoryBoard实例
         let mainStory = UIStoryboard(name: "Main", bundle: nil) // 传入nil，会使用bundleid
 
@@ -44,8 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 因为 场景关联了 控制器
         // 所以说 也可以说 实例化了一个控制器
 
-
-        let controller = mainStory.instantiateViewController(withIdentifier: "Guide")
+        let controller = mainStory.instantiateViewController(withIdentifier: name)
 
         // 替换掉 原来的根控制器
         // 为什么 要通过替换trootViewController的g方式呢？
@@ -53,27 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = controller
     }
 
+    /// 跳转到 引导界面
+    func toGuide() {
+        setRootViewController(name: "Guide")
+    }
+
     /// 跳转到登录/注册界面
     func toLoginOrRegister() {
-        //获取到Main.storyboard
-        let mainStory = UIStoryboard(name: "Main", bundle: nil)
-
-        // 实例化 LoginOrRegister 场景
-        let controller = mainStory.instantiateViewController(withIdentifier: "LoginOrRegister")
-
-        //替换掉原来的根控制器
-        window!.rootViewController = controller
+        setRootViewController(name: "LoginOrRegister")
     }
-    
+
     /// 跳转到首页
     func toHome() {
-        //获取到Main.storyboard
-        let mainStory = UIStoryboard(name: "Main", bundle: nil)
-        
-        // 实例化 LoginOrRegister 场景
-        let controller = mainStory.instantiateViewController(withIdentifier: "Home")
-        
-        //替换掉原来的根控制器
-        window!.rootViewController = controller
+        setRootViewController(name: "Home")
     }
 }
