@@ -69,6 +69,11 @@ class LoginOrRegisterController: UIViewController {
     
     func toRegister()  {
         print("LoginOrRegisterController toRegister ")
+        
+        let controller = storyboard!.instantiateViewController(withIdentifier: "Register")
+        
+        // 将 控制器 要入到 导航控制器
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     //MARK: - 第三方登录

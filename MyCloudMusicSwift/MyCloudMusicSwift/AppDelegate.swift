@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    //MARK: - 替换RootVController
     /// 设置跟控制器
     func setRootViewController(name: String) {
         // 先获取 Main.StoryBoard实例
