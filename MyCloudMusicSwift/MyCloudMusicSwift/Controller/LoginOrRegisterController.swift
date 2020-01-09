@@ -46,13 +46,28 @@ class LoginOrRegisterController: UIViewController {
     @IBAction func touchUp(_ sender: UIButton) {
         // 设置 按钮 抬起的颜色
         sender.backgroundColor = UIColor.white
-    }
 
+        if sender == btnLogin {
+            // 登录
+            toLogin()
+        } else {
+            // 注册
+            toRegister()
+        }
+    }
 
     /// 抬起，在按钮外抬起
     ///
     /// - Parameter sender: 抬起的btn
     @IBAction func touchUpOutside(_ sender: UIButton) {
         touchUp(sender)
+    }
+    
+    func toLogin() {
+        print("LoginOrRegisterController toLogin")
+    }
+    
+    func toRegister()  {
+        print("LoginOrRegisterController toRegister")
     }
 }
