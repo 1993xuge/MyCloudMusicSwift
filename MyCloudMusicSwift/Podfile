@@ -6,6 +6,10 @@ target 'MyCloudMusicSwift' do
   use_frameworks!
 
   # Pods for MyCloudMusicSwift
+  
+  # 提示框架
+  # https://github.com/jdg/MBProgressHUD
+  pod 'MBProgressHUD', '~> 1.1.0'
 
   target 'MyCloudMusicSwiftTests' do
     inherit! :search_paths

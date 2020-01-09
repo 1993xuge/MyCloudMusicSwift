@@ -67,4 +67,20 @@ class GuideController: UIViewController {
         // 取值都是0~1，所以要除以255.0
 //        btEnter.layer.borderColor = UIColor(red: 212 / 255.0, green: 0, blue: 0, alpha: 1.0).cgColor
     }
+
+    //MARK: - 事件
+    /// 登录或注册按钮点击
+    @IBAction func onLoginOrRegisterClick(_ sender: UIButton) {
+        print("GuideController onLoginOrRegisterClick")
+
+        // 调用它里面的方法显示登录/注册界面
+        AppDelegate.shared.toLoginOrRegister()
+    }
+
+    /// 立即体验按钮点击
+    @IBAction func onEnterClick(_ sender: UIButton) {
+        print("GuideController onEnterClick")
+
+        AppDelegate.shared.toHome()
+    }
 }
