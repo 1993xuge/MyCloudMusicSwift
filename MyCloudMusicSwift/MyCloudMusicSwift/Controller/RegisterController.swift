@@ -10,21 +10,40 @@ import UIKit
 
 class RegisterController: UIViewController {
 
+    /// 昵称控件
+    @IBOutlet weak var tfNickname: UITextField!
+
+    /// 手机号控件
+    @IBOutlet weak var tfPhone: UITextField!
+
+    /// 邮箱控件
+    @IBOutlet weak var tfEmail: UITextField!
+
+    /// 密码控件
+    @IBOutlet weak var tfPassword: UITextField!
+
+    /// 确认密码控件
+    @IBOutlet weak var tfConfirmPassword: UITextField!
+
+    /// 注册按钮
+    @IBOutlet weak var btRegister: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ViewUtil.showLargeRadius(view: btRegister)
+        
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - 点击事件
+    /// 注册按钮点击事件
+    @IBAction func onRegisterClick(_ sender: UIButton) {
+         print("RegisterController onRegisterClick")
     }
-    */
-
+    
+    /// 注册协议点击
+    @IBAction func onAgreementClick(_ sender: UIButton) {
+         print("RegisterController onAgreementClick")
+    }
 }
