@@ -22,3 +22,5 @@ extension UIView {
         self.layer.borderColor = UIColor(named: "ColorPrimary")?.cgColor
     }
 }
+
+

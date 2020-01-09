@@ -33,6 +33,13 @@ class RegisterController: UIViewController {
 
         ViewUtil.showLargeRadius(view: btRegister)
         
+        //设置左侧显示的图标
+        tfNickname.showLeftIcon(name: "LoginItemPhone")
+        tfPhone.showLeftIcon(name: "LoginItemPhone")
+        tfEmail.showLeftIcon(name: "LoginItemPhone")
+        tfPassword.showLeftIcon(name: "LoginItemPhone")
+        tfConfirmPassword.showLeftIcon(name: "LoginItemPhone")
+        
         // Do any additional setup after loading the view.
     }
 

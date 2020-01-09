@@ -32,6 +32,7 @@
 		D55801B423C6F38900BD5335 /* BannerGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55801B323C6F38900BD5335 /* BannerGuideController.swift */; };
 		D55801B623C6FFA500BD5335 /* PreferenceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55801B523C6FFA500BD5335 /* PreferenceUtil.swift */; };
 		D57905F323C76291003A4B95 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F223C76291003A4B95 /* RegisterController.swift */; };
+		D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F423C776CC003A4B95 /* TextFieldExtend.swift */; };
 		D594D34723C61D890082F9F3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34623C61D890082F9F3 /* Constant.swift */; };
 		D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34823C623CE0082F9F3 /* ViewUtil.swift */; };
 		D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34B23C625700082F9F3 /* ViewExtend.swift */; };
@@ -103,6 +104,7 @@
 		D55801B323C6F38900BD5335 /* BannerGuideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerGuideController.swift; sourceTree = "<group>"; };
 		D55801B523C6FFA500BD5335 /* PreferenceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceUtil.swift; sourceTree = "<group>"; };
 		D57905F223C76291003A4B95 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		D57905F423C776CC003A4B95 /* TextFieldExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtend.swift; sourceTree = "<group>"; };
 		D594D34623C61D890082F9F3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D594D34823C623CE0082F9F3 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		D594D34B23C625700082F9F3 /* ViewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtend.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				D594D34B23C625700082F9F3 /* ViewExtend.swift */,
 				D594D34D23C627F70082F9F3 /* ColorExtend.swift */,
+				D57905F423C776CC003A4B95 /* TextFieldExtend.swift */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				D55801AC23C6E68300BD5335 /* YJHollowPageControl.m in Sources */,
 				D57905F323C76291003A4B95 /* RegisterController.swift in Sources */,
 				D5060D4A23C4C66F00F875E0 /* GuideController.swift in Sources */,
+				D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */,
 				D558018A23C6AD4C00BD5335 /* LoginOrRegisterController.swift in Sources */,
 				D551B24F23C45B620061E4A8 /* AppDelegate.swift in Sources */,
 			);
