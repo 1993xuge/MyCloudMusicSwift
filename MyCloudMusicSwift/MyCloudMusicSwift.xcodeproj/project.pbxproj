@@ -20,6 +20,15 @@
 		D551B26423C45B650061E4A8 /* MyCloudMusicSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551B26323C45B650061E4A8 /* MyCloudMusicSwiftTests.swift */; };
 		D558018A23C6AD4C00BD5335 /* LoginOrRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D558018923C6AD4C00BD5335 /* LoginOrRegisterController.swift */; };
 		D558018C23C6AFC900BD5335 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D558018B23C6AFC900BD5335 /* HomeController.swift */; };
+		D55801AA23C6E68300BD5335 /* UIView+YJBannerViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = D558019523C6E68300BD5335 /* UIView+YJBannerViewExt.m */; };
+		D55801AB23C6E68300BD5335 /* YJBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D558019723C6E68300BD5335 /* YJBannerView.m */; };
+		D55801AC23C6E68300BD5335 /* YJHollowPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D558019B23C6E68300BD5335 /* YJHollowPageControl.m */; };
+		D55801AD23C6E68300BD5335 /* YJAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D558019C23C6E68300BD5335 /* YJAbstractDotView.m */; };
+		D55801AE23C6E68300BD5335 /* YJAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D558019D23C6E68300BD5335 /* YJAnimatedDotView.m */; };
+		D55801AF23C6E68300BD5335 /* YJBannerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D55801A223C6E68300BD5335 /* YJBannerView.bundle */; };
+		D55801B023C6E68300BD5335 /* YJBannerViewCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D55801A423C6E68300BD5335 /* YJBannerViewCollectionView.m */; };
+		D55801B123C6E68300BD5335 /* YJBannerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55801A523C6E68300BD5335 /* YJBannerViewCell.m */; };
+		D55801B223C6E68300BD5335 /* YJBannerViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D55801A823C6E68300BD5335 /* YJBannerViewFooter.m */; };
 		D594D34723C61D890082F9F3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34623C61D890082F9F3 /* Constant.swift */; };
 		D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34823C623CE0082F9F3 /* ViewUtil.swift */; };
 		D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34B23C625700082F9F3 /* ViewExtend.swift */; };
@@ -71,6 +80,23 @@
 		D558018923C6AD4C00BD5335 /* LoginOrRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterController.swift; sourceTree = "<group>"; };
 		D558018B23C6AFC900BD5335 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D558018E23C6B89F00BD5335 /* MyCloudMusicSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyCloudMusicSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D558019523C6E68300BD5335 /* UIView+YJBannerViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJBannerViewExt.m"; sourceTree = "<group>"; };
+		D558019623C6E68300BD5335 /* UIView+YJBannerViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YJBannerViewExt.h"; sourceTree = "<group>"; };
+		D558019723C6E68300BD5335 /* YJBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBannerView.m; sourceTree = "<group>"; };
+		D558019A23C6E68300BD5335 /* YJAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJAnimatedDotView.h; sourceTree = "<group>"; };
+		D558019B23C6E68300BD5335 /* YJHollowPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJHollowPageControl.m; sourceTree = "<group>"; };
+		D558019C23C6E68300BD5335 /* YJAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJAbstractDotView.m; sourceTree = "<group>"; };
+		D558019D23C6E68300BD5335 /* YJAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJAnimatedDotView.m; sourceTree = "<group>"; };
+		D558019E23C6E68300BD5335 /* YJHollowPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJHollowPageControl.h; sourceTree = "<group>"; };
+		D558019F23C6E68300BD5335 /* YJAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJAbstractDotView.h; sourceTree = "<group>"; };
+		D55801A023C6E68300BD5335 /* YJBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBannerView.h; sourceTree = "<group>"; };
+		D55801A223C6E68300BD5335 /* YJBannerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YJBannerView.bundle; sourceTree = "<group>"; };
+		D55801A423C6E68300BD5335 /* YJBannerViewCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBannerViewCollectionView.m; sourceTree = "<group>"; };
+		D55801A523C6E68300BD5335 /* YJBannerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBannerViewCell.m; sourceTree = "<group>"; };
+		D55801A623C6E68300BD5335 /* YJBannerViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBannerViewFooter.h; sourceTree = "<group>"; };
+		D55801A723C6E68300BD5335 /* YJBannerViewCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBannerViewCollectionView.h; sourceTree = "<group>"; };
+		D55801A823C6E68300BD5335 /* YJBannerViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBannerViewFooter.m; sourceTree = "<group>"; };
+		D55801A923C6E68300BD5335 /* YJBannerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBannerViewCell.h; sourceTree = "<group>"; };
 		D594D34623C61D890082F9F3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D594D34823C623CE0082F9F3 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		D594D34B23C625700082F9F3 /* ViewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtend.swift; sourceTree = "<group>"; };
@@ -164,6 +190,7 @@
 		D551B24D23C45B620061E4A8 /* MyCloudMusicSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D558019223C6E5DD00BD5335 /* Vender */,
 				D594D34A23C6255B0082F9F3 /* Extend */,
 				D594D34523C61D580082F9F3 /* Util */,
 				D5060D4823C4C64D00F875E0 /* Controller */,
@@ -194,6 +221,78 @@
 				D551B27023C45B650061E4A8 /* Info.plist */,
 			);
 			path = MyCloudMusicSwiftUITests;
+			sourceTree = "<group>";
+		};
+		D558019223C6E5DD00BD5335 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				D558019323C6E68300BD5335 /* YJBannerView */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		D558019323C6E68300BD5335 /* YJBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				D558019423C6E68300BD5335 /* Tools */,
+				D558019723C6E68300BD5335 /* YJBannerView.m */,
+				D558019823C6E68300BD5335 /* PageControls */,
+				D55801A023C6E68300BD5335 /* YJBannerView.h */,
+				D55801A123C6E68300BD5335 /* Resource */,
+				D55801A323C6E68300BD5335 /* Views */,
+			);
+			path = YJBannerView;
+			sourceTree = "<group>";
+		};
+		D558019423C6E68300BD5335 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D558019523C6E68300BD5335 /* UIView+YJBannerViewExt.m */,
+				D558019623C6E68300BD5335 /* UIView+YJBannerViewExt.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		D558019823C6E68300BD5335 /* PageControls */ = {
+			isa = PBXGroup;
+			children = (
+				D558019923C6E68300BD5335 /* YJHollowPageControl */,
+			);
+			path = PageControls;
+			sourceTree = "<group>";
+		};
+		D558019923C6E68300BD5335 /* YJHollowPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				D558019A23C6E68300BD5335 /* YJAnimatedDotView.h */,
+				D558019B23C6E68300BD5335 /* YJHollowPageControl.m */,
+				D558019C23C6E68300BD5335 /* YJAbstractDotView.m */,
+				D558019D23C6E68300BD5335 /* YJAnimatedDotView.m */,
+				D558019E23C6E68300BD5335 /* YJHollowPageControl.h */,
+				D558019F23C6E68300BD5335 /* YJAbstractDotView.h */,
+			);
+			path = YJHollowPageControl;
+			sourceTree = "<group>";
+		};
+		D55801A123C6E68300BD5335 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D55801A223C6E68300BD5335 /* YJBannerView.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D55801A323C6E68300BD5335 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D55801A423C6E68300BD5335 /* YJBannerViewCollectionView.m */,
+				D55801A523C6E68300BD5335 /* YJBannerViewCell.m */,
+				D55801A623C6E68300BD5335 /* YJBannerViewFooter.h */,
+				D55801A723C6E68300BD5335 /* YJBannerViewCollectionView.h */,
+				D55801A823C6E68300BD5335 /* YJBannerViewFooter.m */,
+				D55801A923C6E68300BD5335 /* YJBannerViewCell.h */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D594D34523C61D580082F9F3 /* Util */ = {
@@ -327,6 +426,7 @@
 				D551B25923C45B650061E4A8 /* LaunchScreen.storyboard in Resources */,
 				D551B25623C45B650061E4A8 /* Assets.xcassets in Resources */,
 				D551B25423C45B620061E4A8 /* Main.storyboard in Resources */,
+				D55801AF23C6E68300BD5335 /* YJBannerView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,12 +555,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */,
+				D55801AB23C6E68300BD5335 /* YJBannerView.m in Sources */,
+				D55801B123C6E68300BD5335 /* YJBannerViewCell.m in Sources */,
+				D55801B023C6E68300BD5335 /* YJBannerViewCollectionView.m in Sources */,
 				D5060D4C23C4C68000F875E0 /* SplashController.swift in Sources */,
+				D55801AD23C6E68300BD5335 /* YJAbstractDotView.m in Sources */,
+				D55801AA23C6E68300BD5335 /* UIView+YJBannerViewExt.m in Sources */,
 				D551B25123C45B620061E4A8 /* ViewController.swift in Sources */,
 				D594D34E23C627F70082F9F3 /* ColorExtend.swift in Sources */,
 				D558018C23C6AFC900BD5335 /* HomeController.swift in Sources */,
+				D55801B223C6E68300BD5335 /* YJBannerViewFooter.m in Sources */,
+				D55801AE23C6E68300BD5335 /* YJAnimatedDotView.m in Sources */,
 				D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */,
 				D594D34723C61D890082F9F3 /* Constant.swift in Sources */,
+				D55801AC23C6E68300BD5335 /* YJHollowPageControl.m in Sources */,
 				D5060D4A23C4C66F00F875E0 /* GuideController.swift in Sources */,
 				D558018A23C6AD4C00BD5335 /* LoginOrRegisterController.swift in Sources */,
 				D551B24F23C45B620061E4A8 /* AppDelegate.swift in Sources */,
