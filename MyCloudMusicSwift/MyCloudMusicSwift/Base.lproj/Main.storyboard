@@ -210,6 +210,10 @@
                                                                 <state key="highlighted" title="登 陆">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="touchDown:" destination="heC-On-gsi" eventType="touchDown" id="V93-D1-Z7l"/>
+                                                                    <action selector="touchUp:" destination="heC-On-gsi" eventType="touchUpInside" id="NbB-Vi-byA"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZ7-DF-IrN">
                                                                 <rect key="frame" x="0.0" y="64" width="374" height="44"/>
@@ -222,6 +226,10 @@
                                                                 <state key="highlighted">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="touchDown:" destination="heC-On-gsi" eventType="touchDown" id="sX9-vm-kax"/>
+                                                                    <action selector="touchUp:" destination="heC-On-gsi" eventType="touchUpInside" id="efH-G7-qS7"/>
+                                                                </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYs-AY-PWK">
                                                                 <rect key="frame" x="0.0" y="128" width="374" height="259"/>
