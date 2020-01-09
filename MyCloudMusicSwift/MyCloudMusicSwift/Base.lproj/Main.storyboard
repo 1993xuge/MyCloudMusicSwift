@@ -204,7 +204,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="44" id="y2l-gY-Pr8"/>
                                                                 </constraints>
-                                                                <state key="normal" title="登 陆">
+                                                                <state key="normal" title="登 录">
                                                                     <color key="titleColor" name="ColorPrimary"/>
                                                                 </state>
                                                                 <state key="highlighted" title="登 陆">
@@ -260,6 +260,10 @@
                         <viewLayoutGuide key="safeArea" id="k2d-Iw-lu1"/>
                     </view>
                     <navigationItem key="navigationItem" id="mNZ-O0-pVc"/>
+                    <connections>
+                        <outlet property="btnLogin" destination="dwk-3E-cei" id="kGR-6x-I5x"/>
+                        <outlet property="btnRegister" destination="JZ7-DF-IrN" id="wFZ-dk-hJW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhs-B6-W71" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
