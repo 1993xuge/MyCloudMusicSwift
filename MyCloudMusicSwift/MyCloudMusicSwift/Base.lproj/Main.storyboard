@@ -164,15 +164,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0e-bn-2Nu">
-                                <rect key="frame" x="181" y="445" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTU-XT-4qM" userLabel="Container">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cD9-2a-2U9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjv-qR-7ym" userLabel="Header">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pPt-GZ-fDM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aZg-VA-PRW">
+                                                        <rect key="frame" x="169" y="155.5" width="76" height="76"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="76" id="MAf-fZ-WgE"/>
+                                                            <constraint firstAttribute="width" constant="76" id="m7x-re-3L3"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="pPt-GZ-fDM" firstAttribute="leading" secondItem="Rjv-qR-7ym" secondAttribute="leading" id="21a-oO-cvv"/>
+                                                    <constraint firstItem="aZg-VA-PRW" firstAttribute="centerX" secondItem="Rjv-qR-7ym" secondAttribute="centerX" id="5ot-9K-uPs"/>
+                                                    <constraint firstItem="pPt-GZ-fDM" firstAttribute="top" secondItem="Rjv-qR-7ym" secondAttribute="top" id="HnR-Ym-HMU"/>
+                                                    <constraint firstItem="aZg-VA-PRW" firstAttribute="centerY" secondItem="Rjv-qR-7ym" secondAttribute="centerY" id="Pre-7o-uar"/>
+                                                    <constraint firstAttribute="bottom" secondItem="pPt-GZ-fDM" secondAttribute="bottom" id="V0R-LW-w4H"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pPt-GZ-fDM" secondAttribute="trailing" id="aJE-er-DIG"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5E-f1-cwI" userLabel="Footer">
+                                                <rect key="frame" x="0.0" y="387" width="414" height="387"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vxf-k0-w2N">
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="387"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwk-3E-cei">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="44" id="y2l-gY-Pr8"/>
+                                                                </constraints>
+                                                                <state key="normal" title="登 陆">
+                                                                    <color key="titleColor" name="ColorPrimary"/>
+                                                                </state>
+                                                                <state key="highlighted" title="登 陆">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZ7-DF-IrN">
+                                                                <rect key="frame" x="0.0" y="64" width="374" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="44" id="N9a-9b-nag"/>
+                                                                </constraints>
+                                                                <state key="normal" title="注 册">
+                                                                    <color key="titleColor" name="ColorPrimary"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYs-AY-PWK">
+                                                                <rect key="frame" x="0.0" y="128" width="374" height="259"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Vxf-k0-w2N" firstAttribute="top" secondItem="W5E-f1-cwI" secondAttribute="top" id="BXY-sE-O1N"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Vxf-k0-w2N" secondAttribute="bottom" id="Lvi-ld-CLP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Vxf-k0-w2N" secondAttribute="trailing" constant="20" id="bOk-EU-RRA"/>
+                                                    <constraint firstItem="Vxf-k0-w2N" firstAttribute="leading" secondItem="W5E-f1-cwI" secondAttribute="leading" constant="20" id="jzp-aF-Uxc"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" name="ColorPrimary"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cD9-2a-2U9" firstAttribute="top" secondItem="dTU-XT-4qM" secondAttribute="top" id="RO7-ba-Lmd"/>
+                                    <constraint firstAttribute="trailing" secondItem="cD9-2a-2U9" secondAttribute="trailing" id="cBb-bc-xwT"/>
+                                    <constraint firstItem="cD9-2a-2U9" firstAttribute="leading" secondItem="dTU-XT-4qM" secondAttribute="leading" id="eGI-Mi-Aqg"/>
+                                    <constraint firstAttribute="bottom" secondItem="cD9-2a-2U9" secondAttribute="bottom" id="mj6-9r-l1V"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dTU-XT-4qM" firstAttribute="top" secondItem="k2d-Iw-lu1" secondAttribute="top" id="9P7-KX-Wfd"/>
+                            <constraint firstItem="k2d-Iw-lu1" firstAttribute="bottom" secondItem="dTU-XT-4qM" secondAttribute="bottom" id="Koj-PQ-5uN"/>
+                            <constraint firstItem="dTU-XT-4qM" firstAttribute="leading" secondItem="k2d-Iw-lu1" secondAttribute="leading" id="KqJ-Va-dKm"/>
+                            <constraint firstItem="k2d-Iw-lu1" firstAttribute="trailing" secondItem="dTU-XT-4qM" secondAttribute="trailing" id="g6b-u6-ox9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k2d-Iw-lu1"/>
                     </view>
                     <navigationItem key="navigationItem" id="mNZ-O0-pVc"/>
@@ -225,6 +309,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoginBackground" width="180" height="186.66667175292969"/>
+        <image name="LoginLogo" width="60" height="60"/>
         <image name="SplashBanner" width="74.666664123535156" height="309"/>
         <image name="SplashLogo" width="188" height="31.666666030883789"/>
         <namedColor name="ColorPrimary">
