@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import Moya
 
 class LoginOrRegisterController: BaseController {
 
@@ -19,18 +20,17 @@ class LoginOrRegisterController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func initViews() {
         super.initViews()
         // 设置 边框
         btnLogin.showColorPrimaryBorder()
         btnRegister.showColorPrimaryBorder()
-        
+
         // 设置圆角
         ViewUtil.showLargeRadius(view: btnLogin)
         ViewUtil.showLargeRadius(view: btnRegister)
     }
-
 
     /// 按下
     ///
@@ -63,50 +63,71 @@ class LoginOrRegisterController: BaseController {
     @IBAction func touchUpOutside(_ sender: UIButton) {
         touchUp(sender)
     }
-    
+
     func toLogin() {
         print("LoginOrRegisterController toLogin")
 //        ToastUtil.short("去登陆")
-        ToastUtil.showLoading()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            // 延迟了3s后。
-            ToastUtil.hideLoading()
-        })
+//        ToastUtil.showLoading()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//            // 延迟了3s后。
+//            ToastUtil.hideLoading()
+//        })
+
+        let provider = MoyaProvider<Service>()
+
+        provider.request(.sheetDetail(id: "1")) { result in
+            //result类型是Result<Response,MoyaError>
+
+            switch result {
+            case let .success(response):
+                // 请求成功
+                let data = response.data
+                let code = response.statusCode
+
+                //将data转为字符串
+                let dataString = String(data: data, encoding: .utf8)
+
+                print("RegisterController request sheet detail success:\(code),\(dataString)")
+            case let .failure(error):
+                // 请求失败
+                print("RegisterController request sheet detail failed:\(error)")
+            }
+        }
     }
-    
-    func toRegister()  {
+
+    func toRegister() {
         print("LoginOrRegisterController toRegister ")
-        
+
         let controller = storyboard!.instantiateViewController(withIdentifier: "Register")
-        
+
         // 将 控制器 要入到 导航控制器
         navigationController?.pushViewController(controller, animated: true)
     }
-    
+
     //MARK: - 第三方登录
-    
-    
+
+
     /// 微信登录
     ///
     /// - Parameter sender: <#sender description#>
     @IBAction func onWechatLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onWechatLoginClick")
     }
-    
+
     /// QQ登录按钮点击
     ///
     /// - Parameter sender: <#sender description#>
     @IBAction func onQQLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onQQLoginClick")
     }
-    
+
     /// 微博登录按钮点击
     ///
     /// - Parameter sender: <#sender description#>
     @IBAction func onWeiboLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onWeiboLoginClick")
     }
-    
+
     /// 网易邮箱登录按钮点击
     ///
     /// - Parameter sender: <#sender description#>
