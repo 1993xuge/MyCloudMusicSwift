@@ -30,11 +30,26 @@ extension String {
 
     /// 是否符合昵称规范（2~15位）
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: true, 昵称 符合规则
     func isNickName() -> Bool {
         if self.count >= 2 && count <= 15 {
             return true
         }
         return false
+    }
+
+    /// 是否符合邮箱格式
+    ///
+    /// - Returns: true，符合邮箱规则
+    func isEmail() -> Bool {
+        let predicate = NSPredicate(format: "SELF MATCHES %@", REGX_EMAIL)
+        return predicate.evaluate(with: self)
+    }
+
+    /// 是否符合密码格式
+    ///
+    /// - Returns: true， 密码符合规则
+    func isPassword() -> Bool {
+        return count >= 6 && count <= 15
     }
 }
