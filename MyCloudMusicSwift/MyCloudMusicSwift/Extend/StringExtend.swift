@@ -9,11 +9,14 @@
 import Foundation
 
 extension String {
-    
+
     /// 是否符合手机号格式
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: 是否是 手机号
     public func isPhone() -> Bool {
-        return true
+
+        // 使用 谓词
+        let predicate = NSPredicate(format: "SELF MATCHES %@", REGX_PHONE)
+        return predicate.evaluate(with: self)
     }
 }
