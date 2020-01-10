@@ -14,6 +14,19 @@ target 'MyCloudMusicSwift' do
   #响应式编程框架
   #https://github.com/ReactiveX/RxSwift
   pod 'RxSwift', '~> 5'
+  
+  # 网络请求框架
+  # 真实中用旧版也不要用测试版本
+  # 这里用测试版本是
+  # 因为制作的课程时候没有RxSwift 5正式版本
+  # https://github.com/Moya/Moya
+  # pod 'Moya', '~> 14.0.0-alpha.1'
+  
+  # RxSwift版本
+  # 真实中用旧版也不要用测试版本
+  # 这里用测试版本是
+  # 因为制作的课程时候没有RxSwift 5正式版本
+  pod 'Moya/RxSwift', '~> 14.0.0-alpha.1'
 
   target 'MyCloudMusicSwiftTests' do
     inherit! :search_paths

@@ -10,6 +10,8 @@ import UIKit
 
 import RxSwift
 
+import Moya
+
 class RegisterController: BaseController {
 
     /// 昵称控件

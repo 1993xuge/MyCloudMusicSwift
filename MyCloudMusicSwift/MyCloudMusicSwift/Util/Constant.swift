@@ -11,6 +11,14 @@
 
 import Foundation
 
+// MARK: - 开发环境
+/// 网络接口的地址
+let ENDPOINT="http://dev-my-cloud-music-api-rails.ixuea.com"
+
+// MARK: - 正式环境
+///// 网络接口的地址
+//let ENDPOINT="http://my-cloud-music-api-rails.ixuea.com"
+
 // MARK: - 尺寸
 ///立即体验按钮宽度
 let SIZE_BUTTON_ENTER_WIDTH = 130.0
@@ -44,3 +52,5 @@ let REGX_PHONE = "^(0|86|17951)?(13[0-9]|15[012356789]|16[6]|19[89]]|17[01345678
 
 //邮箱正则表达式
 let REGX_EMAIL = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+
+

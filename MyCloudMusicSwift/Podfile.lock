@@ -1,20 +1,31 @@
 PODS:
+  - Alamofire (5.0.0-rc.3)
   - MBProgressHUD (1.1.0)
+  - Moya/Core (14.0.0-beta.6):
+    - Alamofire (= 5.0.0-rc.3)
+  - Moya/RxSwift (14.0.0-beta.6):
+    - Moya/Core
+    - RxSwift (~> 5.0)
   - RxSwift (5.0.1)
 
 DEPENDENCIES:
   - MBProgressHUD (~> 1.1.0)
+  - Moya/RxSwift (~> 14.0.0-alpha.1)
   - RxSwift (~> 5)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - MBProgressHUD
+    - Moya
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  Moya: d4821fbcb3e784f34d2f82869e6855057a0b85d1
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: fa4af5ead56775796351f55a5ad0348ad42f803f
+PODFILE CHECKSUM: 17f27f085e2092e74c3755a6fcfbe501da45423c
 
 COCOAPODS: 1.8.4
