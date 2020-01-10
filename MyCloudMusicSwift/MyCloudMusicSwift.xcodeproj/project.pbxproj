@@ -37,6 +37,7 @@
 		D5752CD523C846C70058FE0F /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD423C846C70058FE0F /* FileUtil.swift */; };
 		D5752CD823C847AE0058FE0F /* FileUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD723C847AE0058FE0F /* FileUtilTests.swift */; };
 		D5752CD923C8487C0058FE0F /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD423C846C70058FE0F /* FileUtil.swift */; };
+		D5752CDC23C8B7500058FE0F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CDB23C8B7500058FE0F /* Service.swift */; };
 		D57905F323C76291003A4B95 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F223C76291003A4B95 /* RegisterController.swift */; };
 		D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F423C776CC003A4B95 /* TextFieldExtend.swift */; };
 		D57905F723C778D2003A4B95 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F623C778D2003A4B95 /* BaseController.swift */; };
@@ -115,6 +116,7 @@
 		D55801B523C6FFA500BD5335 /* PreferenceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceUtil.swift; sourceTree = "<group>"; };
 		D5752CD423C846C70058FE0F /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		D5752CD723C847AE0058FE0F /* FileUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilTests.swift; sourceTree = "<group>"; };
+		D5752CDB23C8B7500058FE0F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D57905F223C76291003A4B95 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		D57905F423C776CC003A4B95 /* TextFieldExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtend.swift; sourceTree = "<group>"; };
 		D57905F623C778D2003A4B95 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		D551B24D23C45B620061E4A8 /* MyCloudMusicSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D5752CDA23C8B7390058FE0F /* Api */,
 				D558019223C6E5DD00BD5335 /* Vender */,
 				D594D34A23C6255B0082F9F3 /* Extend */,
 				D594D34523C61D580082F9F3 /* Util */,
@@ -336,6 +339,14 @@
 				D5752CD723C847AE0058FE0F /* FileUtilTests.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		D5752CDA23C8B7390058FE0F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				D5752CDB23C8B7500058FE0F /* Service.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		D594D34523C61D580082F9F3 /* Util */ = {
@@ -607,6 +618,7 @@
 				D55801AB23C6E68300BD5335 /* YJBannerView.m in Sources */,
 				D55801B123C6E68300BD5335 /* YJBannerViewCell.m in Sources */,
 				D57905F923C77AEB003A4B95 /* ToastUtil.swift in Sources */,
+				D5752CDC23C8B7500058FE0F /* Service.swift in Sources */,
 				D55801B023C6E68300BD5335 /* YJBannerViewCollectionView.m in Sources */,
 				D5060D4C23C4C68000F875E0 /* SplashController.swift in Sources */,
 				D55801AD23C6E68300BD5335 /* YJAbstractDotView.m in Sources */,
