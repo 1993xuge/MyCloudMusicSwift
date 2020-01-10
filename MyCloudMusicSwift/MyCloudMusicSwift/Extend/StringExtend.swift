@@ -19,4 +19,22 @@ extension String {
         let predicate = NSPredicate(format: "SELF MATCHES %@", REGX_PHONE)
         return predicate.evaluate(with: self)
     }
+
+    /// 去除字符串首尾的空格和换行
+    ///
+    /// - Returns: 结果 字符串
+    func trim() -> String? {
+        let whitespce = NSCharacterSet.whitespacesAndNewlines
+        return trimmingCharacters(in: whitespce)
+    }
+
+    /// 是否符合昵称规范（2~15位）
+    ///
+    /// - Returns: <#return value description#>
+    func isNickName() -> Bool {
+        if self.count >= 2 && count <= 15 {
+            return true
+        }
+        return false
+    }
 }

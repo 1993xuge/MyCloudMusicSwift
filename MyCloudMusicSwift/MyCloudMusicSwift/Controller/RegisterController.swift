@@ -48,37 +48,31 @@ class RegisterController: BaseController {
     /// 注册按钮点击事件
     @IBAction func onRegisterClick(_ sender: UIButton) {
          print("RegisterController onRegisterClick")
-        ToastUtil.short("注册")
         
-        var nickName = tfNickname.text!
+        let nickName = tfNickname.text!.trim()!
         
-        //去掉字符串中前后的空格
-        let whiteSpace = NSCharacterSet.whitespacesAndNewlines
-        
-        nickName = nickName.trimmingCharacters(in: whiteSpace)
-        
-        //判断是否输入了昵称
-        if nickName.isEmpty{
+        if nickName.isEmpty {
             ToastUtil.short("请输入昵称！")
             return
         }
         
-        //判断昵称格式
-        if nickName.count<2 || nickName.count>15 {
-            ToastUtil.short("昵称长度不对！")
+        guard nickName.isNickName() else {
+            ToastUtil.short("昵称长度 不对")
             return
         }
-        
+       
         //获取到手机号
-        var phone=tfPhone.text!
+        let phone=tfPhone.text!.trim()!
         
-        //去掉前后的空白字符
-        phone=phone.trimmingCharacters(in: whiteSpace)
         if phone.isEmpty {
             ToastUtil.short("请输入手机号！")
             return
         }
         
+        guard phone.isPhone() else {
+            ToastUtil.short("手机号格式不正确！")
+            return
+        }
     }
     
     /// 注册协议点击
