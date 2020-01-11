@@ -423,6 +423,75 @@
             </objects>
             <point key="canvasLocation" x="-1233.3333333333335" y="116.51785714285714"/>
         </scene>
+        <!--Login Controller-->
+        <scene sceneID="jPk-J9-eiz">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="O1P-iB-L65" customClass="LoginController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dow-Du-bOR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PzQ-ko-g66">
+                                <rect key="frame" x="20" y="64" width="374" height="219"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号/邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gq7-tq-wmR">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkz-Kw-9gh" userLabel="Divider">
+                                        <rect key="frame" x="0.0" y="42" width="374" height="0.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="pyV-5l-y0l"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PSZ-DR-idS">
+                                        <rect key="frame" x="0.0" y="62.5" width="374" height="22"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APR-cR-8Xw" userLabel="Divider">
+                                        <rect key="frame" x="0.0" y="104.5" width="374" height="0.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="jI8-y5-soW"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7F-Jc-ljB">
+                                        <rect key="frame" x="0.0" y="125" width="374" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="gGg-Q4-gy7"/>
+                                        </constraints>
+                                        <state key="normal" title="登录" backgroundImage="ButtonNormal">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="ButtonSelect"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Th2-CQ-XcO">
+                                        <rect key="frame" x="0.0" y="189" width="374" height="30"/>
+                                        <state key="normal" title="忘记密码？">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H73-tN-7Hg" firstAttribute="trailing" secondItem="PzQ-ko-g66" secondAttribute="trailing" constant="20" id="6ui-Yi-cH5"/>
+                            <constraint firstItem="PzQ-ko-g66" firstAttribute="top" secondItem="H73-tN-7Hg" secondAttribute="top" constant="20" id="I7o-dN-KNr"/>
+                            <constraint firstItem="PzQ-ko-g66" firstAttribute="leading" secondItem="H73-tN-7Hg" secondAttribute="leading" constant="20" id="gej-aE-uHz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H73-tN-7Hg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgz-hO-LVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="-187"/>
+        </scene>
         <!--Register Controller-->
         <scene sceneID="gdn-eP-CWv">
             <objects>
@@ -549,6 +618,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ButtonNormal" width="13.333333015441895" height="13.333333015441895"/>
+        <image name="ButtonSelect" width="13.333333015441895" height="13.333333015441895"/>
         <image name="LoginBackground" width="180" height="186.66667175292969"/>
         <image name="LoginLogo" width="60" height="60"/>
         <image name="LoginNetease" width="42" height="42"/>
