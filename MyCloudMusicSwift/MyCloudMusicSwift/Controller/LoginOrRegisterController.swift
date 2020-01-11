@@ -83,7 +83,24 @@ class LoginOrRegisterController: BaseController {
 //        testRequestWithRxAndJsonAndMapAndBaseAndList()
 
 //        testRequestDetailWithApi()
-        testRequestSheetsWithApi()
+//        testRequestSheetsWithApi()
+        testRequestWithCustomSubscribe()
+    }
+
+    //负责对象销毁
+    //这个功能类似NotificationCenter的removeObserver
+    let disposeBag = DisposeBag()
+
+    func testRequestWithCustomSubscribe() {
+        Api
+            .shared
+            .sheetDetail(id: "100000")
+            .subscribeOnSuccess { data in
+                // DetailResponse<Sheet>?
+                if let data = data?.data {
+                    print("RegisterController request sheet list success:\(data.title)")
+                }
+            }.disposed(by: disposeBag)
     }
 
     func testRequestSheetsWithApi() {

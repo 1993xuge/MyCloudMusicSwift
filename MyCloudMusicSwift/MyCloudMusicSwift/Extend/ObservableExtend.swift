@@ -112,6 +112,16 @@ public class HttpObserver<Element>: ObserverType {
 
     func requestErrorHandler(baseResponse: BaseResponse? = nil, error: Error? = nil) {
 
+        if onError != nil && onError!(baseResponse, error) {
+            //回调了请求失败方法
+            //并且该方法返回了true
+
+            //返回true就表示外部手动处理错误
+            //那我们框架内部就不用做任何事情了
+        } else {
+            //要自动处理错误
+            HttpUtil.handlerRequest(baseResponse: baseResponse, error: error)
+        }
     }
 }
 
