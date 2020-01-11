@@ -9,6 +9,7 @@
 
 import UIKit
 import Moya
+import RxSwift
 
 class LoginOrRegisterController: BaseController {
 
@@ -74,7 +75,28 @@ class LoginOrRegisterController: BaseController {
 //        })
 
 //        testRequest()
-        testRequestError()
+//        testRequestError()
+        testRequestWithRx()
+    }
+
+    func testRequestWithRx() {
+        let provider = MoyaProvider<Service>()
+        provider
+            .rx
+            .request(.sheetDetail(id: "1"))
+            .subscribe { event in
+                //event类型是SingleEvent<Response>
+                switch event {
+                case let .success(response):
+                    let data = response.data
+                    let code = response.statusCode
+                    // 将data转为 字符串
+                    let dataString = String(data: data, encoding: .utf8)
+                    print("RegisterController request sheet detail success:\(code),\(dataString)")
+                case let .error(error):
+                    print("RegisterController request sheet detail failed:\(error)")
+                }
+        }
     }
 
     func testRequestError() {
@@ -100,7 +122,7 @@ class LoginOrRegisterController: BaseController {
 //                ToastUtil.hideLoading()
             }
         }
-        let provider = MoyaProvider<Service>(plugins: [ networkActivityPlugin])
+        let provider = MoyaProvider<Service>(plugins: [networkActivityPlugin])
 
         provider.request(.sheetDetail(id: "1")) { event in
             switch event {
