@@ -78,7 +78,59 @@ class LoginOrRegisterController: BaseController {
 //        testRequestError()
 //        testRequestWithRx()
 //        testRequestWithRxAndJson()
-        testRequestWithRxAndJsonAndMap()
+//        testRequestWithRxAndJsonAndMap()
+//        testRequestWithRxAndJsonAndMapAndBase()
+        testRequestWithRxAndJsonAndMapAndBaseAndList()
+    }
+
+    func testRequestWithRxAndJsonAndMapAndBaseAndList() {
+        let provider = MoyaProvider<Service>()
+
+        provider
+            .rx
+            .request(.sheets)
+        // 过滤 错误的状态码，比如404。当接收到 错误的响应码时，将其放入到 Error中处理。如果没有这个，那么将会当成Success处理
+        .filterSuccessfulStatusCodes()
+            .asObservable()
+            .mapString()
+            .mapObject(ListResponse<Sheet>.self)
+            .subscribe(
+                onNext: { data in
+                    // data 是 DetailResponse<Sheet>?
+                    print("RegisterController request sheet detail success:\(data?.data?.count)")
+                }, onError: { error in
+                    // eerror : Error
+                    print("RegisterController request sheet detail faield:\(error)")
+                }, onCompleted: {
+                    // (() -> Void)?
+                    print("onCompleted")
+                }) {
+                // (() -> Void)?
+                print("OnDisposed")
+        }
+    }
+
+    func testRequestWithRxAndJsonAndMapAndBase() {
+        let provider = MoyaProvider<Service>()
+
+        provider.rx.request(.sheetDetail(id: "1"))
+            .asObservable()
+            .mapString()
+            .mapObject(DetailResponse<Sheet>.self)
+            .subscribe(
+                onNext: { data in
+                    // data 是 DetailResponse<Sheet>?
+                    print("RegisterController request sheet detail success:\(data?.data?.title)")
+                }, onError: { error in
+                    // eerror : Error
+                    print("RegisterController request sheet detail faield:\(error)")
+                }, onCompleted: {
+                    // (() -> Void)?
+                    print("onCompleted")
+                }) {
+                // (() -> Void)?
+                print("OnDisposed")
+        }
     }
 
     func testRequestWithRxAndJsonAndMap() {
