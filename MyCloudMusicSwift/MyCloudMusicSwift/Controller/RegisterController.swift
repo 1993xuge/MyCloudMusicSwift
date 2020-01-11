@@ -13,6 +13,10 @@ import RxSwift
 import Moya
 
 class RegisterController: BaseController {
+    
+    //负责对象销毁
+    //这个功能类似NotificationCenter的removeObserver
+    let disposeBag=DisposeBag()
 
     /// 昵称控件
     @IBOutlet weak var tfNickname: UITextField!
@@ -115,6 +119,38 @@ class RegisterController: BaseController {
             ToastUtil.short("两次密码不一致！")
             return
         }
+
+        print("nickName = \(nickName)  phone = \(phone)  email = \(email)  password = \(password)")
+        Api.shared.createUser(nickname: nickName, phone: phone, email: email, password: password)
+            .subscribeOnSuccess { data in
+                // DetailResponse<BaseModel>?
+                if let data = data?.data {
+                    //注册成功
+                    //进行后续的处理
+
+                    print("RegisterController onRegisterClick create user succes:\(data.id)")
+                    
+                    //注册成功后自动登录
+                    self.login(phone: phone, email: email, password: password)
+                    
+                } else {
+                    //注册失败
+                    ToastUtil.short("注册失败，请稍后再试！")
+                }
+        }
+    }
+    
+    /// 登录
+    func login(phone:String?=nil,email:String?=nil,password:String?=nil,qq_id:String?=nil,weibo_id:String?=nil) {
+        Api.shared.login(phone: phone, email: email, password: password).subscribeOnSuccess { data in
+            if let data = data?.data {
+                //登录成功
+                print("RegisterController onRegisterClick login success:\(data.user)")
+                
+                //把登录成功的事件通知到AppDelegate
+                AppDelegate.shared.onLogin()
+            }
+            }.disposed(by: disposeBag)
     }
 
     /// 注册协议点击

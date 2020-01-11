@@ -85,6 +85,7 @@ class LoginOrRegisterController: BaseController {
 //        testRequestDetailWithApi()
 //        testRequestSheetsWithApi()
         testRequestWithCustomSubscribe()
+//        ToastUtil.showLoading()
     }
 
     //负责对象销毁

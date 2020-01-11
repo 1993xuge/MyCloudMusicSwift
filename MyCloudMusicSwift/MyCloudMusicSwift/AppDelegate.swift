@@ -27,8 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func logout() {
-        // 
+    /// 当用户退出了
+    func onLogout() {
+        
+    }
+    
+    /// 当用户登录了
+    func onLogin()  {
+        
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

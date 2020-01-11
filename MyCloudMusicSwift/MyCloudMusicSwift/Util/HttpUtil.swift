@@ -33,7 +33,7 @@ class HttpUtil {
                 switch code {
                 case 401:
 
-                    AppDelegate.shared.logout()
+                    AppDelegate.shared.onLogout()
                     //弹出提示
                     ToastUtil.short("登录信息过期，请重新登录！")
                 case 403:
@@ -88,5 +88,13 @@ class HttpUtil {
     /// 显示未知错误
     static func showUnknowError() {
         ToastUtil.short("未知错误，请稍后再试！")
+    }
+
+    /// 返回JSON编码的参数
+    ///
+    /// - Parameter parameters: 要编码的参数
+    /// - Returns: 编码后的Task
+    static func jsonRequestParamters(_ parameters: [String: Any]) -> Task {
+        return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
     }
 }
