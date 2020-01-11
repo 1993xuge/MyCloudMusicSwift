@@ -80,7 +80,50 @@ class LoginOrRegisterController: BaseController {
 //        testRequestWithRxAndJson()
 //        testRequestWithRxAndJsonAndMap()
 //        testRequestWithRxAndJsonAndMapAndBase()
-        testRequestWithRxAndJsonAndMapAndBaseAndList()
+//        testRequestWithRxAndJsonAndMapAndBaseAndList()
+
+//        testRequestDetailWithApi()
+        testRequestSheetsWithApi()
+    }
+
+    func testRequestSheetsWithApi() {
+        Api
+            .shared
+            .sheets()
+            .subscribe(
+                onNext: { data in
+                    // data 是 DetailResponse<Sheet>?
+                    print("RegisterController request sheet detail success:\(data?.data?.count)")
+                }, onError: { error in
+                    // eerror : Error
+                    print("RegisterController request sheet detail faield:\(error)")
+                }, onCompleted: {
+                    // (() -> Void)?
+                    print("onCompleted")
+                }) {
+                // (() -> Void)?
+                print("OnDisposed")
+        }
+    }
+
+    func testRequestDetailWithApi() {
+        Api
+            .shared
+            .sheetDetail(id: "1")
+            .subscribe(
+                onNext: { data in
+                    // data 是 DetailResponse<Sheet>?
+                    print("RegisterController request sheet detail success:\(data?.data?.title)")
+                }, onError: { error in
+                    // eerror : Error
+                    print("RegisterController request sheet detail faield:\(error)")
+                }, onCompleted: {
+                    // (() -> Void)?
+                    print("onCompleted")
+                }) {
+                // (() -> Void)?
+                print("OnDisposed")
+        }
     }
 
     func testRequestWithRxAndJsonAndMapAndBaseAndList() {
