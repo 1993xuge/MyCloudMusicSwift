@@ -73,7 +73,7 @@ class LoginOrRegisterController: BaseCommonController {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    func toRegister(avatar: String? = nil, nickname: String? = nil, openId: String? = nil) {
+    func toRegister(type:SSDKPlatformType?=nil, avatar: String? = nil, nickname: String? = nil, openId: String? = nil) {
         print("LoginOrRegisterController toRegister ")
 
         let controller = storyboard!.instantiateViewController(withIdentifier: "Register") as! RegisterController
@@ -82,6 +82,7 @@ class LoginOrRegisterController: BaseCommonController {
         controller.avatar = avatar
         controller.nickname = nickname
         controller.openId = openId
+        controller.type = type
 
         // 将 控制器 要入到 导航控制器
         navigationController?.pushViewController(controller, animated: true)
@@ -113,7 +114,7 @@ class LoginOrRegisterController: BaseCommonController {
 
                 print("LoginOrRegisterController onQQLoginClick success:\(nickname),\(avatar),\(openId)")
 
-                self.continueLogin(avatar: avatar!, nickname: nickname!, openId: openId!)
+                self.continueLogin(type: .typeQQ, avatar: avatar!, nickname: nickname!, openId: openId!)
             } else {
                 //登录失败
                 print("LoginOrRegisterControler onQQLoginClick failed:\(error)")
@@ -139,7 +140,7 @@ class LoginOrRegisterController: BaseCommonController {
 
                 print("LoginOrRegisterController onWeiboLoginClick login success:\(nickname),\(avatar),\(openId)")
 
-                self.continueLogin(avatar: avatar!, nickname: nickname!, openId: openId!)
+                self.continueLogin(type: .typeSinaWeibo, avatar: avatar!, nickname: nickname!, openId: openId!)
             } else {
                 //登录失败
                 print("LoginOrRegisterController onWeiboLoginClick login failed:\(error)")
@@ -161,42 +162,53 @@ class LoginOrRegisterController: BaseCommonController {
     ///   - avatar: 昵称
     ///   - nickname: 头像
     ///   - openId: 第三方登录后用户Id
-    func continueLogin(avatar: String, nickname: String, openId: String) {
+    func continueLogin(type: SSDKPlatformType, avatar: String, nickname: String, openId: String) {
         print("LoginOrRegisterController continueLogin:\(avatar),\(nickname),\(openId)")
 
+        var api: Observable<DetailResponse<Session>?>!
+
+        if type == .typeQQ {
+            //把openId传递到qq_id参数上面
+            api = Api.shared.login(qq_id: openId)
+        } else {
+            //把openId传递到weibo_id参数上面
+            api = Api.shared.login(weibo_id: openId)
+        }
         //先调用登录接口
         //如果接口返回用户不存在（根据code判断）
         //就跳转到补充用户资料页面
         //如果存在其实就完成了登录
         //后面的逻辑和正常登录一样
+        api.subscribe({ data in
+            //登录成功
+            //表示用户已经注册了（补充资料了）
+            //把登录完成的事件回调到AppDelegate
+            AppDelegate.shared.onLogin(data!.data!)
+        }) { (baseResponse, error) -> Bool in
+            //登录失败
+            //判断具体的错误类型
+            if let baseResponse = baseResponse {
+                // 请求成功了
+                //并且服务端返回了错误信息
 
-        Api.shared
-            .login(qq_id: openId)
-            .subscribe({ data in
-                //登录成功
-                //表示用户已经注册了（补充资料了）
-                //把登录完成的事件回调到AppDelegate
-                AppDelegate.shared.onLogin(data!.data!)
-            }) { (baseResponse, error) -> Bool in
-                //登录失败
-                //判断具体的错误类型
-                if let baseResponse = baseResponse {
-                    // 请求成功了
-                    //并且服务端返回了错误信息
-
-                    //判断错误码
-                    if 1010 == baseResponse.status {
-                        // 用户未注册
-                        //跳转到补充用户资料页面
-                        self.toRegister(avatar: avatar, nickname: nickname, openId: openId)
-
-                        //返回true就表示我们处理了错误
-                        return true
-                    }
+                //判断错误码
+                if 1010 == baseResponse.status {
+                    // 用户未注册
+                    //跳转到补充用户资料页面
+                    self.toRegister(type: type, avatar: avatar, nickname: nickname, openId: openId)
+                    
+                    //返回true就表示我们处理了错误
+                    return true
                 }
-                //这里我们就不管是什么错误类型了
-                //直接让框架处理
-                return false
-            }.disposed(by: disposeBag)
+            }
+            //这里我们就不管是什么错误类型了
+            //直接让框架处理
+            return false
+        }.disposed(by: disposeBag)
     }
+
+//    enum LoginType {
+//        case QQ
+//        case WEIBO
+//    }
 }

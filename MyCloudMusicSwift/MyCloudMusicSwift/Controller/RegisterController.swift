@@ -38,6 +38,9 @@ class RegisterController: BaseLoginController {
     /// 第三方登录后的OpenId
     var openId: String?
 
+    /// 第三方登录类型
+    var type: SSDKPlatformType?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -140,8 +143,17 @@ class RegisterController: BaseLoginController {
             return
         }
 
+        var qq_id: String?
+        var weibo_id: String?
+
+        if type == .typeQQ {
+            qq_id = openId
+        } else if type == .typeSinaWeibo {
+            weibo_id = openId
+        }
+
         print("nickName = \(nickName)  phone = \(phone)  email = \(email)  password = \(password)")
-        Api.shared.createUser(avatar: avatar, nickname: nickName, phone: phone, email: email, password: password, qq_id: openId)
+        Api.shared.createUser(avatar: avatar, nickname: nickName, phone: phone, email: email, password: password, qq_id: openId, weibo_id: weibo_id)
             .subscribeOnSuccess { data in
                 // DetailResponse<BaseModel>?
                 if let data = data?.data {
