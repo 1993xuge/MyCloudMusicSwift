@@ -469,6 +469,9 @@
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="highlighted" backgroundImage="ButtonSelect"/>
+                                        <connections>
+                                            <action selector="onLoginClick:" destination="O1P-iB-L65" eventType="touchUpInside" id="yWz-xL-i1b"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Th2-CQ-XcO">
                                         <rect key="frame" x="0.0" y="189" width="374" height="30"/>
@@ -487,6 +490,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H73-tN-7Hg"/>
                     </view>
+                    <connections>
+                        <outlet property="btLogin" destination="t7F-Jc-ljB" id="YIb-2D-YqT"/>
+                        <outlet property="tfPassword" destination="PSZ-DR-idS" id="dmG-Ng-Elm"/>
+                        <outlet property="tfUsername" destination="Gq7-tq-wmR" id="bTD-ah-Y0K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgz-hO-LVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
