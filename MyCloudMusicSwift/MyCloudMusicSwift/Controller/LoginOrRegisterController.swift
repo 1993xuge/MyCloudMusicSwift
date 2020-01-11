@@ -73,7 +73,7 @@ class LoginOrRegisterController: BaseCommonController {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    func toRegister(type:SSDKPlatformType?=nil, avatar: String? = nil, nickname: String? = nil, openId: String? = nil) {
+    func toRegister(type: SSDKPlatformType? = nil, avatar: String? = nil, nickname: String? = nil, openId: String? = nil) {
         print("LoginOrRegisterController toRegister ")
 
         let controller = storyboard!.instantiateViewController(withIdentifier: "Register") as! RegisterController
@@ -102,25 +102,7 @@ class LoginOrRegisterController: BaseCommonController {
 /// - Parameter sender: <#sender description#>
     @IBAction func onQQLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onQQLoginClick")
-
-        ShareSDK.getUserInfo(.typeQQ) { (state, user, error) in
-            // (SSDKResponseState, SSDKUser?, Error?)
-            if state == .success {
-                // QQ登录成功
-                //就可以获取到昵称，头像，OpenId
-                let nickname = user?.nickname
-                let avatar = user?.icon
-                let openId = user?.credential.token
-
-                print("LoginOrRegisterController onQQLoginClick success:\(nickname),\(avatar),\(openId)")
-
-                self.continueLogin(type: .typeQQ, avatar: avatar!, nickname: nickname!, openId: openId!)
-            } else {
-                //登录失败
-                print("LoginOrRegisterControler onQQLoginClick failed:\(error)")
-                ToastUtil.short("登录失败，请稍后再试！")
-            }
-        }
+        otherLogin(.typeQQ)
     }
 
 /// 微博登录按钮点击
@@ -128,8 +110,21 @@ class LoginOrRegisterController: BaseCommonController {
 /// - Parameter sender: <#sender description#>
     @IBAction func onWeiboLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onWeiboLoginClick")
+        otherLogin(.typeSinaWeibo)
+    }
 
-        ShareSDK.getUserInfo(.typeSinaWeibo) { (state, user, error) in
+/// 网易邮箱登录按钮点击
+///
+/// - Parameter sender: <#sender description#>
+    @IBAction func onNeteaseLoginClick(_ sender: UIButton) {
+        print("LoginOrRegisterController onNeteaseLoginClick")
+    }
+
+    /// 通用第三方登录
+    ///
+    /// - Parameter type: type description
+    func otherLogin(_ type: SSDKPlatformType) {
+        ShareSDK.getUserInfo(type) { (state, user, error) in
             // (SSDKResponseState, SSDKUser?, Error?)
             if state == .success {
                 // 微博 登录成功
@@ -140,20 +135,13 @@ class LoginOrRegisterController: BaseCommonController {
 
                 print("LoginOrRegisterController onWeiboLoginClick login success:\(nickname),\(avatar),\(openId)")
 
-                self.continueLogin(type: .typeSinaWeibo, avatar: avatar!, nickname: nickname!, openId: openId!)
+                self.continueLogin(type: type, avatar: avatar!, nickname: nickname!, openId: openId!)
             } else {
                 //登录失败
                 print("LoginOrRegisterController onWeiboLoginClick login failed:\(error)")
                 ToastUtil.short("登录失败，请稍后再试！")
             }
         }
-    }
-
-/// 网易邮箱登录按钮点击
-///
-/// - Parameter sender: <#sender description#>
-    @IBAction func onNeteaseLoginClick(_ sender: UIButton) {
-        print("LoginOrRegisterController onNeteaseLoginClick")
     }
 
     /// 继续登录
@@ -196,7 +184,7 @@ class LoginOrRegisterController: BaseCommonController {
                     // 用户未注册
                     //跳转到补充用户资料页面
                     self.toRegister(type: type, avatar: avatar, nickname: nickname, openId: openId)
-                    
+
                     //返回true就表示我们处理了错误
                     return true
                 }
