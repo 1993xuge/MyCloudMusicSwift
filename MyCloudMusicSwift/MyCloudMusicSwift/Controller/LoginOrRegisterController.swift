@@ -96,6 +96,23 @@ class LoginOrRegisterController: BaseController {
 /// - Parameter sender: <#sender description#>
     @IBAction func onQQLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onQQLoginClick")
+
+        ShareSDK.getUserInfo(.typeQQ) { (state, user, error) in
+            // (SSDKResponseState, SSDKUser?, Error?)
+            if state == .success {
+                // QQ登录成功
+                //就可以获取到昵称，头像，OpenId
+                let nickname = user?.nickname
+                let avatar = user?.icon
+                let openId = user?.credential.token
+
+                print("LoginOrRegisterController onQQLoginClick success:\(nickname),\(avatar),\(openId)")
+            } else {
+                //登录失败
+                print("LoginOrRegisterControler onQQLoginClick failed:\(error)")
+                ToastUtil.short("登录失败，请稍后再试！")
+            }
+        }
     }
 
 /// 微博登录按钮点击
