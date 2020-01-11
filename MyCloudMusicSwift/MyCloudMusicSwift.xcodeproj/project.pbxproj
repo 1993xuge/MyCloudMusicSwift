@@ -431,6 +431,7 @@
 				D551B24823C45B620061E4A8 /* Frameworks */,
 				D551B24923C45B620061E4A8 /* Resources */,
 				E91CEEF2D2228CEA84978C37 /* [CP] Embed Pods Frameworks */,
+				34A08D653A462FB55743D2BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -469,6 +470,7 @@
 				D551B26723C45B650061E4A8 /* Frameworks */,
 				D551B26823C45B650061E4A8 /* Resources */,
 				67607DFEA2DF70E37B27BA1D /* [CP] Embed Pods Frameworks */,
+				8482F7989BF8A2E1EF5D1C51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -575,6 +577,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		34A08D653A462FB55743D2BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyCloudMusicSwift/Pods-MyCloudMusicSwift-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyCloudMusicSwift/Pods-MyCloudMusicSwift-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyCloudMusicSwift/Pods-MyCloudMusicSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		52B9E648F4E223A6352EFC91 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -612,6 +631,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyCloudMusicSwift-MyCloudMusicSwiftUITests/Pods-MyCloudMusicSwift-MyCloudMusicSwiftUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8482F7989BF8A2E1EF5D1C51 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyCloudMusicSwift-MyCloudMusicSwiftUITests/Pods-MyCloudMusicSwift-MyCloudMusicSwiftUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyCloudMusicSwift-MyCloudMusicSwiftUITests/Pods-MyCloudMusicSwift-MyCloudMusicSwiftUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyCloudMusicSwift-MyCloudMusicSwiftUITests/Pods-MyCloudMusicSwift-MyCloudMusicSwiftUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A06DD1BE54EA352C43C2EF5D /* [CP] Check Pods Manifest.lock */ = {

@@ -40,9 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         toHome()
     }
 
+    /// 应用启动时
+    /// 全局只调用一次
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initSharedSDK()
         return true
+    }
+
+    /// 初始化SharedSDK
+    func initSharedSDK() {
+        ShareSDK.registPlatforms { register in
+            // SSDKRegister?
+            
+            //设置QQ信息
+            register?.setupQQ(withAppId: QQ_APP_ID, appkey: QQ_APP_SECRET)
+        }
     }
 
     //MARK: - 替换RootVController

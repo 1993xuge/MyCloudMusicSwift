@@ -61,4 +61,6 @@ let REGX_EMAIL = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
 /// 密码格式不正确
 let ERROR_PASSWORD_FORMAT = "密码格式不正确！"
 
-
+// MARK: - QQ第三方登录，分享
+let QQ_APP_ID = "101481482"
+let QQ_APP_SECRET = "b4304961e7299dde6b7b6964bfbb4a7f"

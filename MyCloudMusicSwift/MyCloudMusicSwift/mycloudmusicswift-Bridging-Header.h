@@ -8,3 +8,7 @@
 //轮播图组件（OC实现）
 #import "YJBannerView.h"
 #import "YJBannerViewCell.h"
+
+//ShareSDK
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
