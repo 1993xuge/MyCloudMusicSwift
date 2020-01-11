@@ -78,8 +78,11 @@ class LoginOrRegisterController: BaseController {
     }
 
     func testRequestError() {
-        let provider = MoyaProvider<Service>()
-        provider.request(.sheetDetail(id: "100000")) { event in
+//        let provider = MoyaProvider<Service>()
+        // 添加 日志 c插件
+        let provider = MoyaProvider<Service>(plugins: [NetworkLoggerPlugin()])
+        
+        provider.request(.sheetDetail(id: "1")) { event in
             switch event {
             case let .success(response):
                 // 请求成功
