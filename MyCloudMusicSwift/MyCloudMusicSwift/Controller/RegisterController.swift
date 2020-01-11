@@ -141,7 +141,7 @@ class RegisterController: BaseLoginController {
         }
 
         print("nickName = \(nickName)  phone = \(phone)  email = \(email)  password = \(password)")
-        Api.shared.createUser(nickname: nickName, phone: phone, email: email, password: password)
+        Api.shared.createUser(avatar: avatar, nickname: nickName, phone: phone, email: email, password: password, qq_id: openId)
             .subscribeOnSuccess { data in
                 // DetailResponse<BaseModel>?
                 if let data = data?.data {
