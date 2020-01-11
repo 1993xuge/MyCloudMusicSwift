@@ -79,9 +79,29 @@ class LoginOrRegisterController: BaseController {
 
     func testRequestError() {
 //        let provider = MoyaProvider<Service>()
+
         // 添加 日志 c插件
-        let provider = MoyaProvider<Service>(plugins: [NetworkLoggerPlugin()])
-        
+//        let provider = MoyaProvider<Service>(plugins: [NetworkLoggerPlugin()])
+
+
+        // 添加 请求对话框 插件
+        let networkActivityPlugin = NetworkActivityPlugin { (changeType, targetType) in
+            //changeType他的类似是NetworkActivityChangeType
+
+            //targetType的类型是TargetType
+            //就是我们项目中的service枚举
+            if changeType == .began {
+                // 开始  请求
+                print("RegisterControler began request:\(targetType.path)")
+//                ToastUtil.showLoading()
+            } else {
+                // 结束请求
+                print("RegisterController end request:\(targetType.path)")
+//                ToastUtil.hideLoading()
+            }
+        }
+        let provider = MoyaProvider<Service>(plugins: [ networkActivityPlugin])
+
         provider.request(.sheetDetail(id: "1")) { event in
             switch event {
             case let .success(response):
