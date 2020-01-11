@@ -8,14 +8,7 @@
 
 import UIKit
 
-//导入RxSwift框架
-import RxSwift
-
-class LoginController: BaseController {
-
-    //负责对象销毁
-    //这个功能类似NotificationCenter的removeObserver
-    let disposeBag = DisposeBag()
+class LoginController: BaseLoginController {
 
     /// 用户名
     @IBOutlet weak var tfUsername: UITextField!
@@ -76,18 +69,5 @@ class LoginController: BaseController {
         }
 
         login(phone: username, password: password)
-    }
-
-    /// 登录
-    func login(phone: String, password: String) {
-        Api.shared.login(phone: phone, password: password).subscribeOnSuccess { data in
-            if let data = data?.data {
-                //登录成功
-                print("LoginController onLoginClick login success:\(data.user)")
-
-                //把登录成功的事件通知到AppDelegate
-                AppDelegate.shared.onLogin(data)
-            }
-        }.disposed(by: disposeBag)
     }
 }
