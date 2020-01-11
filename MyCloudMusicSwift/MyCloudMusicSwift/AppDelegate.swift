@@ -36,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func onLogin(_ data: Session) {
         PreferenceUtil.setUserId(data.user)
         PreferenceUtil.setUserToken(data.session)
+
+        toHome()
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
