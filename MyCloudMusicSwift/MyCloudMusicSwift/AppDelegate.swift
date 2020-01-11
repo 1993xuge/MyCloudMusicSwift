@@ -55,6 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //设置QQ信息
             register?.setupQQ(withAppId: QQ_APP_ID, appkey: QQ_APP_SECRET)
+            
+            //配置微博
+            register?.setupSinaWeibo(withAppkey: WEIBO_APP_KEY, appSecret: WEIBO_APP_SECRET, redirectUrl: WEIBO_REDIRECT_URI)
         }
     }
 
