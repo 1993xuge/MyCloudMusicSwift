@@ -47,7 +47,7 @@ class Api {
                 case .sheetDetail, .login:
                     print("应该 显示 对话框")
                     // 对话框 在 后台 显示 有问题
-//                    ToastUtil.showLoading()
+                    ToastUtil.showLoading()
                 default:
                     break
                 }
@@ -55,7 +55,7 @@ class Api {
                 //结束请求
                 //请求结束这里可以不用 判断 请求 类型
                 print("应该 结束 对话框")
-//                ToastUtil.hideLoading()
+                ToastUtil.hideLoading()
             }
         }
         plugins.append(networkActivityPlugin)
