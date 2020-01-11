@@ -8,7 +8,14 @@
 
 import UIKit
 
+//导入RxSwift框架
+import RxSwift
+
 class LoginController: BaseController {
+
+    //负责对象销毁
+    //这个功能类似NotificationCenter的removeObserver
+    let disposeBag = DisposeBag()
 
     /// 用户名
     @IBOutlet weak var tfUsername: UITextField!
@@ -30,7 +37,7 @@ class LoginController: BaseController {
         // 显示 图标
         tfUsername.showLeftIcon(name: "LoginItemPhone")
         tfPassword.showLeftIcon(name: "LoginItemPhone")
-        
+
         // 圆角
         ViewUtil.showLargeRadius(view: btLogin)
     }
@@ -40,5 +47,47 @@ class LoginController: BaseController {
     /// - Parameter sender: <#sender description#>
     @IBAction func onLoginClick(_ sender: UIButton) {
         print("LoginController onLoginClick")
+
+        //获取用户名
+        let username = tfUsername.text!.trim()!
+
+        if username.isEmpty {
+            ToastUtil.short("请输入用户名！")
+            return
+        }
+
+        guard username.isPhone() else {
+            //如果用户名不是手机号
+            ToastUtil.short("用户名格式不正确！")
+            return
+        }
+
+        //获取密码
+        let password = tfPassword.text!.trim()!
+
+        if password.isEmpty {
+            ToastUtil.short("请输入密码！")
+            return
+        }
+
+        guard password.isPassword() else {
+            ToastUtil.short(ERROR_PASSWORD_FORMAT)
+            return
+        }
+
+        login(phone: username, password: password)
+    }
+
+    /// 登录
+    func login(phone: String, password: String) {
+        Api.shared.login(phone: phone, password: password).subscribeOnSuccess { data in
+            if let data = data?.data {
+                //登录成功
+                print("LoginController onLoginClick login success:\(data.user)")
+
+                //把登录成功的事件通知到AppDelegate
+                AppDelegate.shared.onLogin(data)
+            }
+        }.disposed(by: disposeBag)
     }
 }
