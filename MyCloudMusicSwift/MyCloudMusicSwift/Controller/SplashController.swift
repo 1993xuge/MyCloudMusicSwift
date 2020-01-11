@@ -29,6 +29,9 @@ class SplashController: BaseController {
 //                self.next()
 //            })
         self.next()
+        
+        //测试获取用户登录信息
+        print("SplashController viewDidLoad userId:\(PreferenceUtil.userId())")
     }
 
     func next() {

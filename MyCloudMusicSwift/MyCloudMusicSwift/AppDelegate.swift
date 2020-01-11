@@ -26,15 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return UIApplication.shared.delegate as! AppDelegate
         }
     }
-    
+
     /// 当用户退出了
     func onLogout() {
-        
+
     }
-    
+
     /// 当用户登录了
-    func onLogin()  {
-        
+    func onLogin(_ data: Session) {
+        PreferenceUtil.setUserId(data.user)
+        PreferenceUtil.setUserToken(data.session)
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
