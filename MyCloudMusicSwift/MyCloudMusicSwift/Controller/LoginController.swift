@@ -49,10 +49,14 @@ class LoginController: BaseLoginController {
             return
         }
 
-        guard username.isPhone() else {
-            //如果用户名不是手机号
+        var isPhone = false
+        if username.isPhone() {
+            isPhone = true
+        } else if username.isEmail() {
+            isPhone = false
+        } else {
+            //如果用户名 不是手机号 也不是 邮箱
             ToastUtil.short("用户名格式不正确！")
-            return
         }
 
         //获取密码
@@ -68,6 +72,10 @@ class LoginController: BaseLoginController {
             return
         }
 
-        login(phone: username, password: password)
+        if isPhone {
+            login(phone: username, password: password)
+        } else {
+            login(email: username, password: password)
+        }
     }
 }
