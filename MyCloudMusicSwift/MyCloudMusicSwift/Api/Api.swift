@@ -30,6 +30,36 @@ class Api {
             plugins.append(NetworkLoggerPlugin())
         }
 
+        //网络请求加载对话框
+        let networkActivityPlugin = NetworkActivityPlugin { (changeType, targetType) in
+
+            //changeType类型是NetworkActivityChangeType
+            //通过它能监听到开始请求和结束请求
+
+            //targetType类型是TargetType
+            //就是我们这里的service
+            //通过它能判断是那个请求
+
+            if changeType == .began {
+                //开始请求
+                let targetType = targetType as! Service
+                switch targetType {
+                case .sheetDetail:
+                    print("应该 显示 对话框")
+                    // 对话框 在 后台 显示 有问题
+//                    ToastUtil.showLoading()
+                default:
+                    break
+                }
+            } else {
+                //结束请求
+                //请求结束这里可以不用 判断 请求 类型
+                print("应该 结束 对话框")
+//                ToastUtil.hideLoading()
+            }
+        }
+        plugins.append(networkActivityPlugin)
+
         provider = MoyaProvider<Service>(plugins: plugins)
     }
 
