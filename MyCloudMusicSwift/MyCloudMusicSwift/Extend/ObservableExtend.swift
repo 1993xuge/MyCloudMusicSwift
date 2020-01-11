@@ -18,6 +18,7 @@ import HandyJSON
 //导入网络框架
 import Moya
 
+//MARK: - 自定义 错误
 /// 自定义错误
 ///
 /// - objectMapping: 表示JSON解析为对象失败
@@ -54,5 +55,37 @@ extension Observable {
             // 解析成功
             return result
         })
+    }
+}
+
+// MARK: - 扩展ObservableType
+// 目的是添加两个自定义监听方法
+// 一个是只观察请求成功的方法
+// 一个既可以观察请求成功也可以观察请求失败
+extension ObserverType {
+
+    /// 观察成功和失败事件
+    ///
+    /// - Parameters:
+    ///   - onSuccess: 请求成功的回调
+    ///   - onError: 请求失败的回调
+    /// - Returns: <#return value description#>
+    func subscribe(
+        _ onSuccess: @escaping ((E) -> Void),
+        _ onError: @escaping((BaseResponse?, Error?) -> Bool)
+    ) -> Disposable {
+
+    }
+
+  
+    /// 观察成功的事件
+    ///
+    /// - Parameter onSuccess: <#onSuccess description#>
+    /// - Returns: <#return value description#>
+    func subscribeOnSuccess(_ onSuccess: @escaping ((E) -> Void) ) -> Disposable {
+        
+    }
+    func subscribeOnSuccess(_ onSuccess: @escaping((E) -> Void)) -> Disposable {
+
     }
 }
