@@ -73,10 +73,15 @@ class LoginOrRegisterController: BaseController {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    func toRegister() {
+    func toRegister(avatar: String? = nil, nickname: String? = nil, openId: String? = nil) {
         print("LoginOrRegisterController toRegister ")
 
-        let controller = storyboard!.instantiateViewController(withIdentifier: "Register")
+        let controller = storyboard!.instantiateViewController(withIdentifier: "Register") as! RegisterController
+
+        //传递参数
+        controller.avatar = avatar
+        controller.nickname = nickname
+        controller.openId = openId
 
         // 将 控制器 要入到 导航控制器
         navigationController?.pushViewController(controller, animated: true)
@@ -107,6 +112,8 @@ class LoginOrRegisterController: BaseController {
                 let openId = user?.credential.token
 
                 print("LoginOrRegisterController onQQLoginClick success:\(nickname),\(avatar),\(openId)")
+
+                self.toRegister(avatar: avatar, nickname: nickname, openId: openId)
             } else {
                 //登录失败
                 print("LoginOrRegisterControler onQQLoginClick failed:\(error)")

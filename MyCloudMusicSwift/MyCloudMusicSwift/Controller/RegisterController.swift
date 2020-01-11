@@ -10,7 +10,7 @@ import UIKit
 import Moya
 
 class RegisterController: BaseLoginController {
-    
+
     /// 昵称控件
     @IBOutlet weak var tfNickname: UITextField!
 
@@ -29,6 +29,15 @@ class RegisterController: BaseLoginController {
     /// 注册按钮
     @IBOutlet weak var btRegister: UIButton!
 
+    /// 昵称
+    var nickname: String?
+
+    /// 头像
+    var avatar: String?
+
+    /// 第三方登录后的OpenId
+    var openId: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -43,6 +52,24 @@ class RegisterController: BaseLoginController {
         tfEmail.showLeftIcon(name: "LoginItemPhone")
         tfPassword.showLeftIcon(name: "LoginItemPhone")
         tfConfirmPassword.showLeftIcon(name: "LoginItemPhone")
+    }
+
+    override func initDatas() {
+        super.initDatas()
+
+        if let _ = openId {
+            //是第三方登录后跳转过来的
+            //设置标题
+            navigationItem.title = "补充资料"
+            //将昵称显示到输入框
+            tfNickname.text = nickname
+
+            //更改注册按钮标题
+            btRegister.setTitle("完成注册", for: .normal)
+        } else {
+            //不是第三方登录
+            navigationItem.title = "注册"
+        }
     }
 
     //MARK: - 点击事件
