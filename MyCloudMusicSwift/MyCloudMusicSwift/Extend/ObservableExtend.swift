@@ -58,11 +58,68 @@ extension Observable {
     }
 }
 
+public class HttpObserver<Element>: ObserverType {
+
+    /// ObserverType协议中用到了泛型E
+    /// 所以说子类中就要指定E这个泛型
+    /// 不然就会报错
+    public typealias E = Element
+
+    var onSuccess: (E) -> Void
+
+    var onError: ((BaseResponse?, Error?) -> Bool)?
+
+    /// 构造方法
+    ///
+    /// - Parameters:
+    ///   - onSuccess: 请求成功的回调
+    ///   - onError: 请求失败的回调
+    init(_ onSuccess: @escaping((E) -> Void), _ onError: ((BaseResponse?, Error?) -> Bool)?) {
+        self.onSuccess = onSuccess
+        self.onError = onError
+    }
+
+    /// 当RxSwift框架里面发送了事件回调
+    ///
+    /// - Parameter event: <#event description#>
+    public func on(_ event: Event<Element>) {
+        switch event {
+        case .next(let value):
+            //next事件
+            print("HttpObserver next:\(value)")
+
+            let baseResponse = value as? BaseResponse
+
+            if let _ = baseResponse?.status {
+                //有状态码
+                //表示请求出错了
+                requestErrorHandler(baseResponse: baseResponse)
+            } else {
+                onSuccess(value)
+            }
+        case .error(let error):
+            //请求失败
+            print("HttpObserver error:\(error)")
+
+            //处理错误
+            requestErrorHandler(error: error)
+
+        case .completed:
+            //请求完成
+            print("HttpObserver completed")
+        }
+    }
+
+    func requestErrorHandler(baseResponse: BaseResponse? = nil, error: Error? = nil) {
+
+    }
+}
+
 // MARK: - 扩展ObservableType
 // 目的是添加两个自定义监听方法
 // 一个是只观察请求成功的方法
 // 一个既可以观察请求成功也可以观察请求失败
-extension ObserverType {
+extension ObservableType {
 
     /// 观察成功和失败事件
     ///
@@ -75,17 +132,35 @@ extension ObserverType {
         _ onError: @escaping((BaseResponse?, Error?) -> Bool)
     ) -> Disposable {
 
+        //创建一个Disposable
+        let disposable = Disposables.create()
+
+        // 创建一个HttpObserver， 相当于 源码中的AnonymousObserver
+        let observer = HttpObserver<E>(onSuccess, onError)
+
+        // c创建 并返回 d一个 Disposable
+
+        return Disposables.create(
+            self.asObservable().subscribe(observer),
+            disposable
+        )
     }
 
-  
     /// 观察成功的事件
     ///
     /// - Parameter onSuccess: <#onSuccess description#>
     /// - Returns: <#return value description#>
-    func subscribeOnSuccess(_ onSuccess: @escaping ((E) -> Void) ) -> Disposable {
-        
-    }
-    func subscribeOnSuccess(_ onSuccess: @escaping((E) -> Void)) -> Disposable {
+    func subscribeOnSuccess(_ onSuccess: @escaping ((E) -> Void)) -> Disposable {
+        //创建一个Disposable
+        let disposable = Disposables.create()
 
+        // 创建一个HttpObserver， 相当于 源码中的AnonymousObserver
+        let observer = HttpObserver<E>(onSuccess, nil)
+
+        // 创建 并返回 d一个 Disposable
+        return Disposables.create(
+            self.asObservable().subscribe(observer),
+            disposable
+        )
     }
 }
