@@ -21,17 +21,11 @@ class SplashController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-
         // 延迟3s
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//                // 延迟了3s后。
-//                self.next()
-//            })
-        self.next()
-        
-        //测试获取用户登录信息
-        print("SplashController viewDidLoad userId:\(PreferenceUtil.userId())")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                // 延迟了3s后。
+                self.next()
+            })
     }
 
     func next() {
@@ -39,6 +33,8 @@ class SplashController: BaseController {
 
         if(PreferenceUtil.isShowGuide()) {
             AppDelegate.shared.toGuide()
+        } else if PreferenceUtil.isLogin() {
+            AppDelegate.shared.toHome()
         } else {
             AppDelegate.shared.toLoginOrRegister()
         }

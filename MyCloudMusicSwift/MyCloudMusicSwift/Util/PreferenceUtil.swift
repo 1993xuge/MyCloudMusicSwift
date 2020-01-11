@@ -56,6 +56,13 @@ class PreferenceUtil {
         return UserDefaults.standard.string(forKey: KEY_USER_TOKEN)!
     }
 
+    static func isLogin() -> Bool {
+        if let _ = userId() {
+            return true
+        } else {
+            return false
+        }
+    }
 
     /// 是否显示引导界面常用key, 表示 是否 显示过引导界面
     private static let KEY_GUIDE = "KEY_GUIDE"
