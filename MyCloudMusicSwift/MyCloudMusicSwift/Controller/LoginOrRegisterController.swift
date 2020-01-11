@@ -77,7 +77,24 @@ class LoginOrRegisterController: BaseController {
 //        testRequest()
 //        testRequestError()
 //        testRequestWithRx()
-        testRequestWithRxAndJson()
+//        testRequestWithRxAndJson()
+        testRequestWithRxAndJsonAndMap()
+    }
+
+    func testRequestWithRxAndJsonAndMap() {
+        let provider = MoyaProvider<Service>()
+
+        provider
+            .rx
+            .request(.sheetDetail(id: "1"))
+            .asObservable()
+            .mapString()
+            .mapObject(SheetWrapper.self)
+            .subscribe { event in
+                if let data = event.element {
+                    print("RegiseterController request sheet detail success:\(data?.data.title)")
+                }
+        }
     }
 
     func testRequestWithRxAndJson() {
