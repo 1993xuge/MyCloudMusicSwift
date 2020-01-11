@@ -73,9 +73,68 @@ class LoginOrRegisterController: BaseController {
 //            ToastUtil.hideLoading()
 //        })
 
+//        testRequest()
+        testRequestError()
+    }
+
+    func testRequestError() {
+        let provider = MoyaProvider<Service>()
+        provider.request(.sheetDetail(id: "100000")) { event in
+            switch event {
+            case let .success(response):
+                // 请求成功
+                let data = response.data
+                let code = response.statusCode
+
+                // 将data转为 字符串
+                let dataString = String(data: data, encoding: .utf8)
+                print("RegisterController request sheet detail success:\(code),\(dataString)")
+
+            case let .failure(error):
+                print("RegisterController request sheet detail failed:\(error)")
+
+                let error = error as! MoyaError
+                switch error {
+                case .imageMapping(let response):
+                    print("图片解析错误")
+                case .jsonMapping(let response):
+                    print("JSON解析错误")
+                case .statusCode(let response):
+                    print("状态错误")
+                case .stringMapping(let response):
+                    print("字符串映射错误")
+
+                case .underlying(let nsError as NSError, let response):
+                    print("这里将错误转为了NSError")
+                    switch nsError.code {
+                    case NSURLErrorNotConnectedToInternet:
+                        print("网络不太好，请稍后再试！")
+                    case NSURLErrorTimedOut:
+                        print("连接超时，请稍后再试！")
+                    default:
+                        print("未知错误，请稍后再试！")
+                    }
+
+                case .objectMapping(_, _):
+                    print("对象解码错误")
+                case .encodableMapping(_):
+                    print("对象编码错误")
+                case .requestMapping(_):
+                    print("请求映射错误")
+                case .parameterEncoding(_):
+                    print("参数编码错误")
+
+                default:
+                    print("未知错误")
+                }
+            }
+        }
+    }
+
+    func testRequest() {
         let provider = MoyaProvider<Service>()
 
-        provider.request(.sheetDetail(id: "1")) { result in
+        provider.request(.sheetDetail(id: "1000000")) { result in
             //result类型是Result<Response,MoyaError>
 
             switch result {
@@ -104,33 +163,32 @@ class LoginOrRegisterController: BaseController {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    //MARK: - 第三方登录
+//MARK: - 第三方登录
 
-
-    /// 微信登录
-    ///
-    /// - Parameter sender: <#sender description#>
+/// 微信登录
+///
+/// - Parameter sender: <#sender description#>
     @IBAction func onWechatLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onWechatLoginClick")
     }
 
-    /// QQ登录按钮点击
-    ///
-    /// - Parameter sender: <#sender description#>
+/// QQ登录按钮点击
+///
+/// - Parameter sender: <#sender description#>
     @IBAction func onQQLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onQQLoginClick")
     }
 
-    /// 微博登录按钮点击
-    ///
-    /// - Parameter sender: <#sender description#>
+/// 微博登录按钮点击
+///
+/// - Parameter sender: <#sender description#>
     @IBAction func onWeiboLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onWeiboLoginClick")
     }
 
-    /// 网易邮箱登录按钮点击
-    ///
-    /// - Parameter sender: <#sender description#>
+/// 网易邮箱登录按钮点击
+///
+/// - Parameter sender: <#sender description#>
     @IBAction func onNeteaseLoginClick(_ sender: UIButton) {
         print("LoginOrRegisterController onNeteaseLoginClick")
     }
