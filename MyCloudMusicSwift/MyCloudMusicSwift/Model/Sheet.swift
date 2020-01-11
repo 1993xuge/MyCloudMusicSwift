@@ -9,29 +9,35 @@
 
 import Foundation
 
-class Sheet {
-    
+//导入JSON解析框架
+import HandyJSON
+
+class Sheet: HandyJSON {
+
     /// 歌单Id
-    var id:String!
-    
+    var id: String!
+
     /// 标题
-    var title:String!
-    
+    var title: String!
+
     /// 封面
-    var banner:String?
-    
+    var banner: String?
+
     /// 描述
-    var description:String?
-    
+    var description: String?
+
     /// 点击数
-    var clicks_count:Int = 0
-    
+    var clicks_count: Int = 0
+
     /// 收藏数
     var collections_count = 0
-    
+
     /// 评论数
     var comments_count = 0
-    
+
     /// 音乐数
     var songs_count = 0
+
+    //因为HandyJSON解析框架要求有一个init方法
+    required init() { }
 }

@@ -76,7 +76,34 @@ class LoginOrRegisterController: BaseController {
 
 //        testRequest()
 //        testRequestError()
-        testRequestWithRx()
+//        testRequestWithRx()
+        testRequestWithRxAndJson()
+    }
+
+    func testRequestWithRxAndJson() {
+        let provider = MoyaProvider<Service>()
+        provider
+            .rx
+            .request(.sheetDetail(id: "1"))
+            .subscribe { event in
+                //event类型是SingleEvent<Response>
+                switch event {
+                case let .success(response):
+                    let data = response.data
+                    let code = response.statusCode
+                    // 将data转为 字符串
+                    let dataString = String(data: data, encoding: .utf8)
+
+                    //解析JSON为对象
+                    let sheetWrapper = SheetWrapper.deserialize(from: dataString)
+
+                    //解析完成了
+                    print("RegisterController request sheet detail succes:\(sheetWrapper?.data.title)")
+
+                case let .error(error):
+                    print("RegisterController request sheet detail failed:\(error)")
+                }
+        }
     }
 
     func testRequestWithRx() {

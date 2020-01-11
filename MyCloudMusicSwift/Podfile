@@ -27,6 +27,10 @@ target 'MyCloudMusicSwift' do
   # 这里用测试版本是
   # 因为制作的课程时候没有RxSwift 5正式版本
   pod 'Moya/RxSwift', '~> 14.0.0-alpha.1'
+  
+  # JSON解析为对象
+  # https://github.com/alibaba/HandyJSON
+  pod 'HandyJSON', '5.0.0-beta.1'
 
   target 'MyCloudMusicSwiftTests' do
     inherit! :search_paths
