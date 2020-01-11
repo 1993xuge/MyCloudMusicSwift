@@ -22,7 +22,15 @@ class Api {
     private let provider: MoyaProvider<Service>
 
     private init() {
-        provider = MoyaProvider<Service>(plugins: [NetworkLoggerPlugin()])
+
+        var plugins: [PluginType] = []
+        if DEBUG {
+            //表示当前是调试模式
+            //添加网络请求日志插件
+            plugins.append(NetworkLoggerPlugin())
+        }
+
+        provider = MoyaProvider<Service>(plugins: plugins)
     }
 
     /// 歌单列表

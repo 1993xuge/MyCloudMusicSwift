@@ -11,6 +11,9 @@
 
 import Foundation
 
+/// 是否是调试模式
+let DEBUG = true
+
 // MARK: - 开发环境
 /// 网络接口的地址
 let ENDPOINT="http://dev-my-cloud-music-api-rails.ixuea.com"
