@@ -52,6 +52,7 @@
 		D5752CF523C9E5130058FE0F /* BaseLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CF423C9E5130058FE0F /* BaseLoginController.swift */; };
 		D5752CF723C9E6990058FE0F /* BaseCommonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CF623C9E6990058FE0F /* BaseCommonController.swift */; };
 		D5752CF923CA9B720058FE0F /* ForgetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CF823CA9B720058FE0F /* ForgetPasswordController.swift */; };
+		D5752CFD23CB6EC40058FE0F /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = D5752CFC23CB6EC40058FE0F /* CountDown.m */; };
 		D57905F323C76291003A4B95 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F223C76291003A4B95 /* RegisterController.swift */; };
 		D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F423C776CC003A4B95 /* TextFieldExtend.swift */; };
 		D57905F723C778D2003A4B95 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F623C778D2003A4B95 /* BaseController.swift */; };
@@ -145,6 +146,8 @@
 		D5752CF423C9E5130058FE0F /* BaseLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLoginController.swift; sourceTree = "<group>"; };
 		D5752CF623C9E6990058FE0F /* BaseCommonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCommonController.swift; sourceTree = "<group>"; };
 		D5752CF823CA9B720058FE0F /* ForgetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordController.swift; sourceTree = "<group>"; };
+		D5752CFB23CB6EC40058FE0F /* CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDown.h; sourceTree = "<group>"; };
+		D5752CFC23CB6EC40058FE0F /* CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDown.m; sourceTree = "<group>"; };
 		D57905F223C76291003A4B95 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		D57905F423C776CC003A4B95 /* TextFieldExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtend.swift; sourceTree = "<group>"; };
 		D57905F623C778D2003A4B95 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -297,6 +300,7 @@
 		D558019223C6E5DD00BD5335 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D5752CFA23CB6EC40058FE0F /* CountDown */,
 				D558019323C6E68300BD5335 /* YJBannerView */,
 			);
 			path = Vender;
@@ -395,6 +399,15 @@
 				D5752CF023C9BA780058FE0F /* Session.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D5752CFA23CB6EC40058FE0F /* CountDown */ = {
+			isa = PBXGroup;
+			children = (
+				D5752CFB23CB6EC40058FE0F /* CountDown.h */,
+				D5752CFC23CB6EC40058FE0F /* CountDown.m */,
+			);
+			path = CountDown;
 			sourceTree = "<group>";
 		};
 		D594D34523C61D580082F9F3 /* Util */ = {
@@ -722,6 +735,7 @@
 				D5752CEF23C9B2AD0058FE0F /* BaseModel.swift in Sources */,
 				D5752CF323C9CE680058FE0F /* LoginController.swift in Sources */,
 				D5752CF723C9E6990058FE0F /* BaseCommonController.swift in Sources */,
+				D5752CFD23CB6EC40058FE0F /* CountDown.m in Sources */,
 				D55801B223C6E68300BD5335 /* YJBannerViewFooter.m in Sources */,
 				D5752CE523C9689C0058FE0F /* BaseResponse.swift in Sources */,
 				D55801AE23C6E68300BD5335 /* YJAnimatedDotView.m in Sources */,

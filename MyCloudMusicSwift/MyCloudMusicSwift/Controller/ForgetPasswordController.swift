@@ -29,6 +29,9 @@ class ForgetPasswordController: BaseLoginController {
     /// 重置密码按钮
     @IBOutlet weak var btResetPassword: UIButton!
 
+    //倒计时框架
+    var countDown: CountDown!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -42,12 +45,74 @@ class ForgetPasswordController: BaseLoginController {
         ViewUtil.showLargeRadius(view: btResetPassword)
     }
 
+    override func initDatas() {
+        //初始化倒计时框架
+        print("initDatas")
+        countDown = CountDown()
+    }
+
     /// 发送验证码按钮点击事件
     ///
     /// - Parameter sender: <#sender description#>
     @IBAction func onSendCodeClick(_ sender: UIButton) {
         print("ForgetPasswordController onSendCodeClick")
 
+//        startCountDown()
+
+        //获取用户名
+        let username = tfUsername.text!.trim()!
+        if username.isEmpty {
+            ToastUtil.short("请输入用户名！")
+            return
+        }
+
+        //判断用户名格式
+        if username.isPhone() {
+            //手机号
+            sendSMSCode(username)
+        } else if username.isEmail() {
+            //邮箱
+            // sendEmailCode(username)
+        } else {
+            ToastUtil.short("用户名格式不正确！")
+        }
+    }
+    
+    /// 发送短信验证码
+    func sendSMSCode(_ username:String) {
+        Api.shared.sendSMSCode(phone: username).subscribeOnSuccess { _ in
+            //发送成功
+            //开始倒计时
+            self.startCountDown()
+            }.disposed(by: disposeBag)
+    }
+
+    /// 开始倒计时
+    func startCountDown() {
+        // 开始 时间
+        let startDate = Date()
+
+        //结束时间
+        //当前时间+60秒
+        let endDate = Date(timeIntervalSinceNow: 60)
+
+        //禁用按钮点击
+        btSendCode.isEnabled = false
+
+        countDown.countDown(withStratDate: startDate, finish: endDate) { (day, hour, minute, second) in
+            print("day = \(day)  hour = \(hour)  minute = \(minute)  second = \(second)")
+            //计算剩余秒数
+            let totalSecond = day * 24 * 60 * 60 + hour * 60 * 60 + minute * 60 + second
+
+            if totalSecond == 0 {
+                //倒计时完毕了
+                self.btSendCode.setTitle("发送验证码", for: .normal)
+                self.btSendCode.isEnabled = true
+            } else {
+                //正在倒计时
+                self.btSendCode.setTitle("(\(totalSecond))秒", for: .normal)
+            }
+        }
     }
 
     /// 重置密码按钮点击事件
@@ -133,5 +198,11 @@ class ForgetPasswordController: BaseLoginController {
             self.login(phone: phone, email: email, password: password)
         }.disposed(by: disposeBag)
 
+    }
+
+    //类似于OC中的dealloc
+    deinit {
+        print("deinit")
+        countDown.destoryTimer()
     }
 }

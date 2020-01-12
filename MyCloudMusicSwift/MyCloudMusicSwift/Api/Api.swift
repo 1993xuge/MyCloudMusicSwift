@@ -144,4 +144,18 @@ class Api {
             .asObservable()
             .mapObject(DetailResponse<BaseModel>.self)
     }
+
+    /// 发送验证码
+    ///
+    /// - Parameter phone: <#phone description#>
+    /// - Returns: <#return value description#>
+    func sendSMSCode(phone: String) -> Observable<DetailResponse<BaseModel>?> {
+
+        return provider.rx
+            .request(.sendSMSCode(phone: phone))
+            .filterSuccessfulStatusCodes()
+            .mapString()
+            .asObservable()
+            .mapObject(DetailResponse<BaseModel>.self)
+    }
 }

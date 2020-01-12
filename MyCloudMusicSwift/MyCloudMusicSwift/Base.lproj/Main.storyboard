@@ -250,7 +250,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvh-AN-Hwt">
-                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="JSx-5u-VMG"/>
                                                                                 </constraints>
@@ -272,7 +272,7 @@
                                                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yse-Xd-47S">
-                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="tsl-A8-5yd"/>
                                                                                 </constraints>
@@ -294,7 +294,7 @@
                                                                         <rect key="frame" x="187" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ro-2U-Bua">
-                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="OTd-PK-QVp"/>
                                                                                 </constraints>
@@ -316,7 +316,7 @@
                                                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyg-7s-IYN">
-                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="Lsi-ku-9Ap"/>
                                                                                 </constraints>
@@ -636,24 +636,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f3e-UT-57w" userLabel="Container">
-                                <rect key="frame" x="20" y="64" width="374" height="302"/>
+                                <rect key="frame" x="20" y="64" width="374" height="306"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfr-Lo-nLr">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号/邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0JT-H9-epX">
-                                                <rect key="frame" x="0.0" y="0.0" width="244" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLW-H2-cy5">
-                                                <rect key="frame" x="244" y="0.0" width="130" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLW-H2-cy5">
+                                                <rect key="frame" x="264" y="0.0" width="110" height="34"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="S7S-7F-XIY"/>
+                                                    <constraint firstAttribute="width" constant="110" id="S7S-7F-XIY"/>
                                                 </constraints>
                                                 <state key="normal" title="发送验证码">
                                                     <color key="titleColor" name="ColorPrimary"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="onSendCodeClick:" destination="hkL-Ce-BPh" eventType="touchUpInside" id="UHg-v4-iq6"/>
@@ -662,53 +665,53 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwl-Q0-rSq" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="54" width="374" height="0.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="RcB-5a-ea6"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txe-7n-Pnx">
-                                        <rect key="frame" x="0.0" y="70.5" width="374" height="22"/>
+                                        <rect key="frame" x="0.0" y="74.5" width="374" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CI-MQ-AKt" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="112.5" width="374" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="116.5" width="374" height="0.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="Jt1-ZC-mwE"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请设置密码（6~15位）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aeB-hv-3uq">
-                                        <rect key="frame" x="0.0" y="133" width="374" height="22"/>
+                                        <rect key="frame" x="0.0" y="137" width="374" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0j-mi-GqF" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="175" width="374" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="179" width="374" height="0.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="9bb-rm-gOO"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-YF-t66">
-                                        <rect key="frame" x="0.0" y="195.5" width="374" height="22"/>
+                                        <rect key="frame" x="0.0" y="199.5" width="374" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIx-IO-65D" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="237.5" width="374" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="241.5" width="374" height="0.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="knf-CD-ZbA"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxK-Fx-jtw">
-                                        <rect key="frame" x="0.0" y="258" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="262" width="374" height="44"/>
                                         <color key="backgroundColor" name="ColorPrimary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Mao-Sy-3YH"/>
