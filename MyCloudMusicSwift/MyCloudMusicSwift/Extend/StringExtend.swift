@@ -52,4 +52,11 @@ extension String {
     func isPassword() -> Bool {
         return count >= 6 && count <= 15
     }
+    
+    /// 是否符合验证码格式
+    ///
+    /// - Returns: <#return value description#>
+    func isCode() -> Bool {
+        return self.count == 4
+    }
 }

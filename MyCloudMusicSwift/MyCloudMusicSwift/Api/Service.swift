@@ -19,6 +19,7 @@ enum Service {
     case sheets
     case createUser(avatar: String?, nickname: String, phone: String, email: String, password: String, qq_id: String?, weibo_id: String?)
     case login(phone: String?, email: String?, password: String?, qq_id: String?, weibo_id: String?)
+    case resetPassword(phone: String?, email: String?, code: String, password: String)
 }
 
 // MARK: - 实现TargetType协议
@@ -40,6 +41,8 @@ extension Service: TargetType {
             return "/v1/users"
         case .login:
             return "/v1/sessions"
+        case .resetPassword:
+            return "/v1/users/reset_password"
         default:
             return ""
         }
@@ -48,7 +51,7 @@ extension Service: TargetType {
     /// 请求方式
     var method: Moya.Method {
         switch self {
-        case .createUser, .login:
+        case .createUser, .login, .resetPassword:
             return .post
 
         default:
@@ -66,6 +69,8 @@ extension Service: TargetType {
 
 //            return .requestParameters(parameters: ["phone": phone, "email": email, "password": password, "qq_id": qq_id, "weibo_id": weibo_id], encoding: JSONEncoding.default)
             return HttpUtil.jsonRequestParamters(["phone": phone, "email": email, "password": password, "qq_id": qq_id, "weibo_id": weibo_id])
+        case .resetPassword(let phone, let email, let code, let password):
+            return HttpUtil.jsonRequestParamters(["phone":phone,"email":email,"code":code,"password":password])
         default:
             return .requestPlain
         }

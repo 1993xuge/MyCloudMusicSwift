@@ -108,7 +108,7 @@ class Api {
             .mapString()
             .mapObject(DetailResponse<BaseModel>.self)
     }
-    
+
     /// 登录
     ///
     /// - Parameters:
@@ -118,7 +118,7 @@ class Api {
     ///   - qq_id: qq第三方登录后Id
     ///   - weibo_id: 微博第三方登录后Id
     /// - Returns: <#return value description#>
-    func login(phone:String?=nil,email:String?=nil,password:String?=nil,qq_id:String?=nil,weibo_id:String?=nil) -> Observable<DetailResponse<Session>?> {
+    func login(phone: String? = nil, email: String? = nil, password: String? = nil, qq_id: String? = nil, weibo_id: String? = nil) -> Observable<DetailResponse<Session>?> {
         return provider
             .rx
             .request(.login(phone: phone, email: email, password: password, qq_id: qq_id, weibo_id: weibo_id))
@@ -126,5 +126,22 @@ class Api {
             .mapString()
             .asObservable()
             .mapObject(DetailResponse<Session>.self)
+    }
+
+    /// 重置密码
+    ///
+    /// - Parameters:
+    ///   - phone: 手机号
+    ///   - email: 邮箱
+    ///   - code: 验证码
+    ///   - password: 新密码
+    /// - Returns: <#return value description#>
+    func resetPassword(phone: String?, email: String?, code: String, password: String) -> Observable<DetailResponse<BaseModel>?> {
+        return provider.rx
+            .request(.resetPassword(phone: phone, email: email, code: code, password: password))
+            .filterSuccessfulStatusCodes()
+            .mapString()
+            .asObservable()
+            .mapObject(DetailResponse<BaseModel>.self)
     }
 }
