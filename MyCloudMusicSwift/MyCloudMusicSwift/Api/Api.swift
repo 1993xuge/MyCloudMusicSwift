@@ -158,4 +158,18 @@ class Api {
             .asObservable()
             .mapObject(DetailResponse<BaseModel>.self)
     }
+    
+    /// 发送邮件验证码
+    ///
+    /// - Parameter email: <#email description#>
+    /// - Returns: <#return value description#>
+    func sendEmailCode(email:String) -> Observable<DetailResponse<BaseModel>?> {
+        return provider
+            .rx
+            .request(.sendEmailCode(email: email))
+            .filterSuccessfulStatusCodes()
+            .mapString()
+            .asObservable()
+            .mapObject(DetailResponse<BaseModel>.self)
+    }
 }

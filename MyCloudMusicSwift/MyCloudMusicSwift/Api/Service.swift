@@ -16,6 +16,7 @@ import Moya
 /// - createUser: 创建用户
 /// - resetPassword: 重置密码
 /// - sendSMSCode: 发送验证码
+/// - sendEmailCode: 发送邮件验证码
 enum Service {
     case sheetDetail(id: String)
     case sheets
@@ -24,6 +25,7 @@ enum Service {
     case resetPassword(phone: String?, email: String?, code: String, password: String)
 
     case sendSMSCode(phone: String)
+    case sendEmailCode(email: String)
 }
 
 // MARK: - 实现TargetType协议
@@ -50,6 +52,8 @@ extension Service: TargetType {
 
         case .sendSMSCode:
             return "/v1/codes/request_sms_code"
+        case .sendEmailCode:
+            return "/v1/codes/request_email_code"
         default:
             return ""
         }
@@ -58,7 +62,7 @@ extension Service: TargetType {
     /// 请求方式
     var method: Moya.Method {
         switch self {
-        case .createUser, .login, .resetPassword, .sendSMSCode:
+        case .createUser, .login, .resetPassword, .sendSMSCode, .sendEmailCode:
             return .post
 
         default:
@@ -81,6 +85,8 @@ extension Service: TargetType {
 
         case .sendSMSCode(let phone):
             return HttpUtil.jsonRequestParamters(["phone": phone])
+        case .sendEmailCode(let email):
+            return HttpUtil.jsonRequestParamters(["email":email])
         default:
             return .requestPlain
         }

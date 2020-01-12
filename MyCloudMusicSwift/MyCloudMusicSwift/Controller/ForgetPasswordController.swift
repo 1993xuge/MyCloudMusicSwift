@@ -56,9 +56,6 @@ class ForgetPasswordController: BaseLoginController {
     /// - Parameter sender: <#sender description#>
     @IBAction func onSendCodeClick(_ sender: UIButton) {
         print("ForgetPasswordController onSendCodeClick")
-
-//        startCountDown()
-
         //获取用户名
         let username = tfUsername.text!.trim()!
         if username.isEmpty {
@@ -72,19 +69,30 @@ class ForgetPasswordController: BaseLoginController {
             sendSMSCode(username)
         } else if username.isEmail() {
             //邮箱
-            // sendEmailCode(username)
+            sendEmailCode(username)
         } else {
             ToastUtil.short("用户名格式不正确！")
         }
     }
-    
+
     /// 发送短信验证码
-    func sendSMSCode(_ username:String) {
+    func sendSMSCode(_ username: String) {
         Api.shared.sendSMSCode(phone: username).subscribeOnSuccess { _ in
             //发送成功
             //开始倒计时
             self.startCountDown()
-            }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
+    }
+
+    /// 发送邮件验证码
+    ///
+    /// - Parameter email: <#email description#>
+    func sendEmailCode(_ email: String) {
+        Api.shared.sendEmailCode(email: email).subscribeOnSuccess { _ in
+            //发送成功
+            //开始倒计时
+            self.startCountDown()
+        }.disposed(by: disposeBag)
     }
 
     /// 开始倒计时
