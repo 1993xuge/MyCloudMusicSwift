@@ -51,6 +51,7 @@
 		D5752CF323C9CE680058FE0F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CF223C9CE680058FE0F /* LoginController.swift */; };
 		D5752CF523C9E5130058FE0F /* BaseLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CF423C9E5130058FE0F /* BaseLoginController.swift */; };
 		D5752CF723C9E6990058FE0F /* BaseCommonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CF623C9E6990058FE0F /* BaseCommonController.swift */; };
+		D5752CF923CA9B720058FE0F /* ForgetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CF823CA9B720058FE0F /* ForgetPasswordController.swift */; };
 		D57905F323C76291003A4B95 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F223C76291003A4B95 /* RegisterController.swift */; };
 		D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F423C776CC003A4B95 /* TextFieldExtend.swift */; };
 		D57905F723C778D2003A4B95 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F623C778D2003A4B95 /* BaseController.swift */; };
@@ -143,6 +144,7 @@
 		D5752CF223C9CE680058FE0F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D5752CF423C9E5130058FE0F /* BaseLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLoginController.swift; sourceTree = "<group>"; };
 		D5752CF623C9E6990058FE0F /* BaseCommonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCommonController.swift; sourceTree = "<group>"; };
+		D5752CF823CA9B720058FE0F /* ForgetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordController.swift; sourceTree = "<group>"; };
 		D57905F223C76291003A4B95 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		D57905F423C776CC003A4B95 /* TextFieldExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtend.swift; sourceTree = "<group>"; };
 		D57905F623C778D2003A4B95 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				D5752CF223C9CE680058FE0F /* LoginController.swift */,
 				D5752CF423C9E5130058FE0F /* BaseLoginController.swift */,
 				D5752CF623C9E6990058FE0F /* BaseCommonController.swift */,
+				D5752CF823CA9B720058FE0F /* ForgetPasswordController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				D55801B623C6FFA500BD5335 /* PreferenceUtil.swift in Sources */,
 				D594D34E23C627F70082F9F3 /* ColorExtend.swift in Sources */,
 				D57905F723C778D2003A4B95 /* BaseController.swift in Sources */,
+				D5752CF923CA9B720058FE0F /* ForgetPasswordController.swift in Sources */,
 				D55801B423C6F38900BD5335 /* BannerGuideController.swift in Sources */,
 				D558018C23C6AFC900BD5335 /* HomeController.swift in Sources */,
 				D5752CE123C9543B0058FE0F /* Sheet.swift in Sources */,
