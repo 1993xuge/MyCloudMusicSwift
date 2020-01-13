@@ -37,10 +37,10 @@ class WebController: BaseController {
         super.initDatas()
 
         let url = URL(string: uri)!
-        
+
         //创建request
         let request = URLRequest(url: url)
-        
+
         //使用WebView加载这个请求
         wv.load(request)
     }
@@ -54,6 +54,28 @@ extension WebController: WKUIDelegate {
 // MARK: - WKNavigationDelegate代理
 extension WebController: WKNavigationDelegate {
 
+}
+
+// MARK: - 启动界面
+extension WebController {
+    
+    /// 启动界面
+    ///
+    /// - Parameters:
+    ///   - navigationController: 导航控制器
+    ///   - title: 显示的标题
+    ///   - uri: 显示的网址
+    static func start(_ navigationController:UINavigationController, _ title:String,_ uri:String) {
+        //创建控制器
+        let controller = navigationController.storyboard?.instantiateViewController(withIdentifier: "Web") as! WebController
+        
+        //传递参数
+        controller.title=title
+        controller.uri=uri
+        
+        //将控制器压入导航控制器中
+        navigationController.pushViewController(controller, animated: true)
+    }
 }
 
 

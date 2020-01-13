@@ -951,7 +951,7 @@
         <scene sceneID="O1F-gN-U48">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKu-n4-NZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="WEB" id="css-Bt-iai" customClass="WebController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Web" hidesBottomBarWhenPushed="YES" id="css-Bt-iai" customClass="WebController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eno-5I-eij">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
