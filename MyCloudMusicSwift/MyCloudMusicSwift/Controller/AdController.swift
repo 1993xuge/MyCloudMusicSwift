@@ -23,6 +23,12 @@ class AdController: BaseController {
         ViewUtil.showRadius(btSkipAd, 15)
     }
 
+    // 状态栏 颜色
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        // 内容为白色
+        return UIStatusBarStyle.lightContent
+    }
+
     /// 点击了广告
     ///
     /// - Parameter sender: <#sender description#>
