@@ -678,21 +678,22 @@
             </objects>
             <point key="canvasLocation" x="486.95652173913049" y="3204.9107142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Account Controller-->
         <scene sceneID="tq6-fM-Ezq">
             <objects>
-                <viewController id="mkx-js-6US" sceneMemberID="viewController">
+                <viewController id="mkx-js-6US" customClass="AccountController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vK1-2U-pHh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="账号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-75-LzB">
-                                <rect key="frame" x="20" y="97" width="35" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLD-3Z-zL5">
+                                <rect key="frame" x="192" y="433" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="退出"/>
+                                <connections>
+                                    <action selector="onLogoutClick:" destination="mkx-js-6US" eventType="touchUpInside" id="uWt-Gx-FFS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PAy-YA-ehd"/>

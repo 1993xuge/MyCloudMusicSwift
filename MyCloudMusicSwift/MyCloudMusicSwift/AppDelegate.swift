@@ -27,6 +27,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    /// 退出方法
+    func logout() {
+        //如果需要调用退出接 口
+        //就在这里调用就行了
+
+        //清除用户信息
+        PreferenceUtil.logout()
+
+        // 清除第三方登录的token
+        //清除QQ
+        ShareSDK.cancelAuthorize(.typeQQ, result: nil)
+        //清除微博
+        ShareSDK.cancelAuthorize(.typeSinaWeibo, result: nil)
+
+        //跳转到登录注册页面
+        toLoginOrRegister()
+    }
+
     /// 当用户退出了
     func onLogout() {
 

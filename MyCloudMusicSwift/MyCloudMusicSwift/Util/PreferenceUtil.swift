@@ -56,12 +56,24 @@ class PreferenceUtil {
         return UserDefaults.standard.string(forKey: KEY_USER_TOKEN)!
     }
 
+    /// 是否登录了
+    ///
+    /// - Returns: <#return value description#>
     static func isLogin() -> Bool {
         if let _ = userId() {
             return true
         } else {
             return false
         }
+    }
+    
+    /// 退出
+    static func logout() {
+        //清除用户Id
+        UserDefaults.standard.removeObject(forKey: KEY_USER_ID)
+        
+        // 清除用户登录 标识
+        UserDefaults.standard.removeObject(forKey: KEY_USER_TOKEN)
     }
 
     /// 是否显示引导界面常用key, 表示 是否 显示过引导界面
