@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         initSharedSDK()
+//        initTabBar()
         return true
     }
 
@@ -52,13 +53,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initSharedSDK() {
         ShareSDK.registPlatforms { register in
             // SSDKRegister?
-            
+
             //设置QQ信息
             register?.setupQQ(withAppId: QQ_APP_ID, appkey: QQ_APP_SECRET)
-            
+
             //配置微博
             register?.setupSinaWeibo(withAppkey: WEIBO_APP_KEY, appSecret: WEIBO_APP_SECRET, redirectUrl: WEIBO_REDIRECT_URI)
         }
+    }
+
+    /// 初始化TabBar, 全局设置 TabBar的方式
+    func initTabBar() {
+        // TabBar 选中颜色设置
+        UITabBar.appearance().tintColor = UIColor(hex: COLOR_PRIMARY)
     }
 
     //MARK: - 替换RootVController

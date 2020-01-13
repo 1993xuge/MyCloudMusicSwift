@@ -12,5 +12,9 @@ class HomeController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 设置 TabBar高亮颜色
+        tabBar.tintColor = UIColor(hex: COLOR_PRIMARY)
     }
+    
 }

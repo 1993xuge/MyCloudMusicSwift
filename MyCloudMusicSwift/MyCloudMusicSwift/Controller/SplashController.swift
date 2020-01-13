@@ -22,10 +22,11 @@ class SplashController: BaseController {
         super.viewDidLoad()
 
         // 延迟3s
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                // 延迟了3s后。
-                self.next()
-            })
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                // 延迟了3s后。
+//                self.next()
+//            })
+        self.next()
     }
 
     func next() {
