@@ -992,6 +992,9 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YA-RG-f2Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                                                <connections>
+                                                    <action selector="onAdClick:" destination="Eq8-at-R2E" eventType="touchUpInside" id="bOx-rn-6tv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgn-4l-hXi">
                                                 <rect key="frame" x="314" y="706" width="80" height="30"/>
@@ -1004,6 +1007,9 @@
                                                 <state key="normal" title="跳过">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onSkipAdClick:" destination="Eq8-at-R2E" eventType="touchUpInside" id="tUX-sW-sYF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1060,6 +1066,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t5i-Vk-wVQ"/>
                     </view>
+                    <connections>
+                        <outlet property="btSkipAd" destination="Lgn-4l-hXi" id="ucP-hR-757"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqW-6d-kG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
