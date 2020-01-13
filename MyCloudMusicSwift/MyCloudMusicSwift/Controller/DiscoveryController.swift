@@ -33,7 +33,16 @@ class DiscoveryController: BaseCommonController {
     ///
     /// - Parameter notification: <#notification description#>
     @objc func onAdClick(notification: NSNotification) {
-        let adUri = notification.userInfo!["adUri"]
+        let adUri = notification.userInfo!["adUri"] as! String
         print("DiscoveryController onAdClick:\(adUri)")
+
+        let controller = navigationController!.storyboard!.instantiateViewController(withIdentifier: "WEB") as! WebController
+
+        // 设置参数
+        controller.title = "活动详情"
+        controller.uri = adUri
+
+        //将控制器压入导航控制器
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

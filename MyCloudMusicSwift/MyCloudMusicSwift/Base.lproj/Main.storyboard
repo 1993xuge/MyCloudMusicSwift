@@ -250,7 +250,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvh-AN-Hwt">
-                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="JSx-5u-VMG"/>
                                                                                 </constraints>
@@ -272,7 +272,7 @@
                                                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yse-Xd-47S">
-                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="tsl-A8-5yd"/>
                                                                                 </constraints>
@@ -294,7 +294,7 @@
                                                                         <rect key="frame" x="187" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ro-2U-Bua">
-                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="OTd-PK-QVp"/>
                                                                                 </constraints>
@@ -316,7 +316,7 @@
                                                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyg-7s-IYN">
-                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
+                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="Lsi-ku-9Ap"/>
                                                                                 </constraints>
@@ -946,6 +946,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUG-Ai-m2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-423.1884057971015" y="3204.9107142857142"/>
+        </scene>
+        <!--Web Controller-->
+        <scene sceneID="O1F-gN-U48">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKu-n4-NZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="WEB" id="css-Bt-iai" customClass="WebController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eno-5I-eij">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvx-3l-QCL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ehs-u2-hN6" firstAttribute="bottom" secondItem="xvx-3l-QCL" secondAttribute="bottom" id="Bap-mk-eFQ"/>
+                            <constraint firstItem="Ehs-u2-hN6" firstAttribute="trailing" secondItem="xvx-3l-QCL" secondAttribute="trailing" id="ifd-tQ-av4"/>
+                            <constraint firstItem="xvx-3l-QCL" firstAttribute="leading" secondItem="Ehs-u2-hN6" secondAttribute="leading" id="tje-vU-ggy"/>
+                            <constraint firstItem="xvx-3l-QCL" firstAttribute="top" secondItem="Ehs-u2-hN6" secondAttribute="top" id="x13-Iw-0dL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ehs-u2-hN6"/>
+                    </view>
+                    <connections>
+                        <outlet property="wv" destination="xvx-3l-QCL" id="2A6-C0-vk4"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1352" y="4693"/>
         </scene>
         <!--账户-->
         <scene sceneID="lOk-kz-PUU">
