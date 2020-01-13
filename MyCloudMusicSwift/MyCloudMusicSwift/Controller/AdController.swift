@@ -13,7 +13,12 @@ class AdController: BaseController {
     /// 跳过广告按钮
     @IBOutlet weak var btSkipAd: UIButton!
 
+    /// 异步任务
     var task: DispatchWorkItem!
+
+    /// 广告地址
+    /// 只有点击了启动页后面的广告才有值
+    var adUri: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +57,7 @@ class AdController: BaseController {
     func next() {
         print("AdController next")
 
-        AppDelegate.shared.toHome()
+        AppDelegate.shared.toHome(adUri)
     }
 
     /// 点击了广告
@@ -60,6 +65,19 @@ class AdController: BaseController {
     /// - Parameter sender: <#sender description#>
     @IBAction func onAdClick(_ sender: UIButton) {
         print("AdController onAdClick")
+
+        //正常情况，该界面的广告来自一个接口
+        //他应该包含显示的图片，点击跳转的网址
+        //这里就写死
+
+        //由于当前界面和首页的导航控制器不是同一个
+        //所以不能再这里启动显示广告的页面
+        //而应该在显示首页后，在显示广告页面
+        //因为我们希望用户看完广告，返回的是首页，而不是广告页面
+
+        adUri = "http://www.ixuea.com"
+
+        onSkipAdClick(sender)
     }
 
     /// 点击了跳过广告按钮

@@ -69,3 +69,8 @@ let QQ_APP_SECRET = "b4304961e7299dde6b7b6964bfbb4a7f"
 let WEIBO_APP_KEY = "2844920388"
 let WEIBO_APP_SECRET = "6cc6caafbf20dcbb9c46c0e2c52bfdf5"
 let WEIBO_REDIRECT_URI = "https://github.com/"
+
+// MARK: - 常量字符串
+
+/// 广告点击了发送的事件
+let AD_CLICK = "AD_CLICK"

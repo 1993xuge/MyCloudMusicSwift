@@ -113,14 +113,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func toLoginOrRegister() {
         setRootViewController(name: "LoginOrRegisterNavigation")
     }
-    
+
     /// 显示启动界面后的广告界面
     func toAd() {
         setRootViewController(name: "Ad")
     }
 
     /// 跳转到首页
-    func toHome() {
+    func toHome(_ adUri: String? = nil) {
+        print("AppDelegate toHome:\(adUri)")
+
         setRootViewController(name: "Home")
+
+        if let adUri = adUri {
+            //如果有广告地址
+            //才发送一个通知
+
+            //为什么要发送通知呢？
+            //其实是因为我们在AppDelegate中
+            //不太好拿到发现界面控制器
+
+            // 主线程
+
+            // 直接 发送 太快了，延迟1ms
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: AD_CLICK), object: nil, userInfo: ["adUri": adUri])
+            }
+        }
     }
 }
