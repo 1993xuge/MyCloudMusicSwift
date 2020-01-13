@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfP-t4-NL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342" y="-1300"/>
+            <point key="canvasLocation" x="-342" y="-1239"/>
         </scene>
         <!--Login Or Register Controller-->
         <scene sceneID="Tea-Zi-eyq">
@@ -974,15 +974,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5l-b3-GPt">
-                                <rect key="frame" x="113" y="254" width="21" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjw-Lt-EBM" userLabel="Container">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93o-tO-Vo4" userLabel="AdContainer">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashAd" translatesAutoresizingMaskIntoConstraints="NO" id="hgl-Mi-T2l">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashAdBanner" translatesAutoresizingMaskIntoConstraints="NO" id="nue-3t-N1i">
+                                                <rect key="frame" x="142.5" y="222.5" width="129" height="311"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="129" id="RYD-Hu-JxK"/>
+                                                    <constraint firstAttribute="height" constant="311" id="vO0-EJ-Sfi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YA-RG-f2Z">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgn-4l-hXi">
+                                                <rect key="frame" x="314" y="706" width="80" height="30"/>
+                                                <color key="backgroundColor" red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="1I0-Q1-6sM"/>
+                                                    <constraint firstAttribute="height" constant="30" id="oQa-of-DKw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="跳过">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="1YA-RG-f2Z" firstAttribute="leading" secondItem="93o-tO-Vo4" secondAttribute="leading" id="3v4-HS-Bsq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lgn-4l-hXi" secondAttribute="trailing" constant="20" symbolic="YES" id="5Wg-oC-csG"/>
+                                            <constraint firstItem="hgl-Mi-T2l" firstAttribute="leading" secondItem="93o-tO-Vo4" secondAttribute="leading" id="F58-cc-fzD"/>
+                                            <constraint firstAttribute="trailing" secondItem="hgl-Mi-T2l" secondAttribute="trailing" id="FNW-32-JQg"/>
+                                            <constraint firstAttribute="bottom" secondItem="1YA-RG-f2Z" secondAttribute="bottom" id="HX2-zh-oU3"/>
+                                            <constraint firstAttribute="bottom" secondItem="hgl-Mi-T2l" secondAttribute="bottom" id="LI7-hn-qwt"/>
+                                            <constraint firstAttribute="bottom" secondItem="Lgn-4l-hXi" secondAttribute="bottom" constant="20" symbolic="YES" id="Pf6-0g-wYY"/>
+                                            <constraint firstItem="1YA-RG-f2Z" firstAttribute="top" secondItem="93o-tO-Vo4" secondAttribute="top" id="X6v-DX-c19"/>
+                                            <constraint firstItem="nue-3t-N1i" firstAttribute="centerY" secondItem="93o-tO-Vo4" secondAttribute="centerY" id="XaF-Gs-G4Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="1YA-RG-f2Z" secondAttribute="trailing" id="Xkg-Hh-Mpe"/>
+                                            <constraint firstItem="nue-3t-N1i" firstAttribute="centerX" secondItem="93o-tO-Vo4" secondAttribute="centerX" id="gyq-WH-KaE"/>
+                                            <constraint firstItem="hgl-Mi-T2l" firstAttribute="top" secondItem="93o-tO-Vo4" secondAttribute="top" id="nyQ-eg-MeC"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashLogo" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-YN-Jk6">
+                                        <rect key="frame" x="113" y="776" width="188" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="188" id="Wgd-Ef-7yb"/>
+                                            <constraint firstAttribute="height" constant="32" id="vS5-t0-zry"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2019 Ixuea. All Rights Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9m-kF-a3F">
+                                        <rect key="frame" x="82" y="828" width="250.5" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="ueA-x2-LDV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="e9m-kF-a3F" firstAttribute="top" secondItem="PKh-YN-Jk6" secondAttribute="bottom" constant="20" id="AzU-Ef-TBQ"/>
+                                    <constraint firstItem="93o-tO-Vo4" firstAttribute="leading" secondItem="vjw-Lt-EBM" secondAttribute="leading" id="BUU-yh-h5G"/>
+                                    <constraint firstItem="e9m-kF-a3F" firstAttribute="centerX" secondItem="vjw-Lt-EBM" secondAttribute="centerX" id="cAZ-yg-fu7"/>
+                                    <constraint firstAttribute="trailing" secondItem="93o-tO-Vo4" secondAttribute="trailing" id="fZU-DJ-WZK"/>
+                                    <constraint firstItem="PKh-YN-Jk6" firstAttribute="top" secondItem="93o-tO-Vo4" secondAttribute="bottom" constant="20" id="lMd-gM-obg"/>
+                                    <constraint firstItem="93o-tO-Vo4" firstAttribute="top" secondItem="vjw-Lt-EBM" secondAttribute="top" id="mix-jK-cCK"/>
+                                    <constraint firstItem="PKh-YN-Jk6" firstAttribute="centerX" secondItem="vjw-Lt-EBM" secondAttribute="centerX" id="oRZ-Iv-0jO"/>
+                                    <constraint firstAttribute="bottom" secondItem="e9m-kF-a3F" secondAttribute="bottom" constant="20" id="tIG-KJ-OpK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vjw-Lt-EBM" firstAttribute="top" secondItem="CMA-Vq-ERh" secondAttribute="top" id="2lV-DZ-nrC"/>
+                            <constraint firstItem="t5i-Vk-wVQ" firstAttribute="trailing" secondItem="vjw-Lt-EBM" secondAttribute="trailing" id="HXj-fK-37r"/>
+                            <constraint firstItem="t5i-Vk-wVQ" firstAttribute="bottom" secondItem="vjw-Lt-EBM" secondAttribute="bottom" id="gQE-Fi-pq5"/>
+                            <constraint firstItem="vjw-Lt-EBM" firstAttribute="leading" secondItem="t5i-Vk-wVQ" secondAttribute="leading" id="mqG-WU-OMM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t5i-Vk-wVQ"/>
                     </view>
                 </viewController>
@@ -1002,6 +1077,8 @@
         <image name="LoginWechat" width="42" height="42"/>
         <image name="LoginWechatSelected" width="42" height="42"/>
         <image name="LoginWeibo" width="42" height="42"/>
+        <image name="SplashAd" width="360" height="545"/>
+        <image name="SplashAdBanner" width="129.33332824707031" height="311.33334350585938"/>
         <image name="SplashBanner" width="74.666664123535156" height="309"/>
         <image name="SplashLogo" width="188" height="31.666666030883789"/>
         <image name="TabAccount" width="22" height="22"/>
