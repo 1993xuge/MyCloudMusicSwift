@@ -35,7 +35,18 @@ class SplashController: BaseController {
         if(PreferenceUtil.isShowGuide()) {
             AppDelegate.shared.toGuide()
         } else if PreferenceUtil.isLogin() {
-            AppDelegate.shared.toHome()
+            //表示已经登录了
+            
+            //所以直接跳转到首页
+            // AppDelegate.shared.toHome()
+            
+            //显示广告页面
+            //就显示广告页面
+            //在广告页面再进入主界面
+            //可以根据自己的需求来更改
+            //同时只有用户登陆了
+            //才显示也给用户有更好的体验
+            AppDelegate.shared.toAd()
         } else {
             AppDelegate.shared.toLoginOrRegister()
         }

@@ -113,6 +113,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func toLoginOrRegister() {
         setRootViewController(name: "LoginOrRegisterNavigation")
     }
+    
+    /// 显示启动界面后的广告界面
+    func toAd() {
+        setRootViewController(name: "Ad")
+    }
 
     /// 跳转到首页
     func toHome() {

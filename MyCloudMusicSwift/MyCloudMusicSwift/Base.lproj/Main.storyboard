@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1233" y="-594"/>
+            <point key="canvasLocation" x="-1233" y="-960"/>
         </scene>
         <!--Guide Controller-->
         <scene sceneID="530-0A-4qN">
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfP-t4-NL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342" y="-595"/>
+            <point key="canvasLocation" x="-342" y="-1300"/>
         </scene>
         <!--Login Or Register Controller-->
         <scene sceneID="Tea-Zi-eyq">
@@ -250,7 +250,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvh-AN-Hwt">
-                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
+                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="JSx-5u-VMG"/>
                                                                                 </constraints>
@@ -272,7 +272,7 @@
                                                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yse-Xd-47S">
-                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
+                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="tsl-A8-5yd"/>
                                                                                 </constraints>
@@ -294,7 +294,7 @@
                                                                         <rect key="frame" x="187" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ro-2U-Bua">
-                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
+                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="OTd-PK-QVp"/>
                                                                                 </constraints>
@@ -316,7 +316,7 @@
                                                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyg-7s-IYN">
-                                                                                <rect key="frame" x="39" y="0.0" width="16" height="42"/>
+                                                                                <rect key="frame" x="26" y="0.0" width="42" height="42"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="42" id="Lsi-ku-9Ap"/>
                                                                                 </constraints>
@@ -965,6 +965,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQF-dZ-Bcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-423.1884057971015" y="3869.8660714285711"/>
+        </scene>
+        <!--Ad Controller-->
+        <scene sceneID="Em6-ZP-pLM">
+            <objects>
+                <viewController storyboardIdentifier="Ad" id="Eq8-at-R2E" customClass="AdController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CMA-Vq-ERh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5l-b3-GPt">
+                                <rect key="frame" x="113" y="254" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="t5i-Vk-wVQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqW-6d-kG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-342" y="-577"/>
         </scene>
     </scenes>
     <resources>
