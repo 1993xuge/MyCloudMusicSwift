@@ -63,7 +63,7 @@ class RegisterController: BaseLoginController {
         if let _ = openId {
             //是第三方登录后跳转过来的
             //设置标题
-            navigationItem.title = "补充资料"
+            setTitle("补充资料")
             //将昵称显示到输入框
             tfNickname.text = nickname
 
@@ -71,7 +71,7 @@ class RegisterController: BaseLoginController {
             btRegister.setTitle("完成注册", for: .normal)
         } else {
             //不是第三方登录
-            navigationItem.title = "注册"
+            setTitle("注册")
         }
     }
 

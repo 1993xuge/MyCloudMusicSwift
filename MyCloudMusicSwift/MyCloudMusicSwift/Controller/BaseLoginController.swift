@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class BaseLoginController: BaseCommonController {
+class BaseLoginController: BaseTitleController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -25,7 +25,7 @@ class LoginController: BaseLoginController {
     }
 
     override func initViews() {
-        navigationItem.title = "登录"
+        setTitle("登录")
 
         // 显示 图标
         tfUsername.showLeftIcon(name: "LoginItemPhone")

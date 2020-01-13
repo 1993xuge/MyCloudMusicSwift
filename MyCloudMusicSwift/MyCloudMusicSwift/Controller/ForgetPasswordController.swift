@@ -38,8 +38,7 @@ class ForgetPasswordController: BaseLoginController {
 
     override func initViews() {
         super.initViews()
-
-        navigationItem.title = "找回密码"
+        setTitle("找回密码")
 
         //按钮圆角
         ViewUtil.showLargeRadius(view: btResetPassword)

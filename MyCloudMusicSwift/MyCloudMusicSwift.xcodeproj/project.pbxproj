@@ -57,6 +57,7 @@
 		D5752D0123CBFD0E0058FE0F /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752D0023CBFD0E0058FE0F /* AccountController.swift */; };
 		D5752D3D23CC3F2F0058FE0F /* AdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752D3C23CC3F2E0058FE0F /* AdController.swift */; };
 		D5752D3F23CCC10D0058FE0F /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752D3E23CCC10D0058FE0F /* WebController.swift */; };
+		D5752D4123CD35060058FE0F /* BaseTitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752D4023CD35060058FE0F /* BaseTitleController.swift */; };
 		D57905F323C76291003A4B95 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F223C76291003A4B95 /* RegisterController.swift */; };
 		D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F423C776CC003A4B95 /* TextFieldExtend.swift */; };
 		D57905F723C778D2003A4B95 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57905F623C778D2003A4B95 /* BaseController.swift */; };
@@ -156,6 +157,7 @@
 		D5752D0023CBFD0E0058FE0F /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		D5752D3C23CC3F2E0058FE0F /* AdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdController.swift; sourceTree = "<group>"; };
 		D5752D3E23CCC10D0058FE0F /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
+		D5752D4023CD35060058FE0F /* BaseTitleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTitleController.swift; sourceTree = "<group>"; };
 		D57905F223C76291003A4B95 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		D57905F423C776CC003A4B95 /* TextFieldExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtend.swift; sourceTree = "<group>"; };
 		D57905F623C778D2003A4B95 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				D5752D0023CBFD0E0058FE0F /* AccountController.swift */,
 				D5752D3C23CC3F2E0058FE0F /* AdController.swift */,
 				D5752D3E23CCC10D0058FE0F /* WebController.swift */,
+				D5752D4023CD35060058FE0F /* BaseTitleController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				D5752CDF23C954040058FE0F /* SheetWrapper.swift in Sources */,
 				D5752D0123CBFD0E0058FE0F /* AccountController.swift in Sources */,
 				D594D34723C61D890082F9F3 /* Constant.swift in Sources */,
+				D5752D4123CD35060058FE0F /* BaseTitleController.swift in Sources */,
 				D55801AC23C6E68300BD5335 /* YJHollowPageControl.m in Sources */,
 				D57905F323C76291003A4B95 /* RegisterController.swift in Sources */,
 				D5752CF123C9BA780058FE0F /* Session.swift in Sources */,
