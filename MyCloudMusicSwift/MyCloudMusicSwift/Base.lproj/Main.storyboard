@@ -381,30 +381,6 @@
             </objects>
             <point key="canvasLocation" x="-342" y="117"/>
         </scene>
-        <!--Home Controller-->
-        <scene sceneID="BAN-SA-8c8">
-            <objects>
-                <viewController storyboardIdentifier="Home" id="H67-DW-7aI" customClass="HomeController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MSh-7v-Ecn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXe-UK-kin">
-                                <rect key="frame" x="185" y="325" width="46" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="6nh-e4-xmT"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8TJ-dZ-qWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1233" y="838"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="XwX-9x-OEK">
             <objects>
@@ -626,6 +602,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2Z-A3-KZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="714" y="491"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="VAD-4W-OHS">
+            <objects>
+                <viewController id="E8W-Hz-7NN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="is2-k4-4Ak">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="视频" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP6-bC-BOT">
+                                <rect key="frame" x="199" y="459" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uf8-q8-heq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="WDH-Ny-dVP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQM-gT-Q2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-342" y="2735"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="l2P-1s-U14">
+            <objects>
+                <viewController id="YZd-0e-iO3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bhU-tT-Pz5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="发现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJM-2J-x9q">
+                                <rect key="frame" x="171" y="470" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ePU-Bg-fQp"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="v1j-tC-F3o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40P-1g-2sy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-342" y="1854"/>
+        </scene>
+        <!--Home Controller-->
+        <scene sceneID="v6P-Qk-jh4">
+            <objects>
+                <tabBarController storyboardIdentifier="Home" id="zWE-fM-D3n" customClass="HomeController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y36-EM-80m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YZd-0e-iO3" kind="relationship" relationship="viewControllers" id="hA5-Er-K4x"/>
+                        <segue destination="E8W-Hz-7NN" kind="relationship" relationship="viewControllers" id="eyc-5O-ADl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mk7-dN-WBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1233" y="2406"/>
         </scene>
         <!--Forget Password Controller-->
         <scene sceneID="Oeo-17-8hI">
