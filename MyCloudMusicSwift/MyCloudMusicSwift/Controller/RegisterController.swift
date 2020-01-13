@@ -174,5 +174,9 @@ class RegisterController: BaseLoginController {
     /// 注册协议点击
     @IBAction func onAgreementClick(_ sender: UIButton) {
         print("RegisterController onAgreementClick")
+        //使用web控制器打开用户协议
+        //这里打开的是爱学啊官网用户协议
+        //大家可以根据实际情况修改
+        WebController.start(navigationController!, "用户协议", "http://www.ixuea.com/posts/1")
     }
 }
