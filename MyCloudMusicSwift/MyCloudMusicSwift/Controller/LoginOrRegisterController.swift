@@ -32,6 +32,34 @@ class LoginOrRegisterController: BaseCommonController {
         ViewUtil.showLargeRadius(view: btnLogin)
         ViewUtil.showLargeRadius(view: btnRegister)
     }
+    
+    /// 视图即将可见
+    ///
+    /// - Parameter animated: <#animated description#>
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("LoginOrRegisterController viewWillAppear")
+        
+        //隐藏导航栏
+        navigationController!.setNavigationBarHidden(true, animated: true)
+    }
+    
+    /// 视图即将消息
+    /// will:即将
+    /// did:已经
+    /// 其他方法也是遵循这个命名规范的
+    ///
+    /// - Parameter animated: <#animated description#>
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("LoginOrRegisterController viewWillDisappear")
+        
+        //显示导航栏
+        //因为其他界面可能不需要隐藏
+        navigationController!.setNavigationBarHidden(false, animated: true)
+    }
 
     /// 按下
     ///
