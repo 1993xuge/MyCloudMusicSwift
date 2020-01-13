@@ -11,7 +11,7 @@ import UIKit
 import Moya
 import RxSwift
 
-class LoginOrRegisterController: BaseCommonController {
+class LoginOrRegisterController: BaseTitleController {
 
     // 登录
     @IBOutlet weak var btnLogin: UIButton!
@@ -33,32 +33,8 @@ class LoginOrRegisterController: BaseCommonController {
         ViewUtil.showLargeRadius(view: btnRegister)
     }
     
-    /// 视图即将可见
-    ///
-    /// - Parameter animated: <#animated description#>
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("LoginOrRegisterController viewWillAppear")
-        
-        //隐藏导航栏
-        navigationController!.setNavigationBarHidden(true, animated: true)
-    }
-    
-    /// 视图即将消息
-    /// will:即将
-    /// did:已经
-    /// 其他方法也是遵循这个命名规范的
-    ///
-    /// - Parameter animated: <#animated description#>
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        print("LoginOrRegisterController viewWillDisappear")
-        
-        //显示导航栏
-        //因为其他界面可能不需要隐藏
-        navigationController!.setNavigationBarHidden(false, animated: true)
+    override func hideNavigationBar() -> Bool {
+        return true
     }
 
     /// 按下
@@ -68,7 +44,6 @@ class LoginOrRegisterController: BaseCommonController {
         // 设置 按钮 按下的颜色
         sender.backgroundColor = UIColor(hex: COLOR_PRIMARY)
     }
-
 
     /// 抬起，在按钮内 抬起
     ///
