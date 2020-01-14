@@ -38,6 +38,9 @@ let SIZE_BUTTON_ENTER_HEIGHT = 44.0
 /// 大圆角
 let SIZE_LARGE_RADIUS = 22
 
+//小圆角
+let SIZE_SMALL_RADIUS = 5
+
 /// 边框宽度
 let SIZE_BORDER = 1.0
 

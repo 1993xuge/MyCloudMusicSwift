@@ -23,6 +23,9 @@ class DiscoveryHeaderView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        // 设置 轮播图 圆角
+        ViewUtil.showSmallRadius(bannerView)
+
         initBannerView()
     }
 

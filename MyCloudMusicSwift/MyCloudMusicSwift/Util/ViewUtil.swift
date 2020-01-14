@@ -15,6 +15,13 @@ class ViewUtil {
     static func showLargeRadius(view: UIView) {
         showRadius(view, Float(SIZE_LARGE_RADIUS))
     }
+    
+    /// 显示小的圆角
+    ///
+    /// - Parameter view: <#view description#>
+    static func showSmallRadius(_ view:UIView) {
+        showRadius(view, Float(SIZE_SMALL_RADIUS))
+    }
 
     /// 设置圆角
     ///
