@@ -44,6 +44,12 @@ let SIZE_SMALL_RADIUS = 5
 /// 边框宽度
 let SIZE_BORDER = 1.0
 
+/// 发现界面；Cell标题高度
+let SIZE_TITLE_HEIGHT:CGFloat = 40
+
+/// 大分割线
+let SIZE_LARGE_DIVIDER:CGFloat = 10
+
 // MARK: - 颜色
 /// 全局主色调
 /// PRIMARY后缀其实是参考了Android中颜色的命名
