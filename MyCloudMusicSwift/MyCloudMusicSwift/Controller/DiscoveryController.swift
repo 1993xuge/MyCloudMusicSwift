@@ -15,6 +15,9 @@ class DiscoveryController: BaseCommonController {
     /// 当前界面头部布局
     var header: DiscoveryHeaderView!
 
+    /// 当前界面列表数据
+    var dataArray: [Any] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -37,6 +40,9 @@ class DiscoveryController: BaseCommonController {
         super.initDatas()
 
         fetchBanner()
+        
+        fetchData()
+        
     }
 
     func fetchBanner() {
@@ -48,10 +54,31 @@ class DiscoveryController: BaseCommonController {
         }.disposed(by: disposeBag)
     }
     
+    /// 加载首页数据
+    func fetchData() {
+        //添加一些测试数据
+        dataArray.append("这是标题1")
+        dataArray.append("这是标题2")
+        dataArray.append("这是标题3")
+        dataArray.append("这是标题4")
+        dataArray.append("这是标题5")
+        dataArray.append("这是标题6")
+        dataArray.append("这是标题7")
+        dataArray.append("这是标题8")
+        dataArray.append("这是标题9")
+        dataArray.append("这是标题10")
+        dataArray.append("这是标题11")
+        dataArray.append("这是标题12")
+        dataArray.append("这是标题13")
+        
+        //重新加载数据
+        collectionView.reloadData()
+    }
+
     /// 显示轮播图数据
     ///
     /// - Parameter data: <#data description#>
-    func showBannerData(_ data:[Ad]) {
+    func showBannerData(_ data: [Ad]) {
         //将数据设置到头部控件中
         header.bindData(data)
     }
@@ -87,7 +114,7 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
     ///   - section: <#section description#>
     /// - Returns: <#return value description#>
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return dataArray.count
     }
 
     /// 返回当前位置的Cell
@@ -98,7 +125,13 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
     /// - Returns: <#return value description#>
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCell.NAME, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCell.NAME, for: indexPath) as! TitleCell
+
+        //取出当前位置对应的数据
+        let data = dataArray[indexPath.row]
+
+        //绑定数据
+        cell.bindData(data as! String)
 
         return cell
     }
@@ -113,12 +146,12 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
         //才能回调到当前界面
 
         header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DiscoveryHeaderView.NAME, for: indexPath) as! DiscoveryHeaderView
-        
+
         //设置轮播图点击的回调方法
         //类似于OC中的block
         header.onBannerClick = { data in
             print("DiscoveryController onBannerClick:\(data.title)")
-            
+
             //使用Web控制器显示广告界面
             WebController.start(self.navigationController!, data.title, data.uri)
         }
@@ -130,7 +163,7 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
         //获取到当前CollectionView的宽度
         let collectionViewWidth = collectionView.frame.width
 
-        return CGSize(width: collectionViewWidth, height: 300)
+        return CGSize(width: collectionViewWidth, height: 270)
     }
 }
 
@@ -164,10 +197,6 @@ extension DiscoveryController: UICollectionViewDelegateFlowLayout {
         //获取CollectionView的宽
         let collectionViewWidth = collectionView.frame.width
 
-        //计算每列的宽度
-        let width = (collectionViewWidth - 10 * 2) / 3
-
-        //返回当前Cell宽高
-        return CGSize(width: width, height: width)
+        return CGSize(width: collectionViewWidth, height: 40)
     }
 }
