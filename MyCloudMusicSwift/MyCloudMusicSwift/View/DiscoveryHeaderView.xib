@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,16 +20,105 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-Ws-px3" userLabel="Container">
                     <rect key="frame" x="20" y="20" width="773" height="288"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-8L-ufL">
-                            <rect key="frame" x="20" y="0.0" width="733" height="140"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-8L-ufL">
+                            <rect key="frame" x="20" y="0.0" width="733" height="240"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYk-0b-jYA" customClass="YJBannerView">
                                     <rect key="frame" x="0.0" y="0.0" width="733" height="140"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="ColorPrimary"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="140" id="Osl-Bo-77g"/>
                                     </constraints>
                                 </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yOn-Hu-hrC">
+                                    <rect key="frame" x="0.0" y="160" width="733" height="80"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-0a-qCo">
+                                            <rect key="frame" x="0.0" y="0.0" width="183.5" height="80"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyg-nv-q2W">
+                                                    <rect key="frame" x="66.5" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="UJW-Tc-4DY"/>
+                                                        <constraint firstAttribute="height" constant="50" id="i3s-cc-ZNZ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Day"/>
+                                                    <state key="highlighted" image="DaySelected"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每日推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-lb-q8L">
+                                                    <rect key="frame" x="57" y="50" width="69.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hJo-Jz-zqb">
+                                            <rect key="frame" x="183.5" y="0.0" width="183" height="80"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvx-WB-IwE">
+                                                    <rect key="frame" x="66.5" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="GsS-QO-fFZ"/>
+                                                        <constraint firstAttribute="height" constant="50" id="OCf-2I-5gh"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Sheet"/>
+                                                    <state key="highlighted" image="SheetSelected"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZL-cs-lom">
+                                                    <rect key="frame" x="74" y="50" width="35" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uva-wY-0qh">
+                                            <rect key="frame" x="366.5" y="0.0" width="183.5" height="80"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIb-iA-GbD">
+                                                    <rect key="frame" x="66.5" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="P5m-UW-yxa"/>
+                                                        <constraint firstAttribute="width" constant="50" id="pab-z3-8u2"/>
+                                                    </constraints>
+                                                    <state key="normal" image="FM"/>
+                                                    <state key="highlighted" image="FMSelected"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私人FM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59U-hf-Uhj">
+                                                    <rect key="frame" x="62.5" y="50" width="58.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RXN-N3-UeS">
+                                            <rect key="frame" x="550" y="0.0" width="183" height="80"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1il-4c-Dbn">
+                                                    <rect key="frame" x="66.5" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="7r2-Uy-AJ1"/>
+                                                        <constraint firstAttribute="width" constant="50" id="Nc4-4s-U0j"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Rank"/>
+                                                    <state key="highlighted" image="RankSelected"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排行榜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raf-y0-WIZ">
+                                                    <rect key="frame" x="65.5" y="50" width="52" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="4Nb-CX-KiF"/>
+                                    </constraints>
+                                </stackView>
                             </subviews>
                         </stackView>
                     </subviews>
@@ -52,4 +142,17 @@
             <point key="canvasLocation" x="-261.59420289855075" y="121.875"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="Day" width="50" height="50"/>
+        <image name="DaySelected" width="50" height="50"/>
+        <image name="FM" width="50" height="50"/>
+        <image name="FMSelected" width="50" height="50"/>
+        <image name="Rank" width="50" height="50"/>
+        <image name="RankSelected" width="50" height="50"/>
+        <image name="Sheet" width="50" height="50"/>
+        <image name="SheetSelected" width="50" height="50"/>
+        <namedColor name="ColorPrimary">
+            <color red="0.8666666666666667" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
