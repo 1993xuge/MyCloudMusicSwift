@@ -89,13 +89,13 @@ extension DiscoveryController: UICollectionViewDelegateFlowLayout {
     ///
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
-        return 0
+        return 10
     }
 
     /// 返回每个Cell的列间距
     ///
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
 
     /// 返回当前Cell的大小
@@ -105,7 +105,7 @@ extension DiscoveryController: UICollectionViewDelegateFlowLayout {
         let collectionViewWidth = collectionView.frame.width
 
         //计算每列的宽度
-        let width = collectionViewWidth / 3
+        let width = (collectionViewWidth - 10 * 2) / 3
 
         //返回当前Cell宽高
         return CGSize(width: width, height: width)
