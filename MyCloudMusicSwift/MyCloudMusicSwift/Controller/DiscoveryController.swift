@@ -12,6 +12,9 @@ class DiscoveryController: BaseCommonController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    /// 当前界面头部布局
+    var header: DiscoveryHeaderView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,11 +22,17 @@ class DiscoveryController: BaseCommonController {
     override func initViews() {
         navigationItem.title = "发现"
 
-        //
+
+        // 注册 头部
+        collectionView.register(UINib(nibName: DiscoveryHeaderView.NAME, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DiscoveryHeaderView.NAME)
+
+        // 创建 有个 标题 NIB
         let titleNib = UINib(nibName: TitleCell.NAME, bundle: nil)
 
         // 注册Cell
         collectionView.register(titleNib, forCellWithReuseIdentifier: TitleCell.NAME)
+
+
     }
 
     override func initListeners() {
@@ -71,6 +80,27 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCell.NAME, for: indexPath)
 
         return cell
+    }
+
+    /// 返回CollectionView的Header
+    ///
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        //将header中的内容都封装到单独的View中
+        //好处是当前界面简洁一些
+        //但坏处是头部的点击事件，需要通过一些方法
+        //才能回调到当前界面
+
+        header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DiscoveryHeaderView.NAME, for: indexPath) as! DiscoveryHeaderView
+
+        return header
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        //获取到当前CollectionView的宽度
+        let collectionViewWidth=collectionView.frame.width
+        
+        return CGSize(width: collectionViewWidth, height: 100)
     }
 }
 
