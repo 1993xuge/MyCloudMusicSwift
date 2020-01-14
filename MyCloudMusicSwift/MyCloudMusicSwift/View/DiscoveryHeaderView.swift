@@ -14,8 +14,9 @@ class DiscoveryHeaderView: BaseCollectionReusableView {
 
     /// 轮播图
     @IBOutlet weak var bannerView: YJBannerView!
-    
-    
+
+    @IBOutlet weak var lbDay: UILabel!
+
 
     /// 轮播图点击回调方法
     var onBannerClick: ((_ data: Ad) -> Void)!
@@ -25,11 +26,11 @@ class DiscoveryHeaderView: BaseCollectionReusableView {
 
     /// 用来保存广告数据
     var data: [Ad]!
-    
+
     override func initViews() {
         // 设置 轮播图 圆角
         ViewUtil.showSmallRadius(bannerView)
-        
+
         initBannerView()
     }
 
@@ -56,6 +57,31 @@ class DiscoveryHeaderView: BaseCollectionReusableView {
         //        bannerView.reloadData()
     }
 
+    override func initDatas() {
+        super.initDatas()
+        
+        initDay()
+    }
+    
+    func initDay() {
+        //设置每日推荐按钮显示的数据
+        
+        //获取当前日期
+        let now = Date()
+        
+        //创建一个日期格式化器
+        let formatter = DateFormatter()
+        
+        //只获取天（2位）
+        formatter.dateFormat = "dd"
+        
+        //格式化日期
+        let day = formatter.string(from: now)
+        
+        //将格式化后的字符串设置label
+        lbDay.text=day
+    }
+
     /// 显示数据
     ///
     func bindData(_ data: [Ad]) {
@@ -75,33 +101,33 @@ class DiscoveryHeaderView: BaseCollectionReusableView {
         //通知轮播图框架从新加载数据
         bannerView.reloadData()
     }
-    
+
     // MARK: - 快捷按钮点击事件
-    
+
     /// 每日推荐按钮点击
     ///
     @IBAction func onDayClick(_ sender: UIButton) {
         print("DiscoveryHeaderView onDayClick")
     }
-    
+
     /// 歌单按钮点击
     ///
     @IBAction func onSheetClick(_ sender: UIButton) {
         print("DiscoveryHeaderView onSheetClick")
     }
-    
+
     /// 私人FM点击
     ///
     @IBAction func onFMClick(_ sender: UIButton) {
         print("DiscoveryHeaderView onFMClick")
     }
-    
+
     /// 排行榜点击
     ///
     @IBAction func onRankClick(_ sender: UIButton) {
         print("DiscoveryHeaderView onRankClick")
     }
-    
+
 }
 
 extension DiscoveryHeaderView: YJBannerViewDataSource, YJBannerViewDelegate {
