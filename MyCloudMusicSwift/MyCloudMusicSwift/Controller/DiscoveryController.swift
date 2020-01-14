@@ -31,8 +31,6 @@ class DiscoveryController: BaseCommonController {
 
         // 注册Cell
         collectionView.register(titleNib, forCellWithReuseIdentifier: TitleCell.NAME)
-
-
     }
 
     override func initDatas() {
@@ -115,6 +113,15 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
         //才能回调到当前界面
 
         header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DiscoveryHeaderView.NAME, for: indexPath) as! DiscoveryHeaderView
+        
+        //设置轮播图点击的回调方法
+        //类似于OC中的block
+        header.onBannerClick = { data in
+            print("DiscoveryController onBannerClick:\(data.title)")
+            
+            //使用Web控制器显示广告界面
+            WebController.start(self.navigationController!, data.title, data.uri)
+        }
 
         return header
     }

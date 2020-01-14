@@ -12,11 +12,17 @@ class DiscoveryHeaderView: UICollectionReusableView {
 
     static let NAME = "DiscoveryHeaderView"
 
+    /// 轮播图
+    @IBOutlet weak var bannerView: YJBannerView!
+
+    /// 轮播图点击回调方法
+    var onBannerClick: ((_ data: Ad) -> Void)!
+
     /// 轮播图的数据
     var dataArray: [String] = []
 
-    /// 轮播图
-    @IBOutlet weak var bannerView: YJBannerView!
+    /// 用来保存广告数据
+    var data: [Ad]!
 
     /// 当系统创建完成后Nib后
     /// 因为我们在可视化中关联他
@@ -56,6 +62,8 @@ class DiscoveryHeaderView: UICollectionReusableView {
     ///
     func bindData(_ data: [Ad]) {
 
+        self.data = data
+
         //清除原来的数据
         dataArray.removeAll()
 
@@ -93,5 +101,17 @@ extension DiscoveryHeaderView: YJBannerViewDataSource, YJBannerViewDelegate {
         cell.showImageViewContentMode = .scaleAspectFill
 
         return cell
+    }
+
+    /// banner点击回调方法
+    ///
+    func bannerView(_ bannerView: YJBannerView!, didSelectItemAt index: Int) {
+        print("DiscoveryHeaderView didSelectItemAtIndex:\(index)")
+
+        //获取当前点击的广告对象
+        let ad = data[index]
+
+        //调用轮播图回调方法
+        onBannerClick(ad)
     }
 }
