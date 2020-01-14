@@ -14,6 +14,8 @@ class DiscoveryHeaderView: BaseCollectionReusableView {
 
     /// 轮播图
     @IBOutlet weak var bannerView: YJBannerView!
+    
+    
 
     /// 轮播图点击回调方法
     var onBannerClick: ((_ data: Ad) -> Void)!
@@ -73,6 +75,33 @@ class DiscoveryHeaderView: BaseCollectionReusableView {
         //通知轮播图框架从新加载数据
         bannerView.reloadData()
     }
+    
+    // MARK: - 快捷按钮点击事件
+    
+    /// 每日推荐按钮点击
+    ///
+    @IBAction func onDayClick(_ sender: UIButton) {
+        print("DiscoveryHeaderView onDayClick")
+    }
+    
+    /// 歌单按钮点击
+    ///
+    @IBAction func onSheetClick(_ sender: UIButton) {
+        print("DiscoveryHeaderView onSheetClick")
+    }
+    
+    /// 私人FM点击
+    ///
+    @IBAction func onFMClick(_ sender: UIButton) {
+        print("DiscoveryHeaderView onFMClick")
+    }
+    
+    /// 排行榜点击
+    ///
+    @IBAction func onRankClick(_ sender: UIButton) {
+        print("DiscoveryHeaderView onRankClick")
+    }
+    
 }
 
 extension DiscoveryHeaderView: YJBannerViewDataSource, YJBannerViewDelegate {

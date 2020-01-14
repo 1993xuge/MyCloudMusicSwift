@@ -44,6 +44,9 @@
                                                     </constraints>
                                                     <state key="normal" image="Day"/>
                                                     <state key="highlighted" image="DaySelected"/>
+                                                    <connections>
+                                                        <action selector="onDayClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="S7x-kj-tw9"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每日推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-lb-q8L">
                                                     <rect key="frame" x="57" y="50" width="69.5" height="30"/>
@@ -64,6 +67,9 @@
                                                     </constraints>
                                                     <state key="normal" image="Sheet"/>
                                                     <state key="highlighted" image="SheetSelected"/>
+                                                    <connections>
+                                                        <action selector="onSheetClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="pF4-TC-Xjr"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZL-cs-lom">
                                                     <rect key="frame" x="74" y="50" width="35" height="30"/>
@@ -84,6 +90,9 @@
                                                     </constraints>
                                                     <state key="normal" image="FM"/>
                                                     <state key="highlighted" image="FMSelected"/>
+                                                    <connections>
+                                                        <action selector="onFMClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="Foq-eO-JsO"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私人FM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59U-hf-Uhj">
                                                     <rect key="frame" x="62.5" y="50" width="58.5" height="30"/>
@@ -104,6 +113,9 @@
                                                     </constraints>
                                                     <state key="normal" image="Rank"/>
                                                     <state key="highlighted" image="RankSelected"/>
+                                                    <connections>
+                                                        <action selector="onRankClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="Wsd-3x-BZW"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排行榜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raf-y0-WIZ">
                                                     <rect key="frame" x="65.5" y="50" width="52" height="30"/>
