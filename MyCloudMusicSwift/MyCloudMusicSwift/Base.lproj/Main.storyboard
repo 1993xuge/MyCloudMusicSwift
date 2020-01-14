@@ -714,7 +714,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="atA-lq-271">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NRv-e4-12M">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -976,7 +976,6 @@
         <!--Web Controller-->
         <scene sceneID="O1F-gN-U48">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IKu-n4-NZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Web" hidesBottomBarWhenPushed="YES" id="css-Bt-iai" customClass="WebController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eno-5I-eij">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1004,6 +1003,7 @@
                         <outlet property="wv" destination="xvx-3l-QCL" id="2A6-C0-vk4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKu-n4-NZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1352" y="4693"/>
         </scene>

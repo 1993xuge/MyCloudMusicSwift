@@ -13,21 +13,43 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="DiscoveryHeaderView" customModule="MyCloudMusicSwift" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="813" height="308"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-Ws-px3">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-Ws-px3" userLabel="Container">
+                    <rect key="frame" x="20" y="20" width="773" height="288"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-8L-ufL">
+                            <rect key="frame" x="20" y="0.0" width="733" height="140"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYk-0b-jYA" customClass="YJBannerView">
+                                    <rect key="frame" x="0.0" y="0.0" width="733" height="140"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="140" id="Osl-Bo-77g"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="EZf-8L-ufL" firstAttribute="leading" secondItem="l7T-Ws-px3" secondAttribute="leading" constant="20" symbolic="YES" id="Bc8-sQ-Kfu"/>
+                        <constraint firstItem="EZf-8L-ufL" firstAttribute="top" secondItem="l7T-Ws-px3" secondAttribute="top" id="ERe-Qs-62K"/>
+                        <constraint firstAttribute="trailing" secondItem="EZf-8L-ufL" secondAttribute="trailing" constant="20" symbolic="YES" id="MJu-rV-e0l"/>
+                    </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="l7T-Ws-px3" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="GKn-Ca-zrZ"/>
-                <constraint firstAttribute="trailing" secondItem="l7T-Ws-px3" secondAttribute="trailing" id="Gph-2j-C1y"/>
+                <constraint firstItem="l7T-Ws-px3" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="20" id="GKn-Ca-zrZ"/>
+                <constraint firstAttribute="trailing" secondItem="l7T-Ws-px3" secondAttribute="trailing" constant="20" id="Gph-2j-C1y"/>
                 <constraint firstAttribute="bottom" secondItem="l7T-Ws-px3" secondAttribute="bottom" id="Vbq-5p-e5l"/>
-                <constraint firstItem="l7T-Ws-px3" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="ykG-ca-2SV"/>
+                <constraint firstItem="l7T-Ws-px3" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="20" id="ykG-ca-2SV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="bannerView" destination="mYk-0b-jYA" id="RyK-4E-rDC"/>
+            </connections>
+            <point key="canvasLocation" x="-261.59420289855075" y="121.875"/>
         </collectionReusableView>
     </objects>
 </document>

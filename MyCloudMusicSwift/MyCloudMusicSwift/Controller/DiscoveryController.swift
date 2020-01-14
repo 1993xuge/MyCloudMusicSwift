@@ -100,7 +100,7 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
         //获取到当前CollectionView的宽度
         let collectionViewWidth=collectionView.frame.width
         
-        return CGSize(width: collectionViewWidth, height: 100)
+        return CGSize(width: collectionViewWidth, height: 300)
     }
 }
 
