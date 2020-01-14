@@ -18,10 +18,10 @@ class DiscoveryController: BaseCommonController {
 
     override func initViews() {
         navigationItem.title = "发现"
-        
+
         //
         let titleNib = UINib(nibName: TitleCell.NAME, bundle: nil)
-        
+
         // 注册Cell
         collectionView.register(titleNib, forCellWithReuseIdentifier: TitleCell.NAME)
     }
@@ -49,7 +49,7 @@ class DiscoveryController: BaseCommonController {
 }
 
 extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
+
     /// 返回有多个条目
     ///
     /// - Parameters:
@@ -59,7 +59,7 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
-    
+
     /// 返回当前位置的Cell
     ///
     /// - Parameters:
@@ -67,9 +67,47 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
     ///   - indexPath: <#indexPath description#>
     /// - Returns: <#return value description#>
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCell.NAME, for: indexPath)
-        
+
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout代理相关的方法
+// 返回CollectionView相关的间隔
+extension DiscoveryController: UICollectionViewDelegateFlowLayout {
+
+    /// 返回CollectionView里面的Cell到CollectionView的间距
+    ///
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
+    /// 返回每个Cell的行间距
+    ///
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+
+        return 0
+    }
+
+    /// 返回每个Cell的列间距
+    ///
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    /// 返回当前Cell的大小
+    ///
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //获取CollectionView的宽
+        let collectionViewWidth = collectionView.frame.width
+
+        //计算每列的宽度
+        let width = collectionViewWidth / 3
+
+        //返回当前Cell宽高
+        return CGSize(width: width, height: width)
     }
 }
