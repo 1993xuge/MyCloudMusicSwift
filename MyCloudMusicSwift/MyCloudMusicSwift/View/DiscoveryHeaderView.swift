@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiscoveryHeaderView: UICollectionReusableView {
+class DiscoveryHeaderView: BaseCollectionReusableView {
 
     static let NAME = "DiscoveryHeaderView"
 
@@ -23,15 +23,11 @@ class DiscoveryHeaderView: UICollectionReusableView {
 
     /// 用来保存广告数据
     var data: [Ad]!
-
-    /// 当系统创建完成后Nib后
-    /// 因为我们在可视化中关联他
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
+    
+    override func initViews() {
         // 设置 轮播图 圆角
         ViewUtil.showSmallRadius(bannerView)
-
+        
         initBannerView()
     }
 
