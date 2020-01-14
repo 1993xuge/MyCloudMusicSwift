@@ -15,3 +15,6 @@
 
 //导入倒计时框架
 #import "CountDown.h"
+
+//图片加载框架
+#import "SDWebImage/UIImageView+WebCache.h"

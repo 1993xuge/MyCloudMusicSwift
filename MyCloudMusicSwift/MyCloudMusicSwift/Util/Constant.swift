@@ -18,9 +18,15 @@ let DEBUG = true
 /// 网络接口的地址
 let ENDPOINT="http://dev-my-cloud-music-api-rails.ixuea.com"
 
+/// 资源接口地址
+let RESOURCE_ENDPOINT="http://dev-courses-misuc.ixuea.com"
+
 // MARK: - 正式环境
 ///// 网络接口的地址
 //let ENDPOINT="http://my-cloud-music-api-rails.ixuea.com"
+
+/// 资源接口地址
+//let RESOURCE_ENDPOINT="http://courses-misuc.ixuea.com"
 
 // MARK: - 尺寸
 ///立即体验按钮宽度

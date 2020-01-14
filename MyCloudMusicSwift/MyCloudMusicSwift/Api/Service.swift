@@ -26,6 +26,8 @@ enum Service {
 
     case sendSMSCode(phone: String)
     case sendEmailCode(email: String)
+    
+    case ads
 }
 
 // MARK: - 实现TargetType协议
@@ -54,6 +56,9 @@ extension Service: TargetType {
             return "/v1/codes/request_sms_code"
         case .sendEmailCode:
             return "/v1/codes/request_email_code"
+            
+        case .ads:
+            return "/v1/ads"
         default:
             return ""
         }

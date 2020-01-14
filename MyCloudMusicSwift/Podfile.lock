@@ -31,6 +31,9 @@ PODS:
     - RxSwift (~> 5.0)
   - Result (4.1.0)
   - RxSwift (5.0.1)
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
 
 DEPENDENCIES:
   - HandyJSON (= 5.0.0-beta.1)
@@ -43,6 +46,7 @@ DEPENDENCIES:
   - mob_sharesdk/ShareSDKUI
   - Moya/RxSwift (= 14.0.0-alpha.1)
   - RxSwift (~> 5)
+  - SDWebImage (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -54,6 +58,7 @@ SPEC REPOS:
     - Moya
     - Result
     - RxSwift
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -64,7 +69,8 @@ SPEC CHECKSUMS:
   Moya: 65485239114b3b327a17dc2e839f6c8b7143aae9
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
 
-PODFILE CHECKSUM: 85be72ec02d427d402bf6bb88b5ccf6d1b738f59
+PODFILE CHECKSUM: f24426d68dfb49694695ba16a2a320689ba86d42
 
 COCOAPODS: 1.8.4

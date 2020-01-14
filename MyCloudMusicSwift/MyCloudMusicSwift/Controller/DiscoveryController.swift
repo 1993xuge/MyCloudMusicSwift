@@ -35,6 +35,29 @@ class DiscoveryController: BaseCommonController {
 
     }
 
+    override func initDatas() {
+        super.initDatas()
+
+        fetchBanner()
+    }
+
+    func fetchBanner() {
+        Api.shared.ads().subscribeOnSuccess { data in
+            // ListResponse<Ad>?
+            if let data = data?.data {
+                self.showBannerData(data)
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    /// 显示轮播图数据
+    ///
+    /// - Parameter data: <#data description#>
+    func showBannerData(_ data:[Ad]) {
+        //将数据设置到头部控件中
+        header.bindData(data)
+    }
+
     override func initListeners() {
         super.initListeners()
 
@@ -98,8 +121,8 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         //获取到当前CollectionView的宽度
-        let collectionViewWidth=collectionView.frame.width
-        
+        let collectionViewWidth = collectionView.frame.width
+
         return CGSize(width: collectionViewWidth, height: 300)
     }
 }
