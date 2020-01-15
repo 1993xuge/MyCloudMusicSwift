@@ -18,3 +18,6 @@
 
 //图片加载框架
 #import "SDWebImage/UIImageView+WebCache.h"
+
+//自定义CollectionView的Layout
+#import <UICollectionViewLeftAlignedLayout/UICollectionViewLeftAlignedLayout.h>

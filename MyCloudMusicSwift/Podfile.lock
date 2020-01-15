@@ -34,6 +34,7 @@ PODS:
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
+  - UICollectionViewLeftAlignedLayout (1.0.2)
 
 DEPENDENCIES:
   - HandyJSON (= 5.0.0-beta.1)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - Moya/RxSwift (= 14.0.0-alpha.1)
   - RxSwift (~> 5)
   - SDWebImage (~> 4.0)
+  - UICollectionViewLeftAlignedLayout (= 1.0.2)
 
 SPEC REPOS:
   trunk:
@@ -59,6 +61,7 @@ SPEC REPOS:
     - Result
     - RxSwift
     - SDWebImage
+    - UICollectionViewLeftAlignedLayout
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -70,7 +73,8 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: f24426d68dfb49694695ba16a2a320689ba86d42
+PODFILE CHECKSUM: ad953b4f4a96f92526a2ef005147e833c8847fac
 
 COCOAPODS: 1.8.4

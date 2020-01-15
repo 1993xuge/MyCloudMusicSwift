@@ -99,6 +99,11 @@ target 'MyCloudMusicSwift' do
   
   #图片加载
   pod 'SDWebImage', '~> 4.0'
+  
+  #让UICollectionView的cell居左
+  #默认值两边
+  #https://github.com/mokagio/UICollectionViewLeftAlignedLayout
+  pod 'UICollectionViewLeftAlignedLayout','1.0.2'
 
   target 'MyCloudMusicSwiftTests' do
     inherit! :search_paths
