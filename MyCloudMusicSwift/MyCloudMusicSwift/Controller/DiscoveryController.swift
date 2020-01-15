@@ -8,10 +8,13 @@
 
 import UIKit
 
-class DiscoveryController: BaseCommonController {
+class DiscoveryController: BaseTitleController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
+    
+    @IBOutlet weak var btSearch: UIButton!
+    
     /// 当前界面头部布局
     var header: DiscoveryHeaderView!
 
@@ -23,7 +26,10 @@ class DiscoveryController: BaseCommonController {
     }
 
     override func initViews() {
-        navigationItem.title = "发现"
+        setTitle("发现")
+        
+        //设置搜索按钮圆角
+        ViewUtil.showRadius(btSearch, 15)
         
         //去掉导航栏下面的阴影
         //如果大家需要可以留着
@@ -168,6 +174,11 @@ class DiscoveryController: BaseCommonController {
     ///
     @IBAction func onMicroPhoneClick(_ sender: UIBarButtonItem) {
         print("DiscoveryController onMicrophoneClick")
+    }
+    
+    
+    @IBAction func onSearchClick(_ sender: UIButton) {
+        print("DiscoveryController onSearchClick")
     }
 }
 
