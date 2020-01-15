@@ -163,6 +163,12 @@ class DiscoveryController: BaseCommonController {
         case sheet
         case song
     }
+    
+    /// 左侧麦克风点击事件
+    ///
+    @IBAction func onMicroPhoneClick(_ sender: UIBarButtonItem) {
+        print("DiscoveryController onMicrophoneClick")
+    }
 }
 
 extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDelegate {

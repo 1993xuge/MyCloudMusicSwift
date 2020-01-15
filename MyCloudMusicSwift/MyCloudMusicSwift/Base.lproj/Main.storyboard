@@ -713,7 +713,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="atA-lq-271">
-                                <rect key="frame" x="10" y="88" width="394" height="725"/>
+                                <rect key="frame" x="20" y="88" width="374" height="725"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NRv-e4-12M">
                                     <size key="itemSize" width="50" height="50"/>
@@ -740,13 +740,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ePU-Bg-fQp" firstAttribute="bottom" secondItem="atA-lq-271" secondAttribute="bottom" id="0JS-Cc-mjb"/>
-                            <constraint firstItem="ePU-Bg-fQp" firstAttribute="trailing" secondItem="atA-lq-271" secondAttribute="trailing" constant="10" id="VO5-a1-opp"/>
-                            <constraint firstItem="atA-lq-271" firstAttribute="leading" secondItem="ePU-Bg-fQp" secondAttribute="leading" constant="10" id="e9n-ds-ga3"/>
+                            <constraint firstItem="ePU-Bg-fQp" firstAttribute="trailing" secondItem="atA-lq-271" secondAttribute="trailing" constant="20" id="VO5-a1-opp"/>
+                            <constraint firstItem="atA-lq-271" firstAttribute="leading" secondItem="ePU-Bg-fQp" secondAttribute="leading" constant="20" id="e9n-ds-ga3"/>
                             <constraint firstItem="atA-lq-271" firstAttribute="top" secondItem="ePU-Bg-fQp" secondAttribute="top" id="mh2-1c-rNq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ePU-Bg-fQp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Dgd-p6-B2J"/>
+                    <navigationItem key="navigationItem" id="Dgd-p6-B2J">
+                        <barButtonItem key="leftBarButtonItem" image="Microphone" id="w4e-EE-knK">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onMicroPhoneClick:" destination="YZd-0e-iO3" id="Hec-lb-szf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="atA-lq-271" id="UqH-AW-ELI"/>
                     </connections>
@@ -1146,6 +1153,7 @@
         <image name="LoginWechat" width="42" height="42"/>
         <image name="LoginWechatSelected" width="42" height="42"/>
         <image name="LoginWeibo" width="42" height="42"/>
+        <image name="Microphone" width="22" height="22"/>
         <image name="SplashAd" width="360" height="545"/>
         <image name="SplashAdBanner" width="129.33332824707031" height="311.33334350585938"/>
         <image name="SplashBanner" width="74.666664123535156" height="309"/>
