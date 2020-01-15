@@ -16,10 +16,10 @@ let DEBUG = true
 
 // MARK: - 开发环境
 /// 网络接口的地址
-let ENDPOINT="http://dev-my-cloud-music-api-rails.ixuea.com"
+let ENDPOINT = "http://dev-my-cloud-music-api-rails.ixuea.com"
 
 /// 资源接口地址
-let RESOURCE_ENDPOINT="http://dev-courses-misuc.ixuea.com"
+let RESOURCE_ENDPOINT = "http://dev-courses-misuc.ixuea.com"
 
 // MARK: - 正式环境
 ///// 网络接口的地址
@@ -45,10 +45,13 @@ let SIZE_SMALL_RADIUS = 5
 let SIZE_BORDER = 1.0
 
 /// 发现界面；Cell标题高度
-let SIZE_TITLE_HEIGHT:CGFloat = 40
+let SIZE_TITLE_HEIGHT: CGFloat = 40
 
 /// 大分割线
-let SIZE_LARGE_DIVIDER:CGFloat = 10
+let SIZE_LARGE_DIVIDER: CGFloat = 10
+
+/// 发现界面头部高度
+let SIZE_DISCOVERY_HEADER_HEIGHT: CGFloat = 270
 
 // MARK: - 颜色
 /// 全局主色调

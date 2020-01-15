@@ -60,7 +60,7 @@ class DiscoveryController: BaseCommonController {
 
         //清除原来的数据
         dataArray.removeAll()
-        
+
         Api.shared.sheets().subscribeOnSuccess { data in
             // ListResponse<Sheet>?
             if let data = data?.data {
@@ -215,7 +215,7 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
         //获取到当前CollectionView的宽度
         let collectionViewWidth = collectionView.frame.width
 
-        return CGSize(width: collectionViewWidth, height: 270)
+        return CGSize(width: collectionViewWidth, height: SIZE_DISCOVERY_HEADER_HEIGHT)
     }
 }
 
@@ -266,7 +266,7 @@ extension DiscoveryController: UICollectionViewDelegateFlowLayout {
             width = (collectionViewWidth - SIZE_LARGE_DIVIDER * 2) / 3
 
             //计算高度
-            height = width + 200
+            height = width + SIZE_LARGE_DIVIDER*2 + SIZE_TITLE_HEIGHT
         default:
             //标题
             width = collectionViewWidth
