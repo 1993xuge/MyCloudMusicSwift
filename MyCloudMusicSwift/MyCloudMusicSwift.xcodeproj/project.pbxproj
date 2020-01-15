@@ -45,6 +45,8 @@
 		D55F7C5523CE9DE80038D9F9 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C5423CE9DE80038D9F9 /* BaseCollectionViewCell.swift */; };
 		D55F7C5723CE9FAC0038D9F9 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C5623CE9FAC0038D9F9 /* Song.swift */; };
 		D55F7C5923CE9FF70038D9F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C5823CE9FF70038D9F9 /* User.swift */; };
+		D55F7C5C23CEA30A0038D9F9 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C5A23CEA30A0038D9F9 /* SongCell.swift */; };
+		D55F7C5D23CEA30A0038D9F9 /* SongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F7C5B23CEA30A0038D9F9 /* SongCell.xib */; };
 		D5752CD523C846C70058FE0F /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD423C846C70058FE0F /* FileUtil.swift */; };
 		D5752CD823C847AE0058FE0F /* FileUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD723C847AE0058FE0F /* FileUtilTests.swift */; };
 		D5752CD923C8487C0058FE0F /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD423C846C70058FE0F /* FileUtil.swift */; };
@@ -158,6 +160,8 @@
 		D55F7C5423CE9DE80038D9F9 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		D55F7C5623CE9FAC0038D9F9 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		D55F7C5823CE9FF70038D9F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D55F7C5A23CEA30A0038D9F9 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		D55F7C5B23CEA30A0038D9F9 /* SongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCell.xib; sourceTree = "<group>"; };
 		D5752CD423C846C70058FE0F /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		D5752CD723C847AE0058FE0F /* FileUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilTests.swift; sourceTree = "<group>"; };
 		D5752CDB23C8B7500058FE0F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -474,6 +478,8 @@
 				D55F7C4E23CE11A20038D9F9 /* SheetCell.swift */,
 				D55F7C4F23CE11A30038D9F9 /* SheetCell.xib */,
 				D55F7C5423CE9DE80038D9F9 /* BaseCollectionViewCell.swift */,
+				D55F7C5A23CEA30A0038D9F9 /* SongCell.swift */,
+				D55F7C5B23CEA30A0038D9F9 /* SongCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -621,6 +627,7 @@
 				D551B25923C45B650061E4A8 /* LaunchScreen.storyboard in Resources */,
 				D551B25623C45B650061E4A8 /* Assets.xcassets in Resources */,
 				D55F7C4623CDDC970038D9F9 /* DiscoveryHeaderView.xib in Resources */,
+				D55F7C5D23CEA30A0038D9F9 /* SongCell.xib in Resources */,
 				D551B25423C45B620061E4A8 /* Main.storyboard in Resources */,
 				D55801AF23C6E68300BD5335 /* YJBannerView.bundle in Resources */,
 				D5752D4823CD4D0B0058FE0F /* TitleCell.xib in Resources */,
@@ -841,6 +848,7 @@
 				D5752CE323C9647A0058FE0F /* ObservableExtend.swift in Sources */,
 				D55F7C4823CDE84A0038D9F9 /* Ad.swift in Sources */,
 				D551B24F23C45B620061E4A8 /* AppDelegate.swift in Sources */,
+				D55F7C5C23CEA30A0038D9F9 /* SongCell.swift in Sources */,
 				D55F7C5923CE9FF70038D9F9 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

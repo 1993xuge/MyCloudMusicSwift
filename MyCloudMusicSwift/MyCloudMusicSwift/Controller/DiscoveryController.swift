@@ -31,10 +31,14 @@ class DiscoveryController: BaseCommonController {
 
         // 创建 有个 标题 NIB
         let titleNib = UINib(nibName: TitleCell.NAME, bundle: nil)
-        // 注册Cell
+        //注册标题Cell
         collectionView.register(titleNib, forCellWithReuseIdentifier: TitleCell.NAME)
 
+        //注册歌单Cell
         collectionView.register(UINib(nibName: SheetCell.NAME, bundle: nil), forCellWithReuseIdentifier: SheetCell.NAME)
+
+        //注册单曲Cell
+        collectionView.register(UINib(nibName: SongCell.NAME, bundle: nil), forCellWithReuseIdentifier: SongCell.NAME)
     }
 
     override func initDatas() {
@@ -83,7 +87,7 @@ class DiscoveryController: BaseCommonController {
                         self.dataArray = self.dataArray + data
 
                         //重新加载数据
-//                        self.collectionView.reloadData()
+                        self.collectionView.reloadData()
                     }
                 }).disposed(by: self.disposeBag)
             }
@@ -128,9 +132,10 @@ class DiscoveryController: BaseCommonController {
             //歌单
             return .sheet
         }
-        //        else if  data is Song {
-        //
-        //        }
+        else if data is Song {
+            // 单曲
+            return .song
+        }
 
         //标题
         return .title
@@ -185,6 +190,17 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
 
             //绑定数据
             cell.bindData(data as! Sheet)
+
+            //返回Cell
+            return cell
+
+        case .song:
+            //单曲
+            //从CollectionView中取出一个Cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.NAME, for: indexPath) as! SongCell
+
+            //绑定数据
+            cell.bindData(data as! Song)
 
             //返回Cell
             return cell
@@ -281,6 +297,14 @@ extension DiscoveryController: UICollectionViewDelegateFlowLayout {
 
             //计算高度
             height = width + SIZE_LARGE_DIVIDER * 2 + SIZE_TITLE_HEIGHT
+
+        case .song:
+            //单曲
+            width = collectionViewWidth
+
+            //5+110(图片高度)+5
+            height = 5 + 110 + 5
+
         default:
             //标题
             width = collectionViewWidth
