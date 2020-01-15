@@ -57,23 +57,23 @@ class DiscoveryController: BaseCommonController {
 
     /// 加载首页数据
     func fetchData() {
-        //添加一些测试数据
-        dataArray.append("推荐歌单")
 
-        for i in 1...10 {
-            let sheet = Sheet()
-            sheet.title = "这是歌单\(i)，标题可以很长长长长长长长长长长长长长长长"
-            dataArray.append(sheet)
-        }
+        //清除原来的数据
+        dataArray.removeAll()
+        
+        Api.shared.sheets().subscribeOnSuccess { data in
+            // ListResponse<Sheet>?
+            if let data = data?.data {
+                //添加标题
+                self.dataArray.append("推荐歌单")
 
-        dataArray.append("推荐单曲")
+                //添加到歌单数据
+                self.dataArray = self.dataArray + data
 
-//        for i in 1...10 {
-//            let sheet = Sheet()
-//            sheet.title = "这是推荐歌单\(i)，标题可以很长长长长长长长长长长长长长长长"
-//            dataArray.append(sheet)
-//        }
-
+                //重新加载数据
+                self.collectionView.reloadData()
+            }
+        }.disposed(by: disposeBag)
         //重新加载数据
         collectionView.reloadData()
     }
