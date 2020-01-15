@@ -36,25 +36,11 @@ class SheetCell: UICollectionViewCell {
 
         if let imageUri = data.banner {
             // 有图片
-            
-            // 把图片地址转为绝对路径
-            let imageUri = ResourceUtil.resourceUri(imageUri)
-            
-            //创建URL
-            let url = URL(string: imageUri)
-            
-            //占位图
-            let placeholderImage = UIImage(named: "PlaceHolder")
-            
-            // 显示网络图片
-            ivBanner.sd_setImage(with: url, placeholderImage: placeholderImage, options: [], completed: nil)
-            
+            ImageUtil.show(ivBanner, imageUri)
         } else {
             // 没图片
-            
             //设置默认图片
             ivBanner.image = UIImage(named: "PlaceHolder")
         }
     }
-
 }
