@@ -24,7 +24,16 @@ class DiscoveryController: BaseCommonController {
 
     override func initViews() {
         navigationItem.title = "发现"
-
+        
+        //去掉导航栏下面的阴影
+        //如果大家需要可以留着
+        //这个导航栏有层次感
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        //导航栏透明
+        //这里设置导航透明后
+        //就没有上面的灰色了
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 
         // 注册 头部
         collectionView.register(UINib(nibName: DiscoveryHeaderView.NAME, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DiscoveryHeaderView.NAME)
