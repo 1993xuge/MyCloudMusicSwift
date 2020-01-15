@@ -303,7 +303,7 @@ extension DiscoveryController: UICollectionViewDelegateFlowLayout {
             width = collectionViewWidth
 
             //5+110(图片高度)+5
-            height = 5 + 110 + 5
+            height = 110
 
         default:
             //标题
