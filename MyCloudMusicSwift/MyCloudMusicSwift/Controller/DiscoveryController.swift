@@ -66,12 +66,26 @@ class DiscoveryController: BaseCommonController {
             if let data = data?.data {
                 //添加标题
                 self.dataArray.append("推荐歌单")
-
                 //添加到歌单数据
                 self.dataArray = self.dataArray + data
+//                //重新加载数据
+//                self.collectionView.reloadData()
 
-                //重新加载数据
-                self.collectionView.reloadData()
+                Api.shared.songs().subscribeOnSuccess({ response in
+                    // ListResponse<Song>?
+
+                    if let data = response?.data {
+
+                        //添加标题
+                        self.dataArray.append("推荐单曲")
+
+                        //添加单曲数据
+                        self.dataArray = self.dataArray + data
+
+                        //重新加载数据
+//                        self.collectionView.reloadData()
+                    }
+                }).disposed(by: self.disposeBag)
             }
         }.disposed(by: disposeBag)
         //重新加载数据
@@ -266,7 +280,7 @@ extension DiscoveryController: UICollectionViewDelegateFlowLayout {
             width = (collectionViewWidth - SIZE_LARGE_DIVIDER * 2) / 3
 
             //计算高度
-            height = width + SIZE_LARGE_DIVIDER*2 + SIZE_TITLE_HEIGHT
+            height = width + SIZE_LARGE_DIVIDER * 2 + SIZE_TITLE_HEIGHT
         default:
             //标题
             width = collectionViewWidth

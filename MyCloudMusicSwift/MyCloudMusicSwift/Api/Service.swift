@@ -17,6 +17,10 @@ import Moya
 /// - resetPassword: 重置密码
 /// - sendSMSCode: 发送验证码
 /// - sendEmailCode: 发送邮件验证码
+
+/// - ads: 广告列表
+/// - songs: 单曲列表
+
 enum Service {
     case sheetDetail(id: String)
     case sheets
@@ -28,6 +32,8 @@ enum Service {
     case sendEmailCode(email: String)
     
     case ads
+    
+    case songs
 }
 
 // MARK: - 实现TargetType协议
@@ -59,6 +65,9 @@ extension Service: TargetType {
             
         case .ads:
             return "/v1/ads"
+            
+        case .songs:
+            return "/v1/songs.json"
         default:
             return ""
         }

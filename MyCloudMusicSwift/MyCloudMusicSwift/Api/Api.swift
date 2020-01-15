@@ -158,12 +158,12 @@ class Api {
             .asObservable()
             .mapObject(DetailResponse<BaseModel>.self)
     }
-    
+
     /// 发送邮件验证码
     ///
     /// - Parameter email: <#email description#>
     /// - Returns: <#return value description#>
-    func sendEmailCode(email:String) -> Observable<DetailResponse<BaseModel>?> {
+    func sendEmailCode(email: String) -> Observable<DetailResponse<BaseModel>?> {
         return provider
             .rx
             .request(.sendEmailCode(email: email))
@@ -172,7 +172,7 @@ class Api {
             .asObservable()
             .mapObject(DetailResponse<BaseModel>.self)
     }
-    
+
     /// 广告列表
     ///
     func ads() -> Observable<ListResponse<Ad>?> {
@@ -182,5 +182,16 @@ class Api {
             .mapString()
             .asObservable()
             .mapObject(ListResponse<Ad>.self)
+    }
+
+    /// 单曲列表
+    ///
+    func songs() -> Observable<ListResponse<Song>?> {
+        return provider.rx
+            .request(.songs)
+            .filterSuccessfulStatusCodes()
+            .mapString()
+            .asObservable()
+            .mapObject(ListResponse<Song>.self)
     }
 }
