@@ -8,18 +8,17 @@
 
 import UIKit
 
-class SheetCell: UICollectionViewCell {
+class SheetCell: BaseCollectionViewCell {
 
     static let NAME = "SheetCell"
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var ivBanner: UIImageView!
     @IBOutlet weak var lbCount: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-
+    
+    override func initViews() {
+        super.initViews()
+        
         //设置封面圆角
         ViewUtil.showSmallRadius(ivBanner)
     }
