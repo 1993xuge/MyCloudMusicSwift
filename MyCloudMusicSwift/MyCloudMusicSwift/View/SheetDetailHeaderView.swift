@@ -9,7 +9,7 @@
 
 import UIKit
 
-class SheetDetailHeaderView: UITableViewHeaderFooterView {
+class SheetDetailHeaderView: BaseTableViewHeaderFooterView {
 
     static let NAME = "SheetDetailHeaderView"
 
@@ -45,9 +45,8 @@ class SheetDetailHeaderView: UITableViewHeaderFooterView {
 
     private var data: Sheet!
 
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func initViews() {
+        super.initViews()
 
         //设置封面圆角
         ViewUtil.showSmallRadius(ivBannerView)
