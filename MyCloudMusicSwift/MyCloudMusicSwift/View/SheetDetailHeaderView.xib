@@ -88,6 +88,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPJ-hq-kwt">
                                                     <rect key="frame" x="0.0" y="0.0" width="103.5" height="26"/>
                                                     <state key="normal" image="Share"/>
+                                                    <connections>
+                                                        <action selector="onCommentClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qrn-XR-NlI"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHp-dR-awO">
                                                     <rect key="frame" x="0.0" y="26" width="103.5" height="26"/>
@@ -185,6 +188,9 @@
                                                     <state key="normal" title="收藏(0)">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="onCollectionClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="r8D-V8-Gwr"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -229,6 +235,18 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btCollection" destination="3Ai-M3-jyZ" id="GOT-HE-RkT"/>
+                <outlet property="ivAvatar" destination="wZw-fr-Pfv" id="lCg-z0-wVF"/>
+                <outlet property="ivBannerView" destination="c9P-N5-qFm" id="qGa-gt-0bb"/>
+                <outlet property="lbCommentCount" destination="vHp-dR-awO" id="P3D-aq-I0s"/>
+                <outlet property="lbNickname" destination="qCx-B2-Jo4" id="AdQ-TV-JXf"/>
+                <outlet property="lbShareCount" destination="FtC-fy-dy4" id="Rrk-Ir-ed3"/>
+                <outlet property="lbSongCount" destination="IoC-bi-nHB" id="CLR-93-g6z"/>
+                <outlet property="lbTitle" destination="xFx-b1-FhA" id="Len-0j-EEe"/>
+                <outlet property="svUserInfo" destination="4nc-OA-7rR" id="uFz-Mu-zbC"/>
+                <outlet property="vwControl" destination="gLL-Bi-D6U" id="iTo-gx-fJa"/>
+            </connections>
             <point key="canvasLocation" x="172.46376811594203" y="-30.133928571428569"/>
         </view>
     </objects>
