@@ -139,7 +139,8 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
     /// 返回Header高度
     ///
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 400
+        //20(分割线)+140+20(分割线)+52+20(分割线)+55.5
+        return 307.5
     }
 
 }
