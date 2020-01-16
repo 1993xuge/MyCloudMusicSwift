@@ -13,32 +13,38 @@ class ImageUtil {
 
     /// 显示网络图片（相对地址）
     ///
-    static func show(_ imageView: UIImageView, _ uri: String) {
-        //将图片地址转为绝对地址
-        let uri = ResourceUtil.resourceUri(uri)
+    static func show(_ imageView: UIImageView, _ uri: String?) {
 
+        if let uri = uri {
+            //将图片地址转为绝对地址
+            let uri = ResourceUtil.resourceUri(uri)
+
+            //创建URL
+            let url = URL(string: uri)
+
+            //占位图
+            let placeHolderImage = UIImage(named: "PlaceHolder")
+
+            //显示图片
+            imageView.sd_setImage(with: url, placeholderImage: placeHolderImage, options: [], completed: nil)
+        } else {
+            //没有图片路径
+            showDefaultImage(imageView)
+        }
+    }
+
+    /// 显示绝对路径图片
+    ///
+    /// - Parameters:
+    ///   - imageView: <#imageView description#>
+    ///   - uri: <#uri description#>
+    static func showFull(_ imageView: UIImageView, _ uri: String) {
         //创建URL
         let url = URL(string: uri)
 
         //占位图
         let placeHolderImage = UIImage(named: "PlaceHolder")
 
-        //显示图片
-        imageView.sd_setImage(with: url, placeholderImage: placeHolderImage, options: [], completed: nil)
-    }
-    
-    /// 显示绝对路径图片
-    ///
-    /// - Parameters:
-    ///   - imageView: <#imageView description#>
-    ///   - uri: <#uri description#>
-    static func showFull(_ imageView:UIImageView,_ uri:String) {
-        //创建URL
-        let url = URL(string: uri)
-        
-        //占位图
-        let placeHolderImage=UIImage(named: "PlaceHolder")
-        
         //显示图片
         imageView.sd_setImage(with: url, placeholderImage: placeHolderImage, options: [], completed: nil)
     }
@@ -61,7 +67,14 @@ class ImageUtil {
             }
         } else {
             //没有头像
-            imageView.image = UIImage(named: "PlaceHolder")
+            showDefaultImage(imageView)
         }
+    }
+
+    /// 显示默认图片
+    ///
+    /// - Parameter imageView: imageView description
+    static func showDefaultImage(_ imageView: UIImageView) {
+        imageView.image = UIImage(named: "PlaceHolder")
     }
 }

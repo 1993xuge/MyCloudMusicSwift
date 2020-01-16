@@ -173,16 +173,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（共0首）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoC-bi-nHB">
-                                                    <rect key="frame" x="144" y="19" width="66" height="17"/>
+                                                    <rect key="frame" x="144" y="19" width="130" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ai-M3-jyZ">
-                                                    <rect key="frame" x="220" y="0.0" width="194" height="55"/>
+                                                    <rect key="frame" x="284" y="0.0" width="130" height="55"/>
                                                     <color key="backgroundColor" name="ColorPrimary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="3td-qO-Deg"/>
+                                                        <constraint firstAttribute="width" constant="130" id="dA5-cG-GlV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="收藏(0)">

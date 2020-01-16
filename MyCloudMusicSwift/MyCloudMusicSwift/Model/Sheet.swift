@@ -42,7 +42,7 @@ class Sheet: HandyJSON {
     var user:User!
     
     /// 歌曲
-    var songs:[Song] = []
+    var songs:[Song]?
 
     //因为HandyJSON解析框架要求有一个init方法
     required init() { }

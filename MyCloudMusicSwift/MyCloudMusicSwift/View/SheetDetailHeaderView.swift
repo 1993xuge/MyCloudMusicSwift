@@ -43,28 +43,30 @@ class SheetDetailHeaderView: UITableViewHeaderFooterView {
     /// 收藏歌单的按钮
     @IBOutlet weak var btCollection: UIButton!
 
+    private var data: Sheet!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         //设置封面圆角
         ViewUtil.showSmallRadius(ivBannerView)
 
         //设置用户头像圆角
         ViewUtil.showRadius(ivAvatar, 15)
-        
+
         //用户信息点击事件
         svUserInfo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onUserInfoClick)))
-        
+
         //播放全部
         vwControl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onPlayAllClick)))
     }
-    
+
     /// 用户信息点击
     @objc func onUserInfoClick() {
         print("SheetDetailHeaderView onUserInfoClick")
     }
-    
+
     /// 播放所有音乐
     @objc func onPlayAllClick() {
         print("SheetDetailHeaderView onPlayAllClick")
@@ -78,5 +80,29 @@ class SheetDetailHeaderView: UITableViewHeaderFooterView {
     /// 收藏歌单点击
     @IBAction func onCollectionClick(_ sender: UIButton) {
         print("SheetDetailHeaderView onCollectionClick")
+    }
+
+    func bindData(_ data: Sheet) {
+        self.data = data
+
+        //显示歌单封面
+        ImageUtil.show(ivBannerView, data.banner)
+
+        //歌单标题
+        lbTitle.text = data.title
+
+        //歌单创建者的头像
+        ImageUtil.showAvatar(ivAvatar, data.user.avatar)
+
+        //歌单创建者的昵称
+        lbNickname.text = data.user.nickname
+
+        //歌单评论数
+        lbCommentCount.text = "\(data.comments_count)"
+
+        //显示当前歌单音乐数量
+        if let songs = data.songs {
+            lbSongCount.text = "(共\(songs.count)首)"
+        }
     }
 }

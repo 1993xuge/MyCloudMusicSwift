@@ -71,8 +71,13 @@ class SheetDetailController: BaseTitleController {
     func showData(_ data: Sheet) {
         self.data = data
 
+        //显示头部数据
+        header.bindData(data)
+
         //添加歌曲数据
-        dataArray = dataArray + data.songs
+        if let songs = data.songs {
+            dataArray = dataArray + songs
+        }
 
         //重新加载数据
         tableView.reloadData()
