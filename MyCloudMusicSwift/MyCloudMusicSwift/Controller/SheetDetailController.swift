@@ -23,6 +23,9 @@ class SheetDetailController: BaseTitleController {
     /// 列表数据
     var dataArray: [Song] = []
 
+    /// 头部
+    var header: SheetDetailHeaderView!
+
     override func initViews() {
         super.initViews()
 
@@ -36,7 +39,10 @@ class SheetDetailController: BaseTitleController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        // 注册 Cell
+        // 注册 Header
+        tableView.register(UINib(nibName: SheetDetailHeaderView.NAME, bundle: nil), forHeaderFooterViewReuseIdentifier: SheetDetailHeaderView.NAME)
+
+        // 注册 歌单列表Cell
         tableView.register(UINib(nibName: SongListCell.NAME, bundle: nil), forCellReuseIdentifier: SongListCell.NAME)
     }
 
@@ -121,5 +127,19 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    /// 返回Header
+    ///
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SheetDetailHeaderView.NAME) as! SheetDetailHeaderView
+
+        //返回Header
+        return header
+    }
+
+    /// 返回Header高度
+    ///
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 400
+    }
 
 }

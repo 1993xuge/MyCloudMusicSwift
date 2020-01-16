@@ -51,6 +51,8 @@
 		D55F7C6223CFE0270038D9F9 /* SongListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C6023CFE0270038D9F9 /* SongListCell.swift */; };
 		D55F7C6323CFE0270038D9F9 /* SongListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F7C6123CFE0270038D9F9 /* SongListCell.xib */; };
 		D55F7C6523CFF4F70038D9F9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C6423CFF4F70038D9F9 /* BaseTableViewCell.swift */; };
+		D55F7C6723CFF6240038D9F9 /* SheetDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C6623CFF6240038D9F9 /* SheetDetailHeaderView.swift */; };
+		D55F7C6923CFF63F0038D9F9 /* SheetDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F7C6823CFF63F0038D9F9 /* SheetDetailHeaderView.xib */; };
 		D5752CD523C846C70058FE0F /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD423C846C70058FE0F /* FileUtil.swift */; };
 		D5752CD823C847AE0058FE0F /* FileUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD723C847AE0058FE0F /* FileUtilTests.swift */; };
 		D5752CD923C8487C0058FE0F /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD423C846C70058FE0F /* FileUtil.swift */; };
@@ -170,6 +172,8 @@
 		D55F7C6023CFE0270038D9F9 /* SongListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListCell.swift; sourceTree = "<group>"; };
 		D55F7C6123CFE0270038D9F9 /* SongListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongListCell.xib; sourceTree = "<group>"; };
 		D55F7C6423CFF4F70038D9F9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D55F7C6623CFF6240038D9F9 /* SheetDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDetailHeaderView.swift; sourceTree = "<group>"; };
+		D55F7C6823CFF63F0038D9F9 /* SheetDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetDetailHeaderView.xib; sourceTree = "<group>"; };
 		D5752CD423C846C70058FE0F /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		D5752CD723C847AE0058FE0F /* FileUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilTests.swift; sourceTree = "<group>"; };
 		D5752CDB23C8B7500058FE0F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -432,6 +436,8 @@
 				D55F7C4323CDDC970038D9F9 /* DiscoveryHeaderView.swift */,
 				D55F7C4423CDDC970038D9F9 /* DiscoveryHeaderView.xib */,
 				D55F7C4C23CDFA0F0038D9F9 /* BaseCollectionReusableView.swift */,
+				D55F7C6623CFF6240038D9F9 /* SheetDetailHeaderView.swift */,
+				D55F7C6823CFF63F0038D9F9 /* SheetDetailHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -641,6 +647,7 @@
 				D55F7C4623CDDC970038D9F9 /* DiscoveryHeaderView.xib in Resources */,
 				D55F7C5D23CEA30A0038D9F9 /* SongCell.xib in Resources */,
 				D551B25423C45B620061E4A8 /* Main.storyboard in Resources */,
+				D55F7C6923CFF63F0038D9F9 /* SheetDetailHeaderView.xib in Resources */,
 				D55F7C6323CFE0270038D9F9 /* SongListCell.xib in Resources */,
 				D55801AF23C6E68300BD5335 /* YJBannerView.bundle in Resources */,
 				D5752D4823CD4D0B0058FE0F /* TitleCell.xib in Resources */,
@@ -805,6 +812,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D55F7C6723CFF6240038D9F9 /* SheetDetailHeaderView.swift in Sources */,
 				D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */,
 				D50D32B323C8053100710DF6 /* StringExtend.swift in Sources */,
 				D55801AB23C6E68300BD5335 /* YJBannerView.m in Sources */,
