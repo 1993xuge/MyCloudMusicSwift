@@ -53,9 +53,33 @@ class SongListCell: UITableViewCell {
         print("SongListCell onMoreClick:\(tag)")
     }
 
+    /// 选中和取消选中调用
+    ///
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        if selected {
+            //选中
+
+            //隐藏歌曲位置
+            lbPosition.isHidden = true
+
+            //显示正在播放的图标
+            ivPlay.isHidden = false
+
+            //歌曲标题颜色变为主色调
+            lbTitle.textColor = UIColor(hex: COLOR_PRIMARY)
+        } else {
+            //未选中
+
+            //显示歌曲位置
+            lbPosition.isHidden = false
+
+            //隐藏播放按钮
+            ivPlay.isHidden = true
+
+            //更改歌曲标题颜色为黑色
+            lbTitle.textColor = UIColor.darkText
+        }
     }
 }
