@@ -770,6 +770,37 @@
             </objects>
             <point key="canvasLocation" x="486.95652173913049" y="1227.4553571428571"/>
         </scene>
+        <!--Sheet Detail Controller-->
+        <scene sceneID="80J-ts-rbD">
+            <objects>
+                <viewController storyboardIdentifier="SheetDetail" hidesBottomBarWhenPushed="YES" id="FU2-et-sfP" customClass="SheetDetailController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8hi-hB-mke">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rFF-9I-ZPf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rFF-9I-ZPf" firstAttribute="top" secondItem="xWJ-Qa-Nqx" secondAttribute="top" id="djB-2S-Juw"/>
+                            <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="bottom" secondItem="rFF-9I-ZPf" secondAttribute="bottom" id="jVf-JU-2fs"/>
+                            <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="trailing" secondItem="rFF-9I-ZPf" secondAttribute="trailing" id="mJV-V9-hO5"/>
+                            <constraint firstItem="rFF-9I-ZPf" firstAttribute="leading" secondItem="xWJ-Qa-Nqx" secondAttribute="leading" id="whV-je-ZNe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xWJ-Qa-Nqx"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="rFF-9I-ZPf" id="u37-w1-usY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6s-rZ-PlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="1230"/>
+        </scene>
         <!--Home Controller-->
         <scene sceneID="v6P-Qk-jh4">
             <objects>

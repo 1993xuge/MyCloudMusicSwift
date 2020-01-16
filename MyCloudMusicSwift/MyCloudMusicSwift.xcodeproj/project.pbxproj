@@ -47,6 +47,9 @@
 		D55F7C5923CE9FF70038D9F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C5823CE9FF70038D9F9 /* User.swift */; };
 		D55F7C5C23CEA30A0038D9F9 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C5A23CEA30A0038D9F9 /* SongCell.swift */; };
 		D55F7C5D23CEA30A0038D9F9 /* SongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F7C5B23CEA30A0038D9F9 /* SongCell.xib */; };
+		D55F7C5F23CFDB130038D9F9 /* SheetDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C5E23CFDB130038D9F9 /* SheetDetailController.swift */; };
+		D55F7C6223CFE0270038D9F9 /* SongListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F7C6023CFE0270038D9F9 /* SongListCell.swift */; };
+		D55F7C6323CFE0270038D9F9 /* SongListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F7C6123CFE0270038D9F9 /* SongListCell.xib */; };
 		D5752CD523C846C70058FE0F /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD423C846C70058FE0F /* FileUtil.swift */; };
 		D5752CD823C847AE0058FE0F /* FileUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD723C847AE0058FE0F /* FileUtilTests.swift */; };
 		D5752CD923C8487C0058FE0F /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5752CD423C846C70058FE0F /* FileUtil.swift */; };
@@ -162,6 +165,9 @@
 		D55F7C5823CE9FF70038D9F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D55F7C5A23CEA30A0038D9F9 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		D55F7C5B23CEA30A0038D9F9 /* SongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCell.xib; sourceTree = "<group>"; };
+		D55F7C5E23CFDB130038D9F9 /* SheetDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDetailController.swift; sourceTree = "<group>"; };
+		D55F7C6023CFE0270038D9F9 /* SongListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListCell.swift; sourceTree = "<group>"; };
+		D55F7C6123CFE0270038D9F9 /* SongListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongListCell.xib; sourceTree = "<group>"; };
 		D5752CD423C846C70058FE0F /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		D5752CD723C847AE0058FE0F /* FileUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilTests.swift; sourceTree = "<group>"; };
 		D5752CDB23C8B7500058FE0F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -268,6 +274,7 @@
 				D5752D3C23CC3F2E0058FE0F /* AdController.swift */,
 				D5752D3E23CCC10D0058FE0F /* WebController.swift */,
 				D5752D4023CD35060058FE0F /* BaseTitleController.swift */,
+				D55F7C5E23CFDB130038D9F9 /* SheetDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -480,6 +487,8 @@
 				D55F7C5423CE9DE80038D9F9 /* BaseCollectionViewCell.swift */,
 				D55F7C5A23CEA30A0038D9F9 /* SongCell.swift */,
 				D55F7C5B23CEA30A0038D9F9 /* SongCell.xib */,
+				D55F7C6023CFE0270038D9F9 /* SongListCell.swift */,
+				D55F7C6123CFE0270038D9F9 /* SongListCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -629,6 +638,7 @@
 				D55F7C4623CDDC970038D9F9 /* DiscoveryHeaderView.xib in Resources */,
 				D55F7C5D23CEA30A0038D9F9 /* SongCell.xib in Resources */,
 				D551B25423C45B620061E4A8 /* Main.storyboard in Resources */,
+				D55F7C6323CFE0270038D9F9 /* SongListCell.xib in Resources */,
 				D55801AF23C6E68300BD5335 /* YJBannerView.bundle in Resources */,
 				D5752D4823CD4D0B0058FE0F /* TitleCell.xib in Resources */,
 			);
@@ -816,6 +826,7 @@
 				D5752CF923CA9B720058FE0F /* ForgetPasswordController.swift in Sources */,
 				D55801B423C6F38900BD5335 /* BannerGuideController.swift in Sources */,
 				D558018C23C6AFC900BD5335 /* HomeController.swift in Sources */,
+				D55F7C5F23CFDB130038D9F9 /* SheetDetailController.swift in Sources */,
 				D5752CE123C9543B0058FE0F /* Sheet.swift in Sources */,
 				D5752CE723C969230058FE0F /* DetailResponse.swift in Sources */,
 				D55F7C4D23CDFA0F0038D9F9 /* BaseCollectionReusableView.swift in Sources */,
@@ -839,6 +850,7 @@
 				D55801AC23C6E68300BD5335 /* YJHollowPageControl.m in Sources */,
 				D57905F323C76291003A4B95 /* RegisterController.swift in Sources */,
 				D5752CF123C9BA780058FE0F /* Session.swift in Sources */,
+				D55F7C6223CFE0270038D9F9 /* SongListCell.swift in Sources */,
 				D5060D4A23C4C66F00F875E0 /* GuideController.swift in Sources */,
 				D5752CE923C96DA60058FE0F /* ListResponse.swift in Sources */,
 				D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */,

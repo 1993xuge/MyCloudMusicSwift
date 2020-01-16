@@ -11,10 +11,10 @@ import UIKit
 class DiscoveryController: BaseTitleController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
+
+
     @IBOutlet weak var btSearch: UIButton!
-    
+
     /// 当前界面头部布局
     var header: DiscoveryHeaderView!
 
@@ -27,15 +27,15 @@ class DiscoveryController: BaseTitleController {
 
     override func initViews() {
         setTitle("发现")
-        
+
         //设置搜索按钮圆角
         ViewUtil.showRadius(btSearch, 15)
-        
+
         //去掉导航栏下面的阴影
         //如果大家需要可以留着
         //这个导航栏有层次感
         navigationController?.navigationBar.shadowImage = UIImage()
-        
+
         //导航栏透明
         //这里设置导航透明后
         //就没有上面的灰色了
@@ -169,14 +169,14 @@ class DiscoveryController: BaseTitleController {
         case sheet
         case song
     }
-    
+
     /// 左侧麦克风点击事件
     ///
     @IBAction func onMicroPhoneClick(_ sender: UIBarButtonItem) {
         print("DiscoveryController onMicrophoneClick")
     }
-    
-    
+
+
     @IBAction func onSearchClick(_ sender: UIButton) {
         print("DiscoveryController onSearchClick")
     }
@@ -272,6 +272,28 @@ extension DiscoveryController: UICollectionViewDataSource, UICollectionViewDeleg
         let collectionViewWidth = collectionView.frame.width
 
         return CGSize(width: collectionViewWidth, height: SIZE_DISCOVERY_HEADER_HEIGHT)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //取出当前位置的数据
+        let data = dataArray[indexPath.row]
+
+        //获取当前对象的类型
+        let type = typeForItemAtData(data)
+
+        print("DiscoveryController didSelectItemAt:\(indexPath.row)")
+
+        switch type {
+        case .sheet:
+            //跳转到歌单详情
+            let sheet = data as! Sheet
+            SheetDetailController.start(navigationController!, sheet.id)
+        case .song:
+            //跳转到播放界面
+            break
+        default:
+            break
+        }
     }
 }
 
