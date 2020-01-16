@@ -43,6 +43,7 @@ class SheetDetailController: BaseTitleController {
     override func initDatas() {
         super.initDatas()
 
+        fetchData()
     }
 
     func fetchData() {
@@ -109,7 +110,12 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
         //获取Cell
         let cell = tableView.dequeueReusableCell(withIdentifier: SongListCell.NAME) as! SongListCell
 
+        //设置Tag
+        //目的是在Cell中显示当前音乐位置
+        cell.tag = indexPath.row
+
         //绑定数据
+        cell.bindData(dataArray[indexPath.row])
 
         //返回Cell
         return cell
