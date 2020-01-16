@@ -59,6 +59,7 @@ class SheetDetailHeaderView: BaseTableViewHeaderFooterView {
 
         //播放全部
         vwControl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onPlayAllClick)))
+
     }
 
     /// 用户信息点击
@@ -102,6 +103,39 @@ class SheetDetailHeaderView: BaseTableViewHeaderFooterView {
         //显示当前歌单音乐数量
         if let songs = data.songs {
             lbSongCount.text = "(共\(songs.count)首)"
+        }
+
+        //显示收藏状态
+        showCollectionStatus()
+    }
+
+    /// 显示收藏状态
+    func showCollectionStatus() {
+
+        if data.isCollection() {
+            // 收藏了
+
+            //将按钮文字改为取消
+            btCollection.setTitle("取消(\(data.collections_count))", for: .normal)
+
+            //弱化取消收藏按钮
+            //因为我们的本质是想让用户收藏歌单
+            //所以去掉背景
+            btCollection.backgroundColor = UIColor.clear
+
+            //设置文字颜色为灰色
+            btCollection.setTitleColor(UIColor.lightGray, for: .normal)
+        } else {
+            // 没有 收藏
+
+            //将按钮文字改为收藏
+            btCollection.setTitle("收藏(\(data.collections_count))", for: .normal)
+
+            //设置按钮颜色为主色调
+            btCollection.backgroundColor = UIColor(hex: COLOR_PRIMARY)
+
+            //将文字颜色设置为白色
+            btCollection.setTitleColor(.white, for: .normal)
         }
     }
 }

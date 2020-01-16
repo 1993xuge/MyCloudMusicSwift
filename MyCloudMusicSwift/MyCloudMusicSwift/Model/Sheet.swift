@@ -39,11 +39,20 @@ class Sheet: HandyJSON {
     var songs_count = 0
 
     /// 歌单创建者
-    var user:User!
-    
+    var user: User!
+
     /// 歌曲
-    var songs:[Song]?
+    var songs: [Song]?
+
+    /// 是否收藏；有值就表示收藏了
+    var collection_id: Int?
 
     //因为HandyJSON解析框架要求有一个init方法
     required init() { }
+
+    /// 是否收藏
+    ///
+    func isCollection() -> Bool {
+        return collection_id == nil ? false : true
+    }
 }
