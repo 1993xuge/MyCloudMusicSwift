@@ -38,6 +38,12 @@ class Sheet: HandyJSON {
     /// 音乐数
     var songs_count = 0
 
+    /// 歌单创建者
+    var user:User!
+    
+    /// 歌曲
+    var songs:[Song] = []
+
     //因为HandyJSON解析框架要求有一个init方法
     required init() { }
 }

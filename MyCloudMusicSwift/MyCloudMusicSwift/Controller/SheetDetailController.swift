@@ -17,6 +17,12 @@ class SheetDetailController: BaseTitleController {
     /// 歌单Id
     var id: String!
 
+    /// 歌单
+    var data: Sheet!
+
+    /// 列表数据
+    var dataArray: [Song] = []
+
     override func initViews() {
         super.initViews()
 
@@ -32,6 +38,37 @@ class SheetDetailController: BaseTitleController {
 
         // 注册 Cell
         tableView.register(UINib(nibName: SongListCell.NAME, bundle: nil), forCellReuseIdentifier: SongListCell.NAME)
+    }
+
+    override func initDatas() {
+        super.initDatas()
+
+    }
+
+    func fetchData() {
+        //获取数据
+        Api.shared
+            .sheetDetail(id: id)
+            .subscribeOnSuccess { data in
+                // DetailResponse<Sheet>?
+
+                if let data = data?.data {
+                    self.showData(data)
+                }
+            }.disposed(by: disposeBag)
+    }
+
+    /// 显示数据
+    ///
+    /// - Parameter data: <#data description#>
+    func showData(_ data: Sheet) {
+        self.data = data
+
+        //添加歌曲数据
+        dataArray = dataArray + data.songs
+
+        //重新加载数据
+        tableView.reloadData()
     }
 }
 
@@ -62,7 +99,7 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
     /// 有多少行
     ///
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return dataArray.count
     }
 
     /// 返回Cell
