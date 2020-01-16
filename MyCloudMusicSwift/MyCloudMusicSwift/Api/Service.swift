@@ -30,9 +30,9 @@ enum Service {
 
     case sendSMSCode(phone: String)
     case sendEmailCode(email: String)
-    
+
     case ads
-    
+
     case songs
 }
 
@@ -62,10 +62,10 @@ extension Service: TargetType {
             return "/v1/codes/request_sms_code"
         case .sendEmailCode:
             return "/v1/codes/request_email_code"
-            
+
         case .ads:
             return "/v1/ads"
-            
+
         case .songs:
             return "/v1/songs.json"
         default:
@@ -100,14 +100,35 @@ extension Service: TargetType {
         case .sendSMSCode(let phone):
             return HttpUtil.jsonRequestParamters(["phone": phone])
         case .sendEmailCode(let email):
-            return HttpUtil.jsonRequestParamters(["email":email])
+            return HttpUtil.jsonRequestParamters(["email": email])
         default:
             return .requestPlain
         }
     }
 
     var headers: [String: String]? {
-        return nil
+
+        var headers: Dictionary<String, String> = [:]
+
+        //内容的类型
+        headers["Content-Type"] = "application/json"
+
+        if PreferenceUtil.isLogin() {
+            // 登陆了
+
+            let user = PreferenceUtil.userId()
+            let token = PreferenceUtil.userToken()
+
+            if DEBUG {
+                //打印token
+                print("Service headers user:\(user),token:\(token)")
+            }
+
+            //传递登录标识
+            headers["User"] = user
+            headers["Authorization"] = token
+        }
+        return headers
     }
 
 /// 返回测试相关的路径

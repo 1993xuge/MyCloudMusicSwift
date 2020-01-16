@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SongListCell: UITableViewCell {
+class SongListCell: BaseTableViewCell {
 
     static let NAME = "SongListCell"
 
@@ -26,10 +26,9 @@ class SongListCell: UITableViewCell {
 
     /// 更多按钮
     @IBOutlet weak var btMore: UIButton!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
+    
+    override func initViews() {
+        super.initViews()
         //去掉默认的选中颜色
         selectionStyle = .none
     }
