@@ -89,6 +89,17 @@ class SheetDetailController: BaseTitleController {
 
         // 注册 歌单列表Cell
         tableView.register(UINib(nibName: SongListCell.NAME, bundle: nil), forCellReuseIdentifier: SongListCell.NAME)
+
+        //添加右侧按钮
+        //分享
+        let shareBarItem = UIBarButtonItem(image: UIImage(named: "Share"), style: .plain, target: self, action: #selector(onShareClick(sender:)))
+
+        // 更多
+        let moreBarItem = UIBarButtonItem(image: UIImage(named: "MoreWhite"), style: .plain, target: self, action: #selector(onMoreClick(sender:)))
+
+        //将button添加到导航栏右侧
+        //从右到左
+        navigationItem.rightBarButtonItems = [moreBarItem, shareBarItem]
     }
 
     override func initDatas() {
@@ -173,6 +184,18 @@ class SheetDetailController: BaseTitleController {
                 self.header.showCollectionStatus()
             }.disposed(by: disposeBag)
         }
+    }
+
+    /// 分享按钮点击了
+    ///
+    @objc func onShareClick(sender: UIButton) {
+        print("SheetDetailController onShareClick")
+    }
+
+    /// 更多按钮点击了
+    ///
+    @objc func onMoreClick(sender: UIButton) {
+        print("SheetDetailController onMoreClick")
     }
 }
 
