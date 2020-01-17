@@ -39,10 +39,36 @@ class SimpletPlayerController: BaseTitleController {
     /// 循环模式
     @IBOutlet weak var btLoopModel: UIButton!
 
+    /// 播放管理器
+    var musicPlayerManager: MusicPlayerManager!
+
     override func initViews() {
         super.initViews()
     }
 
+    override func initDatas() {
+        super.initDatas()
+
+        //获取音乐播放管理器
+        musicPlayerManager = MusicPlayerManager.shared()
+
+        //测试音乐数据
+        let songUrl = "http://dev-courses-misuc.ixuea.com/assets/s1.mp3"
+
+        let song = Song()
+        song.uri = songUrl
+
+        musicPlayerManager.play(songUrl, song)
+    }
+
+    /// 播放或者暂停
+    func playOrPause() {
+        if musicPlayerManager.isPlaying() {
+            musicPlayerManager.pause()
+        } else {
+            musicPlayerManager.resume()
+        }
+    }
 
     // MARK: - 按钮相关事件
 
@@ -56,6 +82,8 @@ class SimpletPlayerController: BaseTitleController {
     ///
     @IBAction func onPlayClick(_ sender: UIButton) {
         print("SimplePlayerController onPlayClick")
+        
+        playOrPause()
     }
 
     /// 下一曲
