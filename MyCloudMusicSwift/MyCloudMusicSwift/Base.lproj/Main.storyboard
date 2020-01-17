@@ -779,15 +779,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9A-MM-ZW0" userLabel="BackgroundContainer">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iWL-AA-ddp">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psA-uC-Nvv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cM9-Je-GOP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>
@@ -801,6 +801,7 @@
                                     <constraint firstItem="psA-uC-Nvv" firstAttribute="leading" secondItem="g9A-MM-ZW0" secondAttribute="leading" id="JXk-CE-ie8"/>
                                     <constraint firstAttribute="trailing" secondItem="iWL-AA-ddp" secondAttribute="trailing" id="MOb-A9-nfj"/>
                                     <constraint firstAttribute="trailing" secondItem="psA-uC-Nvv" secondAttribute="trailing" id="WbK-MH-Z9c"/>
+                                    <constraint firstAttribute="height" constant="350" id="ZRM-PQ-0V1"/>
                                     <constraint firstAttribute="bottom" secondItem="iWL-AA-ddp" secondAttribute="bottom" id="uYN-Av-yvo"/>
                                     <constraint firstAttribute="bottom" secondItem="psA-uC-Nvv" secondAttribute="bottom" id="vaj-3T-bRQ"/>
                                 </constraints>
@@ -818,13 +819,13 @@
                             <constraint firstItem="rFF-9I-ZPf" firstAttribute="top" secondItem="xWJ-Qa-Nqx" secondAttribute="top" id="djB-2S-Juw"/>
                             <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="bottom" secondItem="rFF-9I-ZPf" secondAttribute="bottom" id="jVf-JU-2fs"/>
                             <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="trailing" secondItem="rFF-9I-ZPf" secondAttribute="trailing" id="mJV-V9-hO5"/>
-                            <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="bottom" secondItem="g9A-MM-ZW0" secondAttribute="bottom" id="nId-Mf-Bho"/>
                             <constraint firstItem="g9A-MM-ZW0" firstAttribute="top" secondItem="8hi-hB-mke" secondAttribute="top" id="vzx-4s-vmO"/>
                             <constraint firstItem="rFF-9I-ZPf" firstAttribute="leading" secondItem="xWJ-Qa-Nqx" secondAttribute="leading" id="whV-je-ZNe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xWJ-Qa-Nqx"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundContainerHeight" destination="ZRM-PQ-0V1" id="Acf-Ps-Q1Y"/>
                         <outlet property="ivBackground" destination="iWL-AA-ddp" id="ueu-UM-Rn9"/>
                         <outlet property="tableView" destination="rFF-9I-ZPf" id="u37-w1-usY"/>
                     </connections>

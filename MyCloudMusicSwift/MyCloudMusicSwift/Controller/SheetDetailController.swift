@@ -13,8 +13,11 @@ class SheetDetailController: BaseTitleController {
 
     /// 列表控件
     @IBOutlet weak var tableView: UITableView!
-    
+
     @IBOutlet weak var ivBackground: UIImageView!
+
+    /// 背景容器的高度约束
+    @IBOutlet weak var backgroundContainerHeight: NSLayoutConstraint!
 
     /// 歌单Id
     var id: String!
@@ -32,42 +35,42 @@ class SheetDetailController: BaseTitleController {
     ///
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         //设置导航栏透明
         navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
+
         //去除导航栏下面的阴影
         navigationController?.navigationBar.shadowImage = UIImage()
-        
+
         //设置导航栏样式
         //这里将导航栏的背景设置为黑色
         //这样的话状态栏文字颜色就会自动变为白色
         //如果界面有了导航栏只能通过这种方式修改
         navigationController!.navigationBar.barStyle = .black
-        
+
         //设置返回按钮为白色
         setNavigationBarTintColor(.white)
     }
-    
+
     /// 视图即将消失
     ///
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+
         //还原导航栏透明
         navigationController!.navigationBar.setBackgroundImage(nil, for: .default)
-        
+
         //还原导航栏下面的阴影
         navigationController!.navigationBar.shadowImage = nil
-        
+
         //还原导航栏样式
         navigationController!.navigationBar.barStyle = .default
-        
+
         //设置返回按钮为黑色
         setNavigationBarTintColor(.black)
     }
-    
-    
+
+
     override func initViews() {
         super.initViews()
 
@@ -112,7 +115,7 @@ class SheetDetailController: BaseTitleController {
     /// - Parameter data: <#data description#>
     func showData(_ data: Sheet) {
         self.data = data
-        
+
         // 显示 背景
         ImageUtil.show(ivBackground, data.banner)
 
@@ -258,4 +261,19 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
         return 307.5
     }
 
+    /// TableView滚动的时候就会调用
+    ///
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //垂直方向上滚动的距离
+        //不滚动的时候为0
+        //在0的位置向上滚动为正
+        //在0的位置向下滚动为负
+        let offsetY = scrollView.contentOffset.y
+
+        print("SheetDetailController scrollViewDidScroll:\(offsetY)")
+
+        //动态更改背景高度约束的值
+        //导航栏+Heade高度=350（大概计算）
+        backgroundContainerHeight.constant = 350 - offsetY
+    }
 }
