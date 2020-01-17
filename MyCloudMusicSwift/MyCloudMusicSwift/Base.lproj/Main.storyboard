@@ -1184,20 +1184,32 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-EO-ubd">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="68.5"/>
                                                         <state key="normal" title="上一曲"/>
+                                                        <connections>
+                                                            <action selector="onPreviousClick:" destination="UjX-U8-3ix" eventType="touchUpInside" id="lgQ-pA-UaC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wk-67-4Qe">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="68.5"/>
                                                         <state key="normal" title="播放"/>
+                                                        <connections>
+                                                            <action selector="onPlayClick:" destination="UjX-U8-3ix" eventType="touchUpInside" id="o88-wX-sU0"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ik8-PL-0wv">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="68.5"/>
                                                         <state key="normal" title="下一曲"/>
+                                                        <connections>
+                                                            <action selector="onNextClick:" destination="UjX-U8-3ix" eventType="touchUpInside" id="und-cy-sF8"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d83-OY-l3c">
                                                 <rect key="frame" x="0.0" y="204.5" width="414" height="68"/>
                                                 <state key="normal" title="列表循环"/>
+                                                <connections>
+                                                    <action selector="onLoopModelClick:" destination="UjX-U8-3ix" eventType="touchUpInside" id="I5T-Xu-quh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1216,6 +1228,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lPf-oh-2Td"/>
                     </view>
+                    <connections>
+                        <outlet property="btLoopModel" destination="d83-OY-l3c" id="BtC-AZ-jUK"/>
+                        <outlet property="lbEnd" destination="0Xa-Hb-VN3" id="KFv-E1-0MF"/>
+                        <outlet property="lbStart" destination="g4I-tS-M5c" id="IqW-JO-gGm"/>
+                        <outlet property="lbTitle" destination="bWr-Jm-sYg" id="Gi5-Kr-ogN"/>
+                        <outlet property="sdProgress" destination="twx-NQ-ARc" id="j0s-A2-3Dl"/>
+                        <outlet property="tableView" destination="Yps-5T-fBv" id="fom-qh-FHS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDH-H0-frV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

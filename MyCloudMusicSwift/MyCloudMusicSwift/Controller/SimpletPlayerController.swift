@@ -18,8 +18,60 @@ import UIKit
 
 class SimpletPlayerController: BaseTitleController {
 
+    /// 音乐播放列表
+    @IBOutlet weak var tableView: UITableView!
+
+    /// 标题
+    @IBOutlet weak var lbTitle: UILabel!
+
+    /// 当前播放时间
+    @IBOutlet weak var lbStart: UILabel!
+
+    /// 进度条
+    @IBOutlet weak var sdProgress: UISlider!
+
+    /// 音乐总时间
+    @IBOutlet weak var lbEnd: UILabel!
+
+    /// 播放按钮
+    @IBOutlet weak var btPlay: UIButton!
+
+    /// 循环模式
+    @IBOutlet weak var btLoopModel: UIButton!
+
+    override func initViews() {
+        super.initViews()
+    }
+
+
+    // MARK: - 按钮相关事件
+
+    /// 上一曲
+    ///
+    @IBAction func onPreviousClick(_ sender: Any) {
+        print("SimplePlayerController onPreviousClick")
+    }
+
+    /// 播放按钮
+    ///
+    @IBAction func onPlayClick(_ sender: UIButton) {
+        print("SimplePlayerController onPlayClick")
+    }
+
+    /// 下一曲
+    ///
+    @IBAction func onNextClick(_ sender: UIButton) {
+        print("SimplePlayerController onNextClick")
+    }
+
+    /// 循环模式
+    ///
+    @IBAction func onLoopModelClick(_ sender: UIButton) {
+        print("SimplePlayerController onLoopModelClick")
+    }
 
 }
+
 
 // MARK: - 启动界面
 extension SimpletPlayerController {
