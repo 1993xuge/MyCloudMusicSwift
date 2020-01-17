@@ -1134,6 +1134,21 @@
             </objects>
             <point key="canvasLocation" x="-1314" y="5841"/>
         </scene>
+        <!--Simplet Player Controller-->
+        <scene sceneID="yx9-wQ-SeF">
+            <objects>
+                <viewController storyboardIdentifier="SimpletPlayer" hidesBottomBarWhenPushed="YES" id="UjX-U8-3ix" customClass="SimpletPlayerController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qIt-OY-HA2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lPf-oh-2Td"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDH-H0-frV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1314" y="6520"/>
+        </scene>
         <!--账户-->
         <scene sceneID="lOk-kz-PUU">
             <objects>

@@ -303,4 +303,12 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
         //导航栏+Heade高度=350（大概计算）
         backgroundContainerHeight.constant = 350 - offsetY
     }
+
+    /// 点击Cell回调方法
+    ///
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+         //跳转到简单播放界面
+        SimpletPlayerController.start(navigationController!)
+    }
 }
