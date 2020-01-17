@@ -1230,6 +1230,7 @@
                     </view>
                     <connections>
                         <outlet property="btLoopModel" destination="d83-OY-l3c" id="BtC-AZ-jUK"/>
+                        <outlet property="btPlay" destination="6wk-67-4Qe" id="B47-dA-AJ9"/>
                         <outlet property="lbEnd" destination="0Xa-Hb-VN3" id="KFv-E1-0MF"/>
                         <outlet property="lbStart" destination="g4I-tS-M5c" id="IqW-JO-gGm"/>
                         <outlet property="lbTitle" destination="bWr-Jm-sYg" id="Gi5-Kr-ogN"/>

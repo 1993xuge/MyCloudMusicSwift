@@ -59,6 +59,9 @@ class SimpletPlayerController: BaseTitleController {
         song.uri = songUrl
 
         musicPlayerManager.play(songUrl, song)
+        
+        //显示播放状态
+        showMusicPlayStatus()
     }
 
     /// 播放或者暂停
@@ -82,7 +85,7 @@ class SimpletPlayerController: BaseTitleController {
     ///
     @IBAction func onPlayClick(_ sender: UIButton) {
         print("SimplePlayerController onPlayClick")
-        
+
         playOrPause()
     }
 
@@ -98,6 +101,45 @@ class SimpletPlayerController: BaseTitleController {
         print("SimplePlayerController onLoopModelClick")
     }
 
+    /// 视图即将可见方法
+    ///
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        //设置播放代理
+        musicPlayerManager.delegate = self
+    }
+
+    /// 视图即将消失
+    ///will：即将
+    ///did：已经
+    ///其他方法命名也都有这个规律
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        //取消代理
+        musicPlayerManager.delegate = nil
+    }
+
+
+    /// 显示播放状态
+    func showPlayStatus() {
+        btPlay.setTitle("播放", for: .normal)
+    }
+
+    /// 显示暂停状态
+    func showPauseStatus() {
+        btPlay.setTitle("暂停", for: .normal)
+    }
+
+    /// 显示播放状态
+    func showMusicPlayStatus() {
+        if musicPlayerManager.isPlaying() {
+            showPauseStatus()
+        } else {
+            showPlayStatus()
+        }
+    }
 }
 
 
@@ -113,5 +155,18 @@ extension SimpletPlayerController {
 
         //将控制器压入导航控制器
         navigationController.pushViewController(controller, animated: true)
+    }
+}
+
+// MARK: - 播放代理
+
+extension SimpletPlayerController: MusicPlayerDelegate {
+    func onPaused(_ data: Song) {
+        showPlayStatus()
+    }
+
+    func onPlaying(_ data: Song) {
+
+        showPauseStatus()
     }
 }
