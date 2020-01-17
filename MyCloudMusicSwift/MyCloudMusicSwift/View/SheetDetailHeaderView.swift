@@ -49,7 +49,7 @@ class SheetDetailHeaderView: BaseTableViewHeaderFooterView {
     var onCommentClick: (() -> Void)!
 
     /// 收藏回调方法
-    var   onCollectionClick: (() -> Void)!
+    var onCollectionClick: (() -> Void)!
 
     /// 用户点击回调方法
     var onUserClick: (() -> Void)!
@@ -72,12 +72,44 @@ class SheetDetailHeaderView: BaseTableViewHeaderFooterView {
         //播放全部
         vwControl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onPlayAllClick)))
 
+        DispatchQueue.main.async {
+            self.setControlRadius()
+        }
+    }
+
+    /// 设置按钮组圆角
+    func setControlRadius() {
+        //设置按钮组圆角
+        //这里要设置左上，右上为圆角
+
+        //设置切哪个直角
+        //UIRectCornerTopLeft     = 1 << 0,  左上角
+        //UIRectCornerTopRight    = 1 << 1,  右上角
+        //UIRectCornerBottomLeft  = 1 << 2,  左下角
+        //UIRectCornerBottomRight = 1 << 3,  右下角
+        //UIRectCornerAllCorners  = ~0UL     全部角
+
+        //创建遮罩
+        //类似PS中的蒙版
+        let maskPath = UIBezierPath(roundedRect: vwControl.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: SIZE_LARGE_DIVIDER, height: SIZE_LARGE_DIVIDER))
+
+        //创建layer
+        let maskLayer = CAShapeLayer()
+
+        //设置frame
+        maskLayer.frame = vwControl.bounds
+
+        //设置layer路径
+        maskLayer.path = maskPath.cgPath
+
+        //设置控件组layer
+        vwControl.layer.mask = maskLayer
     }
 
     /// 用户信息点击
     @objc func onUserInfoClick() {
         print("SheetDetailHeaderView onUserInfoClick")
-    
+
         onUserClick()
     }
 

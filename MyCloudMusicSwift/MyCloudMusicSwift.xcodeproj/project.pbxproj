@@ -16,6 +16,7 @@
 		D50D32B623C8055A00710DF6 /* StringExtendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D32B523C8055A00710DF6 /* StringExtendTests.swift */; };
 		D50D32B723C8064D00710DF6 /* MyCloudMusicSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551B26E23C45B650061E4A8 /* MyCloudMusicSwiftUITests.swift */; };
 		D54266A323D0B4880061F446 /* BaseTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54266A223D0B4880061F446 /* BaseTableViewHeaderFooterView.swift */; };
+		D54266A523D144760061F446 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54266A423D144760061F446 /* CommentController.swift */; };
 		D551B24F23C45B620061E4A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551B24E23C45B620061E4A8 /* AppDelegate.swift */; };
 		D551B25123C45B620061E4A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551B25023C45B620061E4A8 /* ViewController.swift */; };
 		D551B25423C45B620061E4A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D551B25223C45B620061E4A8 /* Main.storyboard */; };
@@ -122,6 +123,7 @@
 		D50D32B223C8053100710DF6 /* StringExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtend.swift; sourceTree = "<group>"; };
 		D50D32B523C8055A00710DF6 /* StringExtendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtendTests.swift; sourceTree = "<group>"; };
 		D54266A223D0B4880061F446 /* BaseTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		D54266A423D144760061F446 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		D551B24B23C45B620061E4A8 /* MyCloudMusicSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCloudMusicSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D551B24E23C45B620061E4A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D551B25023C45B620061E4A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				D5752D3E23CCC10D0058FE0F /* WebController.swift */,
 				D5752D4023CD35060058FE0F /* BaseTitleController.swift */,
 				D55F7C5E23CFDB130038D9F9 /* SheetDetailController.swift */,
+				D54266A423D144760061F446 /* CommentController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				D55801B223C6E68300BD5335 /* YJBannerViewFooter.m in Sources */,
 				D5752CE523C9689C0058FE0F /* BaseResponse.swift in Sources */,
 				D55F7C4B23CDEB140038D9F9 /* ResourceUtil.swift in Sources */,
+				D54266A523D144760061F446 /* CommentController.swift in Sources */,
 				D55801AE23C6E68300BD5335 /* YJAnimatedDotView.m in Sources */,
 				D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */,
 				D5752CEB23C97D430058FE0F /* Api.swift in Sources */,

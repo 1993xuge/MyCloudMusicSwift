@@ -232,6 +232,8 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
         //设置评论列表点击回调方法
         header.onCommentClick = {
             print("SheetDetailController onCommentClick:\(self.data.title)")
+
+            CommentController.start(self.navigationController!, sheet: self.data.id)
         }
 
         //设置收藏点击回调方法
