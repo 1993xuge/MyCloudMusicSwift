@@ -45,6 +45,18 @@ class SheetDetailHeaderView: BaseTableViewHeaderFooterView {
 
     private var data: Sheet!
 
+    /// 评论点击回调
+    var onCommentClick: (() -> Void)!
+
+    /// 收藏回调方法
+    var   onCollectionClick: (() -> Void)!
+
+    /// 用户点击回调方法
+    var onUserClick: (() -> Void)!
+
+    /// 播放全部点击回调方法
+    var onPlayClick: (() -> Void)!
+
     override func initViews() {
         super.initViews()
 
@@ -65,21 +77,26 @@ class SheetDetailHeaderView: BaseTableViewHeaderFooterView {
     /// 用户信息点击
     @objc func onUserInfoClick() {
         print("SheetDetailHeaderView onUserInfoClick")
+    
+        onUserClick()
     }
 
     /// 播放所有音乐
     @objc func onPlayAllClick() {
         print("SheetDetailHeaderView onPlayAllClick")
+        onPlayClick()
     }
 
     /// 歌单评论点击
     @IBAction func onCommentClick(_ sender: UIButton) {
         print("SheetDetailHeaderView onCommentClick")
+        onCommentClick()
     }
 
     /// 收藏歌单点击
     @IBAction func onCollectionClick(_ sender: UIButton) {
         print("SheetDetailHeaderView onCollectionClick")
+        onCollectionClick()
     }
 
     func bindData(_ data: Sheet) {
@@ -138,4 +155,6 @@ class SheetDetailHeaderView: BaseTableViewHeaderFooterView {
             btCollection.setTitleColor(.white, for: .normal)
         }
     }
+
+
 }

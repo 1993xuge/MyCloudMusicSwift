@@ -137,6 +137,26 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SheetDetailHeaderView.NAME) as! SheetDetailHeaderView
 
+        //设置评论列表点击回调方法
+        header.onCommentClick = {
+            print("SheetDetailController onCommentClick:\(self.data.title)")
+        }
+
+        //设置收藏点击回调方法
+        header.onCollectionClick = {
+            print("SheetDetailController onCollectionClick")
+        }
+
+        //设置用户点击回调方法
+        header.onUserClick = {
+            print("SheetDetailController onUserClick")
+        }
+
+        //播放全部点击回调方法
+        header.onPlayClick = {
+            print("SheetDetailController onPlayClick")
+        }
+
         //返回Header
         return header
     }
