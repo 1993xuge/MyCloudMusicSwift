@@ -245,6 +245,8 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
         //设置用户点击回调方法
         header.onUserClick = {
             print("SheetDetailController onUserClick")
+
+            UserDetailController.start(self.navigationController!, userId: self.data.user.id)
         }
 
         //播放全部点击回调方法
