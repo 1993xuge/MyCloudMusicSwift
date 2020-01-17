@@ -28,6 +28,45 @@ class SheetDetailController: BaseTitleController {
     /// 头部
     var header: SheetDetailHeaderView!
 
+    /// 视图即将可见
+    ///
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //设置导航栏透明
+        navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        //去除导航栏下面的阴影
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        //设置导航栏样式
+        //这里将导航栏的背景设置为黑色
+        //这样的话状态栏文字颜色就会自动变为白色
+        //如果界面有了导航栏只能通过这种方式修改
+        navigationController!.navigationBar.barStyle = .black
+        
+        //设置返回按钮为白色
+        setNavigationBarTintColor(.white)
+    }
+    
+    /// 视图即将消失
+    ///
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        //还原导航栏透明
+        navigationController!.navigationBar.setBackgroundImage(nil, for: .default)
+        
+        //还原导航栏下面的阴影
+        navigationController!.navigationBar.shadowImage = nil
+        
+        //还原导航栏样式
+        navigationController!.navigationBar.barStyle = .default
+        
+        //设置返回按钮为黑色
+        setNavigationBarTintColor(.black)
+    }
+    
     
     override func initViews() {
         super.initViews()
