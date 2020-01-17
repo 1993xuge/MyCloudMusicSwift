@@ -1141,7 +1141,79 @@
                     <view key="view" contentMode="scaleToFill" id="qIt-OY-HA2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vsd-ox-xBC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yps-5T-fBv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="545.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Dr-A1-GeZ">
+                                        <rect key="frame" x="0.0" y="545.5" width="414" height="272.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWr-Jm-sYg">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="O4X-KA-r0g">
+                                                <rect key="frame" x="0.0" y="68" width="414" height="68"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-tS-M5c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="68"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="twx-NQ-ARc">
+                                                        <rect key="frame" x="136" y="0.0" width="142" height="69"/>
+                                                    </slider>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xa-Hb-VN3">
+                                                        <rect key="frame" x="276" y="0.0" width="138" height="68"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qU2-Ti-KIQ">
+                                                <rect key="frame" x="0.0" y="136" width="414" height="68.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-EO-ubd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="68.5"/>
+                                                        <state key="normal" title="上一曲"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wk-67-4Qe">
+                                                        <rect key="frame" x="138" y="0.0" width="138" height="68.5"/>
+                                                        <state key="normal" title="播放"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ik8-PL-0wv">
+                                                        <rect key="frame" x="276" y="0.0" width="138" height="68.5"/>
+                                                        <state key="normal" title="下一曲"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d83-OY-l3c">
+                                                <rect key="frame" x="0.0" y="204.5" width="414" height="68"/>
+                                                <state key="normal" title="列表循环"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8Dr-A1-GeZ" firstAttribute="height" secondItem="Yps-5T-fBv" secondAttribute="height" multiplier="1:2" id="z2B-Uy-9dP"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vsd-ox-xBC" firstAttribute="top" secondItem="lPf-oh-2Td" secondAttribute="top" id="HPg-qE-yhc"/>
+                            <constraint firstItem="lPf-oh-2Td" firstAttribute="trailing" secondItem="vsd-ox-xBC" secondAttribute="trailing" id="QKE-At-ma4"/>
+                            <constraint firstItem="vsd-ox-xBC" firstAttribute="leading" secondItem="lPf-oh-2Td" secondAttribute="leading" id="cC7-Ov-W4x"/>
+                            <constraint firstItem="lPf-oh-2Td" firstAttribute="bottom" secondItem="vsd-ox-xBC" secondAttribute="bottom" id="ibU-A5-Lne"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lPf-oh-2Td"/>
                     </view>
                 </viewController>
