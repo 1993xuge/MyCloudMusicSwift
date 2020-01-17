@@ -21,6 +21,9 @@ import Moya
 /// - ads: 广告列表
 /// - songs: 单曲列表
 
+/// - collect: 收藏歌单
+/// - deleteCollect: 取消收藏歌单
+
 enum Service {
     case sheetDetail(id: String)
     case sheets
@@ -34,6 +37,9 @@ enum Service {
     case ads
 
     case songs
+
+    case collect(id: String)
+    case deleteCollect(id: String)
 }
 
 // MARK: - 实现TargetType协议
@@ -68,6 +74,13 @@ extension Service: TargetType {
 
         case .songs:
             return "/v1/songs.json"
+
+        case .collect:
+            return "/v1/collections.json"
+
+        case .deleteCollect(let id):
+            return "/v1/collections/\(id).json"
+
         default:
             return ""
         }
@@ -76,8 +89,11 @@ extension Service: TargetType {
     /// 请求方式
     var method: Moya.Method {
         switch self {
-        case .createUser, .login, .resetPassword, .sendSMSCode, .sendEmailCode:
+        case .createUser, .login, .resetPassword, .sendSMSCode, .sendEmailCode, .collect:
             return .post
+
+        case .deleteCollect:
+            return .delete
 
         default:
             return .get
@@ -101,6 +117,10 @@ extension Service: TargetType {
             return HttpUtil.jsonRequestParamters(["phone": phone])
         case .sendEmailCode(let email):
             return HttpUtil.jsonRequestParamters(["email": email])
+
+        case .collect(let id):
+            return HttpUtil.jsonRequestParamters(["sheet_id": id])
+
         default:
             return .requestPlain
         }

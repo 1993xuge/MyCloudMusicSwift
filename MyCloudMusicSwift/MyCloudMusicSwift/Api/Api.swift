@@ -194,4 +194,32 @@ class Api {
             .asObservable()
             .mapObject(ListResponse<Song>.self)
     }
+
+    /// 收藏歌单
+    ///
+    /// - Parameter id: <#id description#>
+    /// - Returns: <#return value description#>
+    func collect(_ id: String) -> Observable<DetailResponse<BaseModel>?> {
+        return provider
+            .rx
+            .request(.collect(id: id))
+            .filterSuccessfulStatusCodes()
+            .asObservable()
+            .mapString()
+            .mapObject(DetailResponse<BaseModel>.self)
+    }
+
+    /// 取消收藏歌单
+    ///
+    /// - Parameter id: <#id description#>
+    /// - Returns: <#return value description#>
+    func deleteCollect(_ id: String) -> Observable<DetailResponse<BaseModel>?> {
+        return provider
+            .rx
+            .request(.deleteCollect(id: id))
+            .filterSuccessfulStatusCodes()
+            .asObservable()
+            .mapString()
+            .mapObject(DetailResponse<BaseModel>.self)
+    }
 }

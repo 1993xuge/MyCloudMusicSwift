@@ -778,22 +778,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9A-MM-ZW0" userLabel="BackgroundContainer">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iWL-AA-ddp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    </imageView>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psA-uC-Nvv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cM9-Je-GOP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="dark"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iWL-AA-ddp" firstAttribute="leading" secondItem="g9A-MM-ZW0" secondAttribute="leading" id="Af5-6s-BuE"/>
+                                    <constraint firstItem="psA-uC-Nvv" firstAttribute="top" secondItem="g9A-MM-ZW0" secondAttribute="top" id="DP5-tW-yYj"/>
+                                    <constraint firstItem="iWL-AA-ddp" firstAttribute="top" secondItem="g9A-MM-ZW0" secondAttribute="top" id="EH0-sa-20h"/>
+                                    <constraint firstItem="psA-uC-Nvv" firstAttribute="leading" secondItem="g9A-MM-ZW0" secondAttribute="leading" id="JXk-CE-ie8"/>
+                                    <constraint firstAttribute="trailing" secondItem="iWL-AA-ddp" secondAttribute="trailing" id="MOb-A9-nfj"/>
+                                    <constraint firstAttribute="trailing" secondItem="psA-uC-Nvv" secondAttribute="trailing" id="WbK-MH-Z9c"/>
+                                    <constraint firstAttribute="bottom" secondItem="iWL-AA-ddp" secondAttribute="bottom" id="uYN-Av-yvo"/>
+                                    <constraint firstAttribute="bottom" secondItem="psA-uC-Nvv" secondAttribute="bottom" id="vaj-3T-bRQ"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rFF-9I-ZPf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="trailing" secondItem="g9A-MM-ZW0" secondAttribute="trailing" id="K3P-Ja-S1r"/>
+                            <constraint firstItem="g9A-MM-ZW0" firstAttribute="leading" secondItem="xWJ-Qa-Nqx" secondAttribute="leading" id="OvI-Ra-odE"/>
                             <constraint firstItem="rFF-9I-ZPf" firstAttribute="top" secondItem="xWJ-Qa-Nqx" secondAttribute="top" id="djB-2S-Juw"/>
                             <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="bottom" secondItem="rFF-9I-ZPf" secondAttribute="bottom" id="jVf-JU-2fs"/>
                             <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="trailing" secondItem="rFF-9I-ZPf" secondAttribute="trailing" id="mJV-V9-hO5"/>
+                            <constraint firstItem="xWJ-Qa-Nqx" firstAttribute="bottom" secondItem="g9A-MM-ZW0" secondAttribute="bottom" id="nId-Mf-Bho"/>
+                            <constraint firstItem="g9A-MM-ZW0" firstAttribute="top" secondItem="xWJ-Qa-Nqx" secondAttribute="top" id="vzx-4s-vmO"/>
                             <constraint firstItem="rFF-9I-ZPf" firstAttribute="leading" secondItem="xWJ-Qa-Nqx" secondAttribute="leading" id="whV-je-ZNe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xWJ-Qa-Nqx"/>
                     </view>
                     <connections>
+                        <outlet property="ivBackground" destination="iWL-AA-ddp" id="ueu-UM-Rn9"/>
                         <outlet property="tableView" destination="rFF-9I-ZPf" id="u37-w1-usY"/>
                     </connections>
                 </viewController>

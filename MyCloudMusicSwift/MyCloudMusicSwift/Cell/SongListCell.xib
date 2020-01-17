@@ -76,10 +76,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="lNJ-Sd-qhE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ar8-0s-dmg"/>
                     <constraint firstAttribute="bottom" secondItem="lNJ-Sd-qhE" secondAttribute="bottom" id="PbR-wY-zzl"/>
@@ -87,7 +85,6 @@
                     <constraint firstAttribute="trailing" secondItem="lNJ-Sd-qhE" secondAttribute="trailing" constant="10" id="q6I-1v-VSM"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btMore" destination="igN-8b-mdT" id="fhc-lA-J4j"/>

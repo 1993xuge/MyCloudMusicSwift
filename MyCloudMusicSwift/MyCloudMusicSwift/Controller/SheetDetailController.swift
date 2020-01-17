@@ -13,6 +13,8 @@ class SheetDetailController: BaseTitleController {
 
     /// 列表控件
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var ivBackground: UIImageView!
 
     /// 歌单Id
     var id: String!
@@ -26,6 +28,7 @@ class SheetDetailController: BaseTitleController {
     /// 头部
     var header: SheetDetailHeaderView!
 
+    
     override func initViews() {
         super.initViews()
 
@@ -70,6 +73,9 @@ class SheetDetailController: BaseTitleController {
     /// - Parameter data: <#data description#>
     func showData(_ data: Sheet) {
         self.data = data
+        
+        // 显示 背景
+        ImageUtil.show(ivBackground, data.banner)
 
         //显示头部数据
         header.bindData(data)
@@ -81,6 +87,50 @@ class SheetDetailController: BaseTitleController {
 
         //重新加载数据
         tableView.reloadData()
+    }
+
+    /// 处理收藏和取消收藏逻辑
+    func processCollectionClick() {
+        if data.isCollection() {
+            //已经收藏了
+
+            //取消收藏
+
+            Api.shared.deleteCollect(data.id).subscribeOnSuccess { response in
+                // DetailResponse<BaseModel>?
+                //取消收藏成功
+                self.data.collection_id = nil
+
+                //收藏数-1
+                self.data.collections_count -= 1
+
+                //刷新收藏状态
+                self.header.showCollectionStatus()
+            }.disposed(by: disposeBag)
+        } else {
+            //没有收藏
+
+            //收藏
+            Api.shared.collect(data.id).subscribeOnSuccess { response in
+                // DetailResponse<BaseModel>?
+                //收藏成功
+
+                //收藏状态变更后
+                //可以重新点击歌单详情界面
+                //获取收藏状态
+                //但对于收藏来说
+                //收藏数可能没那么重要
+                //所以不用及时刷新
+
+                self.data.collection_id = 1
+
+                //收藏数量+1
+                self.data.collections_count += 1
+
+                //刷新收藏状态
+                self.header.showCollectionStatus()
+            }.disposed(by: disposeBag)
+        }
     }
 }
 
@@ -145,6 +195,7 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
         //设置收藏点击回调方法
         header.onCollectionClick = {
             print("SheetDetailController onCollectionClick")
+            self.processCollectionClick()
         }
 
         //设置用户点击回调方法
