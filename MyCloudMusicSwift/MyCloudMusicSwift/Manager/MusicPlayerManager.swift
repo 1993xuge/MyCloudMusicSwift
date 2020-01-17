@@ -30,6 +30,9 @@ class MusicPlayerManager {
     /// 当前音乐
     var data: Song!
 
+    /// 播放代理
+    var delegate: MusicPlayerDelegate?
+
     /// 获取单例的播放管理器
     ///
     static func shared() -> MusicPlayerManager {
@@ -64,6 +67,8 @@ class MusicPlayerManager {
 
         //播放
         player.play()
+
+        delegate?.onPlaying(data!)
     }
 
     /// 暂停
@@ -74,16 +79,18 @@ class MusicPlayerManager {
 
         //暂停
         player.pause()
+        delegate?.onPaused(data!)
     }
 
     /// 继续播放
     func resume() {
-        
+
         //更改播放状态
         status = .playing
 
         //播放
         player.play()
+        delegate?.onPlaying(data!)
     }
 
     /// 是否在播放
@@ -104,4 +111,15 @@ enum PlayStatus {
     case playing
     case pause
     case error
+}
+
+protocol MusicPlayerDelegate {
+
+    /// 暂停了
+    ///
+    func onPaused(_ data: Song)
+
+    /// 正在播放
+    ///
+    func onPlaying(_ data: Song)
 }
