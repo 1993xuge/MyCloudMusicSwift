@@ -34,6 +34,9 @@ class MusicPlayerManager: NSObject {
     /// 播放代理
     var delegate: MusicPlayerDelegate?
 
+    /// 定时器返回的对象
+    var playTimeObserve: Any?
+
     /// 获取单例的播放管理器
     ///
     static func shared() -> MusicPlayerManager {
@@ -134,6 +137,9 @@ class MusicPlayerManager: NSObject {
         initListeners()
 
         delegate?.onPlaying(data!)
+
+        //启动进度分发定时器
+        startPublishProgress()
     }
 
     /// 暂停
@@ -144,11 +150,14 @@ class MusicPlayerManager: NSObject {
 
         //暂停
         player.pause()
-        
+
         //移除监听器
         removeListeners()
-        
+
         delegate?.onPaused(data!)
+
+        //停止进度分发定时器
+        stopPublishProgress()
     }
 
     /// 继续播放
@@ -159,17 +168,59 @@ class MusicPlayerManager: NSObject {
 
         //播放
         player.play()
-        
+
         //设置监听器
         initListeners()
-        
+
         delegate?.onPlaying(data!)
+
+        //启动进度分发定时器
+        startPublishProgress()
     }
 
     /// 是否在播放
     ///
     func isPlaying() -> Bool {
         return status == .playing
+    }
+
+    /// 开启进度回调通知
+    func startPublishProgress() {
+        //判断是否启动了
+        if let _ = playTimeObserve {
+            //已经启动了
+            return
+        }
+
+        //1/60
+        //16毫秒执行一次
+        playTimeObserve = player.addPeriodicTimeObserver(forInterval: CMTime(value: CMTimeValue(1.0), timescale: 60), queue: DispatchQueue.main, using: { time in
+
+                //判断是否有代理
+                guard let delegate = self.delegate else {
+                    //没有回调
+                    //停止定时器
+                    self.stopPublishProgress()
+
+                    return
+                }
+
+                //获取当前音乐播放时间
+                self.data!.progress = Float(CMTimeGetSeconds(time))
+
+                print("MusicPlayerManager startPublishProgress progress:\(self.data.progress),\(self.data.duration)")
+
+                //回调代理
+                delegate.onProgress(self.data)
+            })
+    }
+
+    /// 停止进度分发
+    func stopPublishProgress() {
+        if let playTimeObserve = playTimeObserve {
+            player.removeTimeObserver(playTimeObserve)
+            self.playTimeObserve = nil
+        }
     }
 }
 
@@ -201,4 +252,9 @@ protocol MusicPlayerDelegate {
     /// 正在播放
     ///
     func onPlaying(_ data: Song)
+
+    /// 进度回调
+    ///
+    /// - Parameter data: <#data description#>
+    func onProgress(_ data: Song)
 }

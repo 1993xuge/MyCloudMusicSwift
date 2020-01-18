@@ -194,4 +194,11 @@ extension SimpletPlayerController: MusicPlayerDelegate {
 
         showPauseStatus()
     }
+
+    /// 进度回调
+    ///
+    /// - Parameter data: <#data description#>
+    func onProgress(_ data: Song) {
+        print("SimplePlayerController onProgress:\(data.progress),\(data.duration)")
+    }
 }
