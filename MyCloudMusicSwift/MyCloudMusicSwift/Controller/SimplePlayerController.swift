@@ -1,5 +1,5 @@
 //
-//  SimpletPlayerController.swift
+//  SimplePlayerController.swift
 //  MyCloudMusicSwift
 //  简单的音乐播放实现
 //  主要测试音乐播放相关逻辑
@@ -16,7 +16,7 @@
 
 import UIKit
 
-class SimpletPlayerController: BaseTitleController {
+class SimplePlayerController: BaseTitleController {
 
     /// 音乐播放列表
     @IBOutlet weak var tableView: UITableView!
@@ -156,7 +156,7 @@ class SimpletPlayerController: BaseTitleController {
 
 
 // MARK: - 启动界面
-extension SimpletPlayerController {
+extension SimplePlayerController {
 
     /// 启动界面
     ///
@@ -172,7 +172,7 @@ extension SimpletPlayerController {
 
 // MARK: - 播放代理
 
-extension SimpletPlayerController: MusicPlayerDelegate {
+extension SimplePlayerController: MusicPlayerDelegate {
 
     /// 播放器准备完毕了
     ///

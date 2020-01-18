@@ -309,6 +309,6 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
          //跳转到简单播放界面
-        SimpletPlayerController.start(navigationController!)
+        SimplePlayerController.start(navigationController!)
     }
 }

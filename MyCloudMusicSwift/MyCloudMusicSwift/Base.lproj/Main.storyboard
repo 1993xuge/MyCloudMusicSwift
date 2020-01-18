@@ -1134,10 +1134,10 @@
             </objects>
             <point key="canvasLocation" x="-1314" y="5841"/>
         </scene>
-        <!--Simplet Player Controller-->
+        <!--Simple Player Controller-->
         <scene sceneID="yx9-wQ-SeF">
             <objects>
-                <viewController storyboardIdentifier="SimpletPlayer" hidesBottomBarWhenPushed="YES" id="UjX-U8-3ix" customClass="SimpletPlayerController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpletPlayer" hidesBottomBarWhenPushed="YES" id="UjX-U8-3ix" customClass="SimplePlayerController" customModule="MyCloudMusicSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qIt-OY-HA2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
