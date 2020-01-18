@@ -64,6 +64,7 @@ class SimplePlayerController: BaseTitleController {
         showMusicPlayStatus()
 
         showDuration()
+        showProgress()
     }
 
     /// 播放或者暂停
@@ -152,6 +153,16 @@ class SimplePlayerController: BaseTitleController {
             sdProgress.maximumValue = duration
         }
     }
+
+    /// 显示进度
+    func showProgress() {
+        let progress = musicPlayerManager.data!.progress
+
+        if progress > 0 {
+            lbStart.text = TimeUtil.second2MinuteAndSecond(progress)
+            sdProgress.value = progress
+        }
+    }
 }
 
 
@@ -200,5 +211,6 @@ extension SimplePlayerController: MusicPlayerDelegate {
     /// - Parameter data: <#data description#>
     func onProgress(_ data: Song) {
         print("SimplePlayerController onProgress:\(data.progress),\(data.duration)")
+        showProgress()
     }
 }
