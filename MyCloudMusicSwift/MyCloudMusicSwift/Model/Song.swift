@@ -40,7 +40,13 @@ class Song: BaseModel {
 
     /// 歌手
     var singer: User!
-
+    
+    // MARK: - 播放后才有值
+    /// 时长
+    var duration:Float = 0
+    
+    /// 播放进度
+    var progress:Float = 0
 }
 
 /// 歌词类型

@@ -59,9 +59,11 @@ class SimpletPlayerController: BaseTitleController {
         song.uri = songUrl
 
         musicPlayerManager.play(songUrl, song)
-        
+
         //显示播放状态
         showMusicPlayStatus()
+
+        showDuration()
     }
 
     /// 播放或者暂停
@@ -140,6 +142,16 @@ class SimpletPlayerController: BaseTitleController {
             showPlayStatus()
         }
     }
+
+    /// 显示播放总时长
+    func showDuration() {
+        let duration = musicPlayerManager.data!.duration
+
+        if duration > 0 {
+            lbEnd.text = TimeUtil.second2MinuteAndSecond(duration)
+            sdProgress.maximumValue = duration
+        }
+    }
 }
 
 
@@ -161,10 +173,23 @@ extension SimpletPlayerController {
 // MARK: - 播放代理
 
 extension SimpletPlayerController: MusicPlayerDelegate {
+
+    /// 播放器准备完毕了
+    ///
+    func onPrepared(_ data: Song) {
+        print("SimplePlayController onPrepared duration:\(data.duration)")
+
+        showDuration()
+    }
+
+    /// 暂停了
+    ///
     func onPaused(_ data: Song) {
         showPlayStatus()
     }
 
+    /// 播放中
+    ///
     func onPlaying(_ data: Song) {
 
         showPauseStatus()

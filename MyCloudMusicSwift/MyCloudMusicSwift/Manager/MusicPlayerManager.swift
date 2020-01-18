@@ -17,7 +17,8 @@ import Foundation
 //导入媒体模块
 import MediaPlayer
 
-class MusicPlayerManager {
+class MusicPlayerManager: NSObject {
+    static var STATUS = "status"
 
     private static var instance: MusicPlayerManager?
 
@@ -43,8 +44,67 @@ class MusicPlayerManager {
     }
 
     /// 初始化
-    init() {
+    override init() {
+        super.init()
         player = AVPlayer.init()
+    }
+
+    /// 设置监听器
+    func initListeners() {
+        //KVO方式监听播放状态
+        //KVC:Key-Value Coding,另一种获取对象字段的值，类似字典
+        //KVO:Key-Value Observing,建立在KVC基础上，能够观察一个字段值的改变
+        player.currentItem?.addObserver(self, forKeyPath: MusicPlayerManager.STATUS, options: .new, context: nil)
+
+        //监听播放结束事件
+        NotificationCenter.default.addObserver(self, selector: #selector(onComplete(notification:)), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+    }
+
+    /// 移除监听器
+    func removeListeners() {
+        player.currentItem?.removeObserver(self, forKeyPath: MusicPlayerManager.STATUS)
+
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    /// 播放完毕了回调
+    ///
+    /// - Parameter notification: <#notification description#>
+    @objc func onComplete(notification: Notification) {
+        print("MusicPlayerManager onComplete")
+    }
+
+    /// KVO监听回调方法
+    ///
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+        print("MusicPlayerManager observeValue:\(keyPath)")
+
+        if keyPath == MusicPlayerManager.STATUS {
+            //播放状态
+
+            switch player.status {
+            case .readyToPlay:
+                //准备播放完成了
+                self.data!.duration = Float(CMTimeGetSeconds(player.currentItem!.asset.duration))
+                print("MusicPlayerManager observeValue duration:\(self.data!.duration)")
+
+                //回调代理
+                delegate?.onPrepared(data)
+                break
+
+            case .failed:
+                //播放失败了
+                status = .error
+
+                print("MusicPlayerManager observeValue error")
+                break
+
+            default:
+                //未知状态
+                print("MusicPlayerManager observeValue unknown status")
+                break
+            }
+        }
     }
 
     /// 播放
@@ -68,6 +128,11 @@ class MusicPlayerManager {
         //播放
         player.play()
 
+        //设置监听器
+        //因为监听器是针对PlayerItem的
+        //所以说播放了音乐在这里设置
+        initListeners()
+
         delegate?.onPlaying(data!)
     }
 
@@ -79,6 +144,10 @@ class MusicPlayerManager {
 
         //暂停
         player.pause()
+        
+        //移除监听器
+        removeListeners()
+        
         delegate?.onPaused(data!)
     }
 
@@ -90,6 +159,10 @@ class MusicPlayerManager {
 
         //播放
         player.play()
+        
+        //设置监听器
+        initListeners()
+        
         delegate?.onPlaying(data!)
     }
 
@@ -114,6 +187,12 @@ enum PlayStatus {
 }
 
 protocol MusicPlayerDelegate {
+
+    /// 播放器准备完毕了
+    /// 可以获取到音乐总时长
+    ///
+    /// - Parameter data: <#data description#>
+    func onPrepared(_ data: Song)
 
     /// 暂停了
     ///
