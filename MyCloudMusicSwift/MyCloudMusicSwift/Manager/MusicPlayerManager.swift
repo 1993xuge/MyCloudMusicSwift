@@ -178,6 +178,14 @@ class MusicPlayerManager: NSObject {
         startPublishProgress()
     }
 
+    /// 从指定位置开始播放
+    ///
+    /// - Parameter value: <#value description#>
+    func seekTo(_ value: Float) {
+        let positionTime = CMTime(seconds: Double(value), preferredTimescale: 1)
+        player.seek(to: positionTime)
+    }
+
     /// 是否在播放
     ///
     func isPlaying() -> Bool {

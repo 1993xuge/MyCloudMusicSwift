@@ -1169,6 +1169,9 @@
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="twx-NQ-ARc">
                                                         <rect key="frame" x="136" y="0.0" width="142" height="69"/>
+                                                        <connections>
+                                                            <action selector="onProgressChanged:" destination="UjX-U8-3ix" eventType="valueChanged" id="5fL-fF-X0a"/>
+                                                        </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xa-Hb-VN3">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="68"/>

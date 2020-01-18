@@ -103,7 +103,20 @@ class SimplePlayerController: BaseTitleController {
     @IBAction func onLoopModelClick(_ sender: UIButton) {
         print("SimplePlayerController onLoopModelClick")
     }
-
+    
+    // MARK: - 进度条相关
+    
+    /// 进度条拖拽回调
+    ///
+    @IBAction func onProgressChanged(_ sender: UISlider) {
+        //将拖拽进度显示到界面
+        //用户就很方便的知道自己拖拽到什么位置
+        lbStart.text = TimeUtil.second2MinuteAndSecond(sender.value)
+        
+        //音乐切换到拖拽位置播放
+        musicPlayerManager.seekTo(sender.value)
+    }
+    
     /// 视图即将可见方法
     ///
     override func viewWillAppear(_ animated: Bool) {
