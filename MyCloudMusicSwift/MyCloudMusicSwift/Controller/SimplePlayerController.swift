@@ -42,6 +42,9 @@ class SimplePlayerController: BaseTitleController {
     /// 播放管理器
     var musicPlayerManager: MusicPlayerManager!
 
+    /// 是否按下了进度条
+    var isSlideTouch = false
+
     override func initViews() {
         super.initViews()
     }
@@ -103,20 +106,44 @@ class SimplePlayerController: BaseTitleController {
     @IBAction func onLoopModelClick(_ sender: UIButton) {
         print("SimplePlayerController onLoopModelClick")
     }
-    
+
     // MARK: - 进度条相关
-    
+
     /// 进度条拖拽回调
     ///
     @IBAction func onProgressChanged(_ sender: UISlider) {
         //将拖拽进度显示到界面
         //用户就很方便的知道自己拖拽到什么位置
         lbStart.text = TimeUtil.second2MinuteAndSecond(sender.value)
-        
+
         //音乐切换到拖拽位置播放
-        musicPlayerManager.seekTo(sender.value)
+//        musicPlayerManager.seekTo(sender.value)
     }
-    
+
+    /// 进度条按下
+    ///
+    @IBAction func onSlideTouchDown(_ sender: UISlider) {
+
+        print("SimplePlayerController onSlideTouchDown")
+
+        isSlideTouch = true
+    }
+
+    /// 进度条抬起
+    ///
+    @IBAction func onSlideTouchUp(_ sender: UISlider) {
+        print("SimplePlayerController onSlideTouchUp")
+
+        isSlideTouch = false
+
+        if sender.value > 1 {
+            //减一是为了用户能听清前一秒
+            //音乐可能没那么明显
+            //但视频继续播放的时候最好减一秒
+            musicPlayerManager.seekTo(sender.value-1)
+        }
+    }
+
     /// 视图即将可见方法
     ///
     override func viewWillAppear(_ animated: Bool) {
@@ -172,8 +199,10 @@ class SimplePlayerController: BaseTitleController {
         let progress = musicPlayerManager.data!.progress
 
         if progress > 0 {
-            lbStart.text = TimeUtil.second2MinuteAndSecond(progress)
-            sdProgress.value = progress
+            if !isSlideTouch {
+                lbStart.text = TimeUtil.second2MinuteAndSecond(progress)
+                sdProgress.value = progress
+            }
         }
     }
 }
