@@ -41,9 +41,9 @@ class SimplePlayerController: BaseTitleController {
 
     /// 播放管理器
     var musicPlayerManager: MusicPlayerManager!
-    
+
     /// 播放列表管理器
-    var playListManager:PlayListManager!
+    var playListManager: PlayListManager!
 
     /// 是否按下了进度条
     var isSlideTouch = false
@@ -54,7 +54,7 @@ class SimplePlayerController: BaseTitleController {
 
     override func initDatas() {
         super.initDatas()
-        
+
         //获取播放列表管理器
         playListManager = PlayListManager.shared
 
@@ -71,9 +71,9 @@ class SimplePlayerController: BaseTitleController {
     /// 播放或者暂停
     func playOrPause() {
         if musicPlayerManager.isPlaying() {
-            musicPlayerManager.pause()
+            playListManager.pause()
         } else {
-            musicPlayerManager.resume()
+            playListManager.resume()
         }
     }
 

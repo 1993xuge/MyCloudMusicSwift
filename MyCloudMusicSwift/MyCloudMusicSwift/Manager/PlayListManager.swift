@@ -25,6 +25,9 @@ class PlayListManager: NSObject {
     // 当前播放的音乐
     var data: Song? = nil
 
+    /// 是否播放了音乐
+    var isPlay = false
+
     override init() {
         super.init()
 
@@ -60,17 +63,44 @@ class PlayListManager: NSObject {
 
         data = datum[position]
 
+        play(data!)
+    }
+    
+    /// 播放当前音乐
+    ///
+    /// - Parameter data: <#data description#>
+    func play(_ data:Song) {
         //播放在线音乐
-        musicPlayerManager.play(ResourceUtil.resourceUri(data!.uri), data!)
+        musicPlayerManager.play(ResourceUtil.resourceUri(data.uri), data)
+        
+        //标记为播放了
+        isPlay = true
     }
 
     /// 暂停
     func pause() {
         print("PlayListManager pause")
+        musicPlayerManager.pause()
     }
 
     /// 继续播放
     func resume() {
         print("PlayListManager resume")
+
+        if isPlay {
+            //播放管理器已经播放过音乐了
+            musicPlayerManager.resume()
+        } else {
+            //还没有进行播放
+            //第一次打开应用点击继续播放
+            play(data!)
+            
+            //继续播放
+            if data!.progress > 1 {
+                //有播放记录
+                //继续播放
+                musicPlayerManager.seekTo(data!.progress-1)
+            }
+        }
     }
 }
