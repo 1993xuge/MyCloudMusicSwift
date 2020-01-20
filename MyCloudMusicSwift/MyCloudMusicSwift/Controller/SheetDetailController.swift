@@ -31,6 +31,8 @@ class SheetDetailController: BaseTitleController {
     /// 头部
     var header: SheetDetailHeaderView!
 
+    var playListManager: PlayListManager!
+
     /// 视图即将可见
     ///
     override func viewWillAppear(_ animated: Bool) {
@@ -105,6 +107,9 @@ class SheetDetailController: BaseTitleController {
     override func initDatas() {
         super.initDatas()
 
+        //初始化播放列表管理器
+        playListManager = PlayListManager.shared
+
         fetchData()
     }
 
@@ -140,6 +145,20 @@ class SheetDetailController: BaseTitleController {
 
         //重新加载数据
         tableView.reloadData()
+    }
+
+    /// 播放当前位置的音乐
+    ///
+    /// - Parameter position: <#position description#>
+    func play(_ position: Int) {
+        //替换播放列表
+        playListManager.setPlayList(dataArray)
+
+        //从当前位置开始播放
+        playListManager.play(position)
+
+        //跳转到简单播放界面
+        SimplePlayerController.start(navigationController!)
     }
 
     /// 处理收藏和取消收藏逻辑
@@ -275,6 +294,7 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
         //播放全部点击回调方法
         header.onPlayClick = {
             print("SheetDetailController onPlayClick")
+            self.play(0)
         }
 
         //返回Header
@@ -307,8 +327,6 @@ extension SheetDetailController: UITableViewDelegate, UITableViewDataSource {
     /// 点击Cell回调方法
     ///
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-         //跳转到简单播放界面
-        SimplePlayerController.start(navigationController!)
+        play(indexPath.row)
     }
 }

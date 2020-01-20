@@ -93,6 +93,7 @@
 		D594D34923C623CE0082F9F3 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34823C623CE0082F9F3 /* ViewUtil.swift */; };
 		D594D34C23C625700082F9F3 /* ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34B23C625700082F9F3 /* ViewExtend.swift */; };
 		D594D34E23C627F70082F9F3 /* ColorExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594D34D23C627F70082F9F3 /* ColorExtend.swift */; };
+		D5BCC3AD23D5309F000EF158 /* PlayListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BCC3AC23D5309F000EF158 /* PlayListManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +221,7 @@
 		D594D34823C623CE0082F9F3 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		D594D34B23C625700082F9F3 /* ViewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtend.swift; sourceTree = "<group>"; };
 		D594D34D23C627F70082F9F3 /* ColorExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtend.swift; sourceTree = "<group>"; };
+		D5BCC3AC23D5309F000EF158 /* PlayListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				D5651B3023D1FAB2001E1A1C /* MusicPlayerManager.swift */,
+				D5BCC3AC23D5309F000EF158 /* PlayListManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -894,6 +897,7 @@
 				D57905F323C76291003A4B95 /* RegisterController.swift in Sources */,
 				D5752CF123C9BA780058FE0F /* Session.swift in Sources */,
 				D55F7C6223CFE0270038D9F9 /* SongListCell.swift in Sources */,
+				D5BCC3AD23D5309F000EF158 /* PlayListManager.swift in Sources */,
 				D5060D4A23C4C66F00F875E0 /* GuideController.swift in Sources */,
 				D5752CE923C96DA60058FE0F /* ListResponse.swift in Sources */,
 				D57905F523C776CD003A4B95 /* TextFieldExtend.swift in Sources */,
