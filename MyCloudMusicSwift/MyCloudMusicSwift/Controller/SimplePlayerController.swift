@@ -41,6 +41,9 @@ class SimplePlayerController: BaseTitleController {
 
     /// 播放管理器
     var musicPlayerManager: MusicPlayerManager!
+    
+    /// 播放列表管理器
+    var playListManager:PlayListManager!
 
     /// 是否按下了进度条
     var isSlideTouch = false
@@ -51,17 +54,12 @@ class SimplePlayerController: BaseTitleController {
 
     override func initDatas() {
         super.initDatas()
+        
+        //获取播放列表管理器
+        playListManager = PlayListManager.shared
 
         //获取音乐播放管理器
         musicPlayerManager = MusicPlayerManager.shared()
-
-        //测试音乐数据
-        let songUrl = "http://dev-courses-misuc.ixuea.com/assets/s1.mp3"
-
-        let song = Song()
-        song.uri = songUrl
-
-        musicPlayerManager.play(songUrl, song)
 
         //显示播放状态
         showMusicPlayStatus()
