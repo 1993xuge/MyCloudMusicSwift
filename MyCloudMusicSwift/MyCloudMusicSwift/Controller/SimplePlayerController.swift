@@ -64,8 +64,14 @@ class SimplePlayerController: BaseTitleController {
         //显示播放状态
         showMusicPlayStatus()
 
+        //显示音乐时长
         showDuration()
+        
+        //显示进度
         showProgress()
+        
+        //显示循环模式
+        showLoopModel()
     }
 
     /// 播放或者暂停
@@ -83,6 +89,9 @@ class SimplePlayerController: BaseTitleController {
     ///
     @IBAction func onPreviousClick(_ sender: Any) {
         print("SimplePlayerController onPreviousClick")
+
+        let song = playListManager.previous()
+        playListManager.play(song)
     }
 
     /// 播放按钮
@@ -97,12 +106,19 @@ class SimplePlayerController: BaseTitleController {
     ///
     @IBAction func onNextClick(_ sender: UIButton) {
         print("SimplePlayerController onNextClick")
+        playListManager.play(playListManager.next())
     }
 
     /// 循环模式
     ///
     @IBAction func onLoopModelClick(_ sender: UIButton) {
         print("SimplePlayerController onLoopModelClick")
+
+        //切换循环模式
+        playListManager.changeLoopModel()
+
+        //显示当前循环模式
+        showLoopModel()
     }
 
     // MARK: - 进度条相关
@@ -201,6 +217,21 @@ class SimplePlayerController: BaseTitleController {
                 lbStart.text = TimeUtil.second2MinuteAndSecond(progress)
                 sdProgress.value = progress
             }
+        }
+    }
+
+    /// 显示循环模式
+    func showLoopModel() {
+        //获取当前循环模式
+        let model = playListManager.getLoopModel()
+
+        switch model {
+        case .list:
+            btLoopModel.setTitle("列表循环", for: .normal)
+        case .random:
+            btLoopModel.setTitle("随机循环", for: .normal)
+        default:
+            btLoopModel.setTitle("单曲循环", for: .normal)
         }
     }
 }

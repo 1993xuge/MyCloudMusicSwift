@@ -64,9 +64,7 @@ class PlayListManager: NSObject {
     func play(_ position: Int) {
         print("PlayListManager play:\(position)")
 
-        data = datum[position]
-
-        play(data!)
+        play(datum[position])
     }
 
     /// 播放当前音乐
@@ -78,6 +76,8 @@ class PlayListManager: NSObject {
 
         //标记为播放了
         isPlay = true
+        
+        self.data = data
     }
 
     /// 暂停
